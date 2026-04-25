@@ -1,0 +1,31 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Large data/cache files
+*.pt
+*.pth
+*.pkl
+*.npz
+*.npy
+*.tar
+*.tar.gz
+*.zip
+
+# Logs and temporary outputs
+*.tmp
+*.bak
+.ipynb_checkpoints/
+
+# Local data
+planetoid/data/
+data/
+datasets/
+
+# Large experimental raw outputs
+all_grid_runs/
+single_runs/
+candidate_trace_large/
+node_level_raw_large/

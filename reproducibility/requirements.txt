@@ -1,0 +1,9 @@
+﻿numpy
+scipy
+pandas
+scikit-learn
+openpyxl
+matplotlib
+torch
+torch-geometric
+psutil
