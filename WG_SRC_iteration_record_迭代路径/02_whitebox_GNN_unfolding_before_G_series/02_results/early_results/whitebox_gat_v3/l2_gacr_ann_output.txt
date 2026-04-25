@@ -1,0 +1,79 @@
+﻿L2-A Innovation: GACR + Cosine Tau Annealing + delta_R Normalization
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+Output will be saved to: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\l2_gacr_ann_output.txt
+
+============================================================
+Experiment: L2-A GACR + Cosine Tau Annealing + delta_R Norm
+  Design: GACR hop-weighting + std CR gradient (hybrid)
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'eps': 0.5, 'num_hops': 2, 'eta': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'lambda_div': 0.01, 'log_alpha_init': -2.0, 'tau_min': 0.1, 'tau_max': 1.0, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 200, 'patience': 50, 'seed': 42}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | tau=0.9955 | loss=0.8282 | val=0.6867 | test=0.6910
+  [L2-A] Layer1: alpha=0.1423 | H_half_norm=202.03
+         hop_w=[0.740, 0.129, 0.131] | var=0.12411
+         delta_R_norm=[1.155, -0.584, -0.571]
+         delta_R_raw(GACR)=[0.50207, -0.23950, -0.23396]
+  [L2-A] Layer2: alpha=0.1423 | H_half_norm=228.92
+         hop_w=[0.739, 0.121, 0.140] | var=0.12339
+         delta_R_norm=[1.152, -0.647, -0.505]
+         delta_R_raw(GACR)=[4.96823, -1.47496, -0.96404]
+Epoch   20 | tau=0.9801 | loss=0.5674 | val=0.6867 | test=0.6870
+  [L2-A] Layer1: alpha=0.1495 | H_half_norm=202.03
+         hop_w=[0.706, 0.200, 0.094] | var=0.10705
+         delta_R_norm=[1.072, -0.163, -0.908]
+         delta_R_raw(GACR)=[0.23414, -0.03335, -0.19463]
+  [L2-A] Layer2: alpha=0.1495 | H_half_norm=224.13
+         hop_w=[0.737, 0.155, 0.108] | var=0.12270
+         delta_R_norm=[1.136, -0.391, -0.745]
+         delta_R_raw(GACR)=[2.10693, -0.30774, -0.86789]
+Epoch   30 | tau=0.9541 | loss=0.4193 | val=0.6800 | test=0.6800
+  [L2-A] Layer1: alpha=0.1571 | H_half_norm=202.03
+         hop_w=[0.754, 0.126, 0.120] | var=0.13288
+         delta_R_norm=[1.154, -0.553, -0.601]
+         delta_R_raw(GACR)=[0.72085, -0.33075, -0.36040]
+  [L2-A] Layer2: alpha=0.1571 | H_half_norm=217.88
+         hop_w=[0.703, 0.210, 0.087] | var=0.10610
+         delta_R_norm=[1.048, -0.104, -0.944]
+         delta_R_raw(GACR)=[0.55117, 0.01142, -0.38255]
+Epoch   40 | tau=0.9182 | loss=0.3577 | val=0.6767 | test=0.6800
+  [L2-A] Layer1: alpha=0.1649 | H_half_norm=202.03
+         hop_w=[0.765, 0.129, 0.106] | var=0.13999
+         delta_R_norm=[1.150, -0.487, -0.664]
+         delta_R_raw(GACR)=[0.46267, -0.19117, -0.26186]
+  [L2-A] Layer2: alpha=0.1649 | H_half_norm=212.98
+         hop_w=[0.710, 0.209, 0.081] | var=0.11072
+         delta_R_norm=[1.040, -0.085, -0.955]
+         delta_R_raw(GACR)=[0.33564, -0.02091, -0.29659]
+Epoch   50 | tau=0.8732 | loss=0.2966 | val=0.6833 | test=0.6820
+  [L2-A] Layer1: alpha=0.1731 | H_half_norm=202.03
+         hop_w=[0.783, 0.117, 0.100] | var=0.15165
+         delta_R_norm=[1.152, -0.507, -0.645]
+         delta_R_raw(GACR)=[0.25217, -0.11011, -0.14030]
+  [L2-A] Layer2: alpha=0.1731 | H_half_norm=208.72
+         hop_w=[0.771, 0.142, 0.087] | var=0.14453
+         delta_R_norm=[1.128, -0.350, -0.778]
+         delta_R_raw(GACR)=[0.46548, -0.12847, -0.30031]
+Epoch   60 | tau=0.8202 | loss=0.2485 | val=0.6767 | test=0.6930
+  [L2-A] Layer1: alpha=0.1815 | H_half_norm=202.03
+         hop_w=[0.794, 0.127, 0.079] | var=0.15997
+         delta_R_norm=[1.133, -0.373, -0.760]
+         delta_R_raw(GACR)=[0.86863, -0.27114, -0.56348]
+  [L2-A] Layer2: alpha=0.1815 | H_half_norm=204.83
+         hop_w=[0.802, 0.112, 0.086] | var=0.16479
+         delta_R_norm=[1.148, -0.467, -0.681]
+         delta_R_raw(GACR)=[0.47567, -0.18838, -0.27680]
+Early stop at epoch 64
+============================================================
+FINAL: best_val=0.6933 | best_test=0.6890 | time=94.8s
+============================================================
+
+Comparison with baselines:
+  G1   baseline : val=0.7033, test=0.6800
+  Agent4 (tau)  : val=0.6933, test=0.6920
+  Agent5 (GACR) : val=0.7067, test=0.6870
+  L2-A (ours)   : val=0.6933, test=0.6890
+  vs G1   => val -0.0100 | test +0.0090
+  vs A4   => val +0.0000 | test -0.0030
+  vs A5   => val -0.0134 | test +0.0020
+

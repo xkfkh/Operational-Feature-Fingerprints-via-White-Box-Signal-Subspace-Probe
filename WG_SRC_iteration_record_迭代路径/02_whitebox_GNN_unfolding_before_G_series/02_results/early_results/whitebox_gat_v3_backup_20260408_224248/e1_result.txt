@@ -1,0 +1,56 @@
+﻿=== Agent E1: Hessian Attention GL-SRR  2026-04-08 12:16:24 ===
+改进：attention = z_i^T M^{-1} z_j，M = I + coeff*Z^T Z（真正的 coding rate Hessian）
+
+Cora: 2708 nodes, 1433 features, 7 classes
+
+--- iter1_hessian_base ---
+  [iter1_hessian_base] ep= 50  loss=0.1924  ce=0.3247  val=0.6800  test=0.7070
+  >> iter1_hessian_base: val=0.7133  test=0.6980
+
+--- iter2_eps_01 ---
+  [iter2_eps_01] ep= 50  loss=0.4561  ce=0.5504  val=0.6433  test=0.6730
+  >> iter2_eps_01: val=0.6567  test=0.6770
+
+--- iter3_eps_10 ---
+  [iter3_eps_10] ep= 50  loss=0.0424  ce=0.1699  val=0.6733  test=0.7060
+  >> iter3_eps_10: val=0.7200  test=0.7160
+
+--- iter4_lap_005 ---
+  [iter4_lap_005] ep= 50  loss=0.2288  ce=0.3553  val=0.6767  test=0.6980
+  >> iter4_lap_005: val=0.7067  test=0.7030
+
+--- iter5_lap_02 ---
+  [iter5_lap_02] ep= 50  loss=0.1075  ce=0.2333  val=0.6733  test=0.7160
+  >> iter5_lap_02: val=0.7267  test=0.7250
+
+--- iter6_sub32 ---
+  [iter6_sub32] ep= 50  loss=1.0423  ce=0.6288  val=0.7000  test=0.7380
+  >> iter6_sub32: val=0.7433  test=0.7120
+
+--- iter7_heads4 ---
+  [iter7_heads4] ep= 50  loss=0.2059  ce=0.4916  val=0.6767  test=0.6970
+  >> iter7_heads4: val=0.7000  test=0.6970
+
+--- iter8_best ---
+  [iter8_best] ep= 50  loss=1.1513  ce=0.7159  val=0.7033  test=0.7310
+  >> iter8_best: val=0.7233  test=0.7360
+
+============================================================
+Agent E1 - Hessian Attention 实验结果汇总
+============================================================
+  iter1_hessian_base        val=0.7133  test=0.6980
+  iter2_eps_01              val=0.6567  test=0.6770
+  iter3_eps_10              val=0.7200  test=0.7160
+  iter4_lap_005             val=0.7067  test=0.7030
+  iter5_lap_02              val=0.7267  test=0.7250
+  iter6_sub32               val=0.7433  test=0.7120
+  iter7_heads4              val=0.7000  test=0.6970
+  iter8_best                val=0.7233  test=0.7360
+
+最优: iter6_sub32  val=0.7433  test=0.7120
+
+理论贡献：
+  - attention 权重 = z_i^T M^{-1} z_j，M 为 coding rate 的 Hessian
+  - 这是 natural gradient 意义下的节点相似度，有严格信息几何依据
+  - 相比普通内积 attention，更接近目标函数的曲率结构
+

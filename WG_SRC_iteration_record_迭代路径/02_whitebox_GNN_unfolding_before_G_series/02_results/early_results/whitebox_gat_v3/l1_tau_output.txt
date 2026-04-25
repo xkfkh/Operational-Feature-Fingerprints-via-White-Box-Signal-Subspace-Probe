@@ -1,0 +1,38 @@
+﻿L1 Innovation: Cosine Tau Annealing + Hop Diversity Regularization
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: L1 Tau Annealing + Hop Diversity Regularization
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'lambda_div': 0.01, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 150, 'patience': 30, 'seed': 42, 'tau_min': 0.1, 'tau_max': 1.0}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | tau=0.9920 | loss=0.8282 | val=0.6867 | test=0.6910
+  Layer1: hop_w=[0.737, 0.148, 0.115] | var=0.12258
+          dR_norm=[1.146, -0.448, -0.698]
+          dR_raw=[1.479, -0.479, -0.785]
+  Layer2: hop_w=[0.740, 0.122, 0.137] | var=0.12436
+          dR_norm=[1.153, -0.634, -0.519]
+Epoch   20 | tau=0.9648 | loss=0.5687 | val=0.6867 | test=0.6830
+  Layer1: hop_w=[0.747, 0.112, 0.140] | var=0.12884
+          dR_norm=[1.148, -0.682, -0.466]
+          dR_raw=[0.786, -0.410, -0.269]
+  Layer2: hop_w=[0.744, 0.149, 0.107] | var=0.12676
+          dR_norm=[1.140, -0.411, -0.729]
+Epoch   30 | tau=0.9195 | loss=0.4183 | val=0.6733 | test=0.6830
+  Layer1: hop_w=[0.750, 0.093, 0.157] | var=0.13149
+          dR_norm=[1.121, -0.802, -0.319]
+          dR_raw=[0.426, -0.297, -0.116]
+  Layer2: hop_w=[0.730, 0.185, 0.085] | var=0.12023
+          dR_norm=[1.078, -0.182, -0.897]
+Epoch   40 | tau=0.8580 | loss=0.3589 | val=0.6633 | test=0.6810
+  Layer1: hop_w=[0.788, 0.095, 0.117] | var=0.15499
+          dR_norm=[1.150, -0.666, -0.484]
+          dR_raw=[0.686, -0.386, -0.278]
+  Layer2: hop_w=[0.781, 0.132, 0.087] | var=0.15067
+          dR_norm=[1.136, -0.387, -0.749]
+Early stop at epoch 46
+============================================================
+FINAL: best_val=0.6967 | best_test=0.6920 | time=83.0s
+============================================================
+

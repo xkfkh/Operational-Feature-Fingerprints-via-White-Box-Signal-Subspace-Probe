@@ -1,0 +1,49 @@
+﻿G1 Small Clean Test — White-box self-check
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: g1_base_small
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 150, 'patience': 30, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | loss=0.8348 | val=0.6833 | test=0.6970
+  [WHITE-BOX] Layer1: H_half_norm=202.0257 | tau=0.9980
+              hop_w=[0.395, 0.276, 0.328]
+              delta_R=[0.193, -0.164, 0.008]
+  [WHITE-BOX] Layer2: H_half_norm=229.4733 | tau=0.9993
+              hop_w=[0.992, 0.001, 0.007]
+              delta_R=[4.799, -2.030, -0.198]
+Epoch   20 | loss=0.5875 | val=0.6933 | test=0.6810
+  [WHITE-BOX] Layer1: H_half_norm=202.0254 | tau=0.9990
+              hop_w=[0.356, 0.313, 0.331]
+              delta_R=[0.071, -0.060, -0.003]
+  [WHITE-BOX] Layer2: H_half_norm=223.8460 | tau=1.0014
+              hop_w=[0.850, 0.049, 0.102]
+              delta_R=[2.010, -0.855, -0.117]
+Epoch   30 | loss=0.4422 | val=0.6833 | test=0.6680
+  [WHITE-BOX] Layer1: H_half_norm=202.0253 | tau=0.9994
+              hop_w=[0.339, 0.329, 0.333]
+              delta_R=[0.017, -0.013, -0.000]
+  [WHITE-BOX] Layer2: H_half_norm=217.1324 | tau=1.0010
+              hop_w=[0.504, 0.223, 0.273]
+              delta_R=[0.547, -0.269, -0.068]
+Epoch   40 | loss=0.3622 | val=0.6800 | test=0.6760
+  [WHITE-BOX] Layer1: H_half_norm=202.0253 | tau=0.9996
+              hop_w=[0.335, 0.331, 0.333]
+              delta_R=[0.007, -0.005, -0.000]
+  [WHITE-BOX] Layer2: H_half_norm=212.1531 | tau=0.9996
+              hop_w=[0.372, 0.306, 0.323]
+              delta_R=[0.134, -0.062, -0.008]
+Epoch   50 | loss=0.2804 | val=0.6900 | test=0.6840
+  [WHITE-BOX] Layer1: H_half_norm=202.0253 | tau=0.9998
+              hop_w=[0.334, 0.333, 0.333]
+              delta_R=[0.002, -0.002, -0.000]
+  [WHITE-BOX] Layer2: H_half_norm=208.0332 | tau=1.0002
+              hop_w=[0.352, 0.320, 0.328]
+              delta_R=[0.066, -0.032, -0.005]
+Early stop at epoch 52
+============================================================
+FINAL: best_val=0.7033 | best_test=0.6800 | time=29.6s
+============================================================
+

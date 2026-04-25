@@ -1,0 +1,4 @@
+task3b completed
+G1_64_16_scaled: val=0.7533 test=0.7710
+G1_128_32_scaled: val=0.7700 test=0.7920
+all_checks_pass=True

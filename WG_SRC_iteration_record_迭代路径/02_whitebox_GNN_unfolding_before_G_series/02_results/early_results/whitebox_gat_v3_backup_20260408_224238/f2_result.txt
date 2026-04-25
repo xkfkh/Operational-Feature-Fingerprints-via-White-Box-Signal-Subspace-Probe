@@ -1,0 +1,35 @@
+﻿=== Agent F2 (vectorized): Spectral Proximal Gradient  2026-04-08 19:16:35 ===
+Bug fix: eigvals[-k:] (largest), not [:k] (all zeros)
+Speedup: vectorized Phi=V^T H, no inner loop over spectral components
+
+Cora: 2708 nodes, 1433 features, 7 classes
+  Computing top-16 eigenvectors via eigsh (sparse, fast)...
+  Eigenvalue range: [1.431972, 1.482631]
+
+
+--- f2_base ---
+  [f2_base] ep= 50  loss=1.0050  ce=1.3264  val=0.3700  test=0.3570  hop_w=[0.336 0.361 0.303]  top_spec=[9, 5, 14]
+  [f2_base] ep=100  loss=-0.2107  ce=0.2651  val=0.5067  test=0.5180  hop_w=[0.369 0.350 0.282]  top_spec=[11, 2, 10]
+  >> f2_base: val=0.5367  test=0.5070
+
+--- f2_lap_high ---
+  [f2_lap_high] ep= 50  loss=0.1029  ce=0.4721  val=0.5067  test=0.5100  hop_w=[0.366 0.335 0.299]  top_spec=[8, 15, 6]
+  >> f2_lap_high: val=0.5367  test=0.5170
+
+--- f2_hidden128 ---
+  >> f2_hidden128: val=0.3000  test=0.3190
+
+============================================================
+Agent F2 (vectorized) - 初步实验结果
+============================================================
+  f2_base              val=0.5367  test=0.5070
+  f2_lap_high          val=0.5367  test=0.5170
+  f2_hidden128         val=0.3000  test=0.3190
+
+最优: f2_base  val=0.5367  test=0.5070
+
+白盒理论贡献（谱域）：
+  - 每层 = 对谱域 coding rate 目标函数的一步 proximal gradient
+  - spec_w 可解释：哪些频率对分类最有用（从目标函数推导）
+  - 与 F3（空域）对比：谱域 vs 空域 proximal gradient 的差异
+

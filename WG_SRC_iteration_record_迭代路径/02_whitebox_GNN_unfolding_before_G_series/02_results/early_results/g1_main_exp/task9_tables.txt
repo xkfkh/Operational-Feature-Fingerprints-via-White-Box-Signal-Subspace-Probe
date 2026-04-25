@@ -1,0 +1,81 @@
+﻿================================================================
+G1 Main Experiment - Paper-Level Comparison Tables
+Date: 2026-04-09
+Compiled by: Agent 2a
+================================================================
+
+----------------------------------------------------------------
+Table 1: Multi-Dataset Generalization Results
+----------------------------------------------------------------
+Dataset       Nodes    Feat   Classes   Val Acc   Test Acc
+----------------------------------------------------------
+Cora           2708    1433         7    0.8370     0.8400
+CiteSeer       3327    3703         6    0.8140     0.7900
+PubMed        19717     500         3    0.7980     0.7650
+----------------------------------------------------------
+Note: G1 with CR-driven hop, hidden=64, subspace=16, seed=0.
+      All results are single-run best val checkpoint.
+
+----------------------------------------------------------------
+Table 2: G1 vs F3 Fair Comparison (Cora)
+----------------------------------------------------------------
+Config    Model   Hop Strategy          Val Acc   Test Acc   Delta Test
+-----------------------------------------------------------------------
+64/16     F3      Gumbel learnable      0.7670     0.7820        --
+64/16     G1      CR-driven             0.8230     0.8470      +0.0650
+128/32    F3      Gumbel learnable      0.8270     0.8040        --
+128/32    G1      CR-driven             0.6070     0.6250      -0.1790
+-----------------------------------------------------------------------
+Note: Delta Test = G1 test - F3 test within the same config.
+      G1 advantage holds only at smaller hidden dimension (64/16).
+
+----------------------------------------------------------------
+Table 3: Hop Selection Ablation (Cora, hidden=64, subspace=16)
+----------------------------------------------------------------
+Hop Mode       Description                    Val Acc   Test Acc
+----------------------------------------------------------------
+fixed_hop0     Always use 0-hop               0.6700     0.6450
+fixed_hop1     Always use 1-hop               0.7667     0.7790
+fixed_hop2     Always use 2-hop               0.7833     0.7940
+uniform        Equal weight all hops          0.7567     0.7720
+learnable      Gumbel softmax learned         0.7967     0.7950
+cr_driven      Softmax over coding rates      0.8000     0.8290  *
+----------------------------------------------------------------
+* Best result. CR-driven outperforms all fixed and learned baselines.
+
+----------------------------------------------------------------
+Table 4: Module Ablation Results (Cora, full model = baseline)
+----------------------------------------------------------------
+Variant          Description                  Val Acc   Test Acc   Delta Test
+-----------------------------------------------------------------------------
+full             Complete G1 model            0.8370     0.8400    baseline
+no_mcr           Remove MCR loss              0.7370     0.7420      -0.0980
+no_orth          Remove orthogonality reg     0.8030     0.8040      -0.0360
+no_layernorm     Remove LayerNorm             0.3570     0.3970      -0.4430
+no_threshold     Remove threshold gate        0.8300     0.8350      -0.0050
+one_layer        Single GNN layer             0.8500     0.8660      +0.0260
+uniform_hop      Replace CR-hop w/ uniform    0.7830     0.8050      -0.0350
+learnable_hop    Replace CR-hop w/ Gumbel     0.7930     0.7770      -0.0630
+-----------------------------------------------------------------------------
+Note: Ranked by |Delta Test|: LayerNorm > MCR loss > learnable_hop >
+      uniform_hop > no_orth > no_threshold.
+
+----------------------------------------------------------------
+Table 5: tau Mechanism Results (Cora, hidden=64, subspace=16)
+----------------------------------------------------------------
+Scheme         tau Type    Init tau   Val Acc   Test Acc   Hop Entropy
+----------------------------------------------------------------------
+tau_fixed_05   fixed          0.5     0.5967     0.5850    ~0.00 (collapsed)
+tau_fixed_10   fixed          1.0     0.8400     0.8530    moderate       *
+tau_fixed_20   fixed          2.0     0.7433     0.7640    high (diffuse)
+tau_learnable  learnable      1.0     0.8367     0.8400    moderate
+tau_anneal     annealing      2.0     0.7833     0.8030    moderate
+----------------------------------------------------------------------
+* Best result. tau=1.0 fixed achieves highest test accuracy.
+  Learnable tau converges near 1.0 and performs comparably (test=0.8400).
+
+================================================================
+END OF TABLES
+================================================================
+
+

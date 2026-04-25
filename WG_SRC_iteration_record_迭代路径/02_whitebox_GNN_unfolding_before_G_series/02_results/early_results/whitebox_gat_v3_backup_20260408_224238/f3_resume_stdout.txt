@@ -1,0 +1,74 @@
+﻿
+=== F3 ���� (resume) 2026-04-08 18:59:23 ===
+�����: f3_base (val=0.8133, test=0.7930)
+������: f3_lap_high ~ f3_seed2
+
+D:\����\MSRʵ�鸴���봴��\run_f3_resume.py:36: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+
+--- f3_lap_high ---
+  [f3_lap_high] ep= 50  loss=-0.3592  ce=0.0730  val=0.7467  test=0.7840  hop_w=[0.329 0.334 0.337]
+  >> f3_lap_high: val=0.7767  test=0.7960
+
+--- f3_lap_low ---
+  [f3_lap_low] ep= 50  loss=-0.3796  ce=0.0507  val=0.7467  test=0.7680  hop_w=[0.322 0.334 0.344]
+  [f3_lap_low] ep=100  loss=-0.4435  ce=0.0436  val=0.6900  test=0.7210  hop_w=[0.329 0.332 0.339]
+  >> f3_lap_low: val=0.7800  test=0.7880
+
+--- f3_sub32 ---
+  [f3_sub32] ep= 50  loss=-0.1502  ce=0.0468  val=0.7633  test=0.7830  hop_w=[0.325 0.329 0.346]
+  >> f3_sub32: val=0.7767  test=0.7770
+
+--- f3_hop3 ---
+  [f3_hop3] ep= 50  loss=-0.3744  ce=0.0218  val=0.7500  test=0.7810  hop_w=[0.241 0.252 0.253 0.254]
+  [f3_hop3] ep=100  loss=-0.4567  ce=0.0244  val=0.7600  test=0.7880  hop_w=[0.248 0.250 0.251 0.252]
+  >> f3_hop3: val=0.7933  test=0.8090
+
+--- f3_orth_high ---
+  [f3_orth_high] ep= 50  loss=-0.3321  ce=0.0548  val=0.7167  test=0.7820  hop_w=[0.324 0.336 0.341]
+  [f3_orth_high] ep=100  loss=-0.4335  ce=0.0193  val=0.7567  test=0.7850  hop_w=[0.330 0.331 0.339]
+  [f3_orth_high] ep=150  loss=-0.4644  ce=0.0059  val=0.7633  test=0.7590  hop_w=[0.330 0.332 0.339]
+  >> f3_orth_high: val=0.7767  test=0.7820
+
+--- f3_hidden128 ---
+  [f3_hidden128] ep= 50  loss=-1.1826  ce=0.0374  val=0.6567  test=0.6400  hop_w=[0.328 0.330 0.342]
+  >> f3_hidden128: val=0.8267  test=0.8040
+
+--- f3_best ---
+  [f3_best] ep= 50  loss=-1.1755  ce=0.0261  val=0.7767  test=0.7750  hop_w=[0.324 0.330 0.345]
+  >> f3_best: val=0.8267  test=0.8050
+
+--- f3_seed1 ---
+  [f3_seed1] ep= 50  loss=-0.3941  ce=0.0411  val=0.7333  test=0.7900  hop_w=[0.320 0.331 0.349]
+  [f3_seed1] ep=100  loss=-0.4798  ce=0.0175  val=0.7500  test=0.7900  hop_w=[0.330 0.333 0.338]
+  >> f3_seed1: val=0.7833  test=0.7850
+
+--- f3_seed2 ---
+  [f3_seed2] ep= 50  loss=-0.3807  ce=0.0528  val=0.7733  test=0.8030  hop_w=[0.324 0.330 0.346]
+  >> f3_seed2: val=0.7967  test=0.7940
+
+============================================================
+Agent F3 - �����������
+============================================================
+  f3_base              val=0.8133  test=0.7930
+  f3_lap_high          val=0.7767  test=0.7960
+  f3_lap_low           val=0.7800  test=0.7880
+  f3_sub32             val=0.7767  test=0.7770
+  f3_hop3              val=0.7933  test=0.8090
+  f3_orth_high         val=0.7767  test=0.7820
+  f3_hidden128         val=0.8267  test=0.8040
+  f3_best              val=0.8267  test=0.8050
+  f3_seed1             val=0.7833  test=0.7850
+  f3_seed2             val=0.7967  test=0.7940
+
+����: f3_hidden128  val=0.8267  test=0.8040
+
+�׺����۹��ף�
+  - 3�� unrolling = ����� proximal gradient ��������Ӧ�����Ŀ�꺯���Ż�
+  - �������Լ�� = Ŀ�꺯���� inter-class coding rate �Ĳ���ƹ�
+  - Gumbel hop Ȩ�� = ����Ӧ����Ұ����Ŀ�꺯���Ƶ����Ǻں����
+  - ���в� = unrolling �е� warm start������ȷ��ѧ����
+
+Written to D:/����/MSRʵ�鸴���봴��/results/whitebox_gat_v3\f3_result.txt
+
+

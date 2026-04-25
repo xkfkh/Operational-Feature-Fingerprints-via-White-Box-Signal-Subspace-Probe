@@ -1,0 +1,27 @@
+﻿Whitebox GAT CRATE v2 - Agent A: Ablation Study
+============================================================
+
+修复内容：
+1. MCR2 只用 train_idx（修复标签泄漏）
+2. 标准 soft-threshold: sign(x)*relu(|x|-thr)
+3. 训练结束后 load best_state
+4. head 内部正交约束 ||U_k^T U_k - I||_F^2
+5. MCR2 对 penultimate embedding 算
+6. 加入 LayerNorm + 独立 classifier head
+
+消融实验结果：
+  full_model      val=0.7333  test=0.7400
+  no_mcr          val=0.7400  test=0.7670
+  no_orth         val=0.7500  test=0.7700
+  no_l1           val=0.7033  test=0.7220
+  relu_thresh     val=0.7200  test=0.7480
+  ce_only         val=0.7467  test=0.7610
+
+最佳 config: no_orth  val=0.7500  test=0.7700
+
+结论：
+  MCR2 贡献: full=0.7400 vs no_mcr=0.7670 (diff=-0.0270)
+  Orth 贡献: full=0.7400 vs no_orth=0.7700 (diff=-0.0300)
+  vs CE only: full=0.7400 vs ce_only=0.7610 (diff=-0.0210)
+
+

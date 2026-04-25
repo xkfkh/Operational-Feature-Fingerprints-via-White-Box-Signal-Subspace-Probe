@@ -1,0 +1,12 @@
+﻿Task 4: Hop Selection Ablation
+========================================
+Mode                  Val     Test
+----------------------------------
+fixed_hop0         0.6700   0.6450
+fixed_hop1         0.7667   0.7790
+fixed_hop2         0.7833   0.7940
+uniform            0.7567   0.7720
+learnable          0.7967   0.7950
+cr_driven          0.8000   0.8290 <-- best
+DONE
+

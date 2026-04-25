@@ -1,0 +1,14 @@
+﻿{
+  "dataset": "synthetic",
+  "data_root": "./data",
+  "output_dir": "./results/mcr2_trace",
+  "epochs": 10,
+  "batch_size": 128,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "hidden_dims": "128,64,32",
+  "seed": 42,
+  "num_workers": 0,
+  "samples_per_class": 1
+}
+

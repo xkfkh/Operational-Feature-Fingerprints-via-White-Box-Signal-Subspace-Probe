@@ -1,0 +1,62 @@
+﻿L2 Innovation: Graph-Aware Coding Rate FIXED (eps=0.1, hidden=64, subspace=16)
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+Output will be saved to: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\l2_gacr_fixed_output.txt
+
+============================================================
+Experiment: L2 Graph-Aware Coding Rate FIXED (eps=0.1, hidden=64, sub=16)
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.1, 'lambda_lap': 0.1, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 200, 'patience': 50, 'seed': 42, 'tau_init': 1.0, 'log_alpha_init': -2.0}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+coeff (eps=0.5, sub=8): 0.0118  ->  coeff (eps=0.1, sub=16): 0.5908  (x50.0)
+Epoch   10 | loss=0.6639 | val=0.6133 | test=0.6030
+  [GACR] Layer1: alpha=0.1423 | tau=1.0016 | H_half_norm=215.1469
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[21.987, -19.586, -0.810]
+  [GACR] Layer2: alpha=0.1423 | tau=1.0002 | H_half_norm=319.1007
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[32.008, -6.825, -3.621]
+Epoch   20 | loss=0.4616 | val=0.6067 | test=0.6200
+  [GACR] Layer1: alpha=0.1495 | tau=1.0004 | H_half_norm=215.1465
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[21.503, -20.889, -0.198]
+  [GACR] Layer2: alpha=0.1495 | tau=1.0012 | H_half_norm=314.4294
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[16.316, -5.269, -2.373]
+Epoch   30 | loss=0.3505 | val=0.6133 | test=0.6120
+  [GACR] Layer1: alpha=0.1571 | tau=0.9997 | H_half_norm=215.1453
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[18.314, -18.164, -0.040]
+  [GACR] Layer2: alpha=0.1571 | tau=0.9994 | H_half_norm=307.6694
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[11.296, -4.525, -1.269]
+Epoch   40 | loss=0.2744 | val=0.6167 | test=0.6160
+  [GACR] Layer1: alpha=0.1650 | tau=0.9996 | H_half_norm=215.1432
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[15.189, -15.113, -0.028]
+  [GACR] Layer2: alpha=0.1649 | tau=1.0001 | H_half_norm=300.9189
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[9.245, -3.356, -1.129]
+Epoch   50 | loss=0.2203 | val=0.6000 | test=0.6240
+  [GACR] Layer1: alpha=0.1732 | tau=1.0000 | H_half_norm=215.1405
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[12.295, -12.260, -0.011]
+  [GACR] Layer2: alpha=0.1731 | tau=1.0000 | H_half_norm=294.6151
+         hop_w=[0.997, 0.000, 0.002]
+         delta_R_graph=[5.512, -3.220, -0.532]
+Epoch   60 | loss=0.1835 | val=0.6000 | test=0.6190
+  [GACR] Layer1: alpha=0.1816 | tau=1.0001 | H_half_norm=215.1382
+         hop_w=[1.000, 0.000, 0.000]
+         delta_R_graph=[10.307, -10.293, -0.005]
+  [GACR] Layer2: alpha=0.1815 | tau=1.0001 | H_half_norm=288.9940
+         hop_w=[0.957, 0.004, 0.039]
+         delta_R_graph=[3.082, -2.406, -0.118]
+Early stop at epoch 64
+============================================================
+FINAL: best_val=0.6200 | best_test=0.6190 | time=55.8s
+============================================================
+
+Comparison with G1 baseline (val=0.7033, test=0.6800):
+  Val  diff: -0.0833  (worse)
+  Test diff: -0.0610  (worse)
+

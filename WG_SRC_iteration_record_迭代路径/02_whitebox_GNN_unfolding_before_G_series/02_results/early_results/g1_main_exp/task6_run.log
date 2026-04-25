@@ -1,0 +1,14 @@
+﻿Task6: hidden=128 Crash Diagnosis - 4 Hop Weight Strategies
+Date: 2026-04-08
+Config: hidden=128, subspace=32, dataset=Cora
+
+
+============================================================
+Experiment: hidden128_raw  weight_mode=raw
+hidden=128  subspace=32
+============================================================
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task6_hidden128_diag.py:39: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  Dim check: in_dim=1433, hidden=128, subspace=32, num_classes=7
+
+

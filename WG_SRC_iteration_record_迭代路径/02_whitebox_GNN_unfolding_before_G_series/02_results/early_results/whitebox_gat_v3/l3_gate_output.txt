@@ -1,0 +1,30 @@
+﻿L3 Innovation: Adaptive Gate for Hop Weighting (FINAL)
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+Output: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\l3_gate_output.txt
+Result: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\l3_gate_result.txt
+
+============================================================
+Experiment: L3 Adaptive Gate GNN (FINAL)
+  Gate weights on DIRECT hop aggregation (Z_k = W_k @ H_k)
+  Strong CE gradient -> gate; CR gradient step for regularization
+  Gate features: mean_norm, std_norm, lap_quad, rank_proxy on Z_k
+Config: {'hidden_dim': 64, 'num_hops': 2, 'eta': 0.1, 'eps': 0.5, 'lambda_lap': 0.1, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 300, 'patience': 50, 'seed': 42}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Gate MLP: in=12, hidden=24, out=3
+
+Model parameters: 277467
+
+Epoch   50 | loss=0.1652 | val=0.7467 | test=0.7890
+  Layer1 hop_w=[0.382, 0.366, 0.252]  lap_quad=[0.0138, 0.0019, 0.0008]
+  Layer2 hop_w=[0.099, 0.347, 0.553]  lap_quad=[0.0716, 0.0208, 0.0181]
+Early stop at epoch 60
+============================================================
+FINAL: best_val=0.7867 | best_test=0.7820 | time=32.7s
+============================================================
+
+Comparison with G1 baseline (val=0.7033, test=0.6800):
+  Val  diff: +0.0834  (better)
+  Test diff: +0.1020  (better)
+

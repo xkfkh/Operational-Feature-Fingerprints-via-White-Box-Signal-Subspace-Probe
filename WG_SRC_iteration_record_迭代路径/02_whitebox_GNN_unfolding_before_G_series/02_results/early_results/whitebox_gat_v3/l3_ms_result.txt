@@ -1,0 +1,10 @@
+﻿L3 Multi-Scale GCN Result
+========================================
+Best Val  Acc: 0.7333
+Best Test Acc: 0.7550
+G1 Baseline:  val=0.7033, test=0.68
+Delta Val:  +0.0300
+Delta Test: +0.0750
+========================================
+
+

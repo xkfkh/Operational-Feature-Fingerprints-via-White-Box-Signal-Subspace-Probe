@@ -1,0 +1,12 @@
+﻿G3 Variational Hop Selection — Results
+==================================================
+g3_base: val=0.5880, test=0.5530, time=166.8s
+g3_kl_high: val=0.5880, test=0.5530, time=215.1s
+g3_kl_low: val=0.5880, test=0.5530, time=217.6s
+g3_hidden128: val=0.5780, test=0.5430, time=194.3s
+g3_hop3: val=0.5680, test=0.5350, time=231.4s
+g3_best: val=0.5780, test=0.5430, time=186.9s
+
+Best: g3_base  test=0.5530
+
+

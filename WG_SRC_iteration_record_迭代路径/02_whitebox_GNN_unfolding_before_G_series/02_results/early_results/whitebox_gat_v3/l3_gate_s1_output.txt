@@ -1,0 +1,12 @@
+﻿============================================================
+Experiment: L3 Adaptive Gate GNN (FINAL) — seed=1
+Config: {'hidden_dim': 64, 'num_hops': 2, 'eta': 0.1, 'eps': 0.5, 'lambda_lap': 0.1, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 300, 'patience': 50, 'seed': 1}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   50 | loss=0.1677 | val=0.7433 | test=0.7820
+Early stop at epoch 66
+============================================================
+FINAL: best_val=0.7667 | best_test=0.7920 | time=33.1s
+============================================================
+

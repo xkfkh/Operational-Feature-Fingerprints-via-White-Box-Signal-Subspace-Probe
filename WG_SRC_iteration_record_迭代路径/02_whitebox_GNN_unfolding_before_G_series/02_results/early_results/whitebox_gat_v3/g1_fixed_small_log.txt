@@ -1,0 +1,68 @@
+﻿White-box GNN (CR-Gain) — Small Scale Verification
+Data dir : D:/桌面/MSR实验复现与创新/planetoid/data
+Out  dir : D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: g1_fixed_small_base
+WHITE-BOX GNN: CR-Gain Hop Layer (Fixed)
+============================================================
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'epochs': 100, 'patience': 20, 'dropout': 0.5, 'lr': 0.005, 'wd': 0.001, 'tau_init': 1.0, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'eps': 0.5, 'eta': 0.5, 'seed': 42}
+
+Loading Cora dataset ...
+  Nodes=2708, Features=1433, Classes=7
+  Train=140, Val=300, Test=1000
+
+Model architecture (whitebox dimension check):
+  Layer1: in_dim=1433, out_dim=32, subspace_dim=8
+  Layer1.out_proj: weight shape = [32, 1433]
+    -> Expected [32, 1433] (in_dim=1433, NOT subspace_dim=8)
+  Layer2: in_dim=32, out_dim=7, subspace_dim=8
+  Layer2.out_proj: weight shape = [7, 32]
+
+Total parameters: 81359
+
+Training started ...
+------------------------------------------------------------
+Epoch   10 | loss=0.6780 | val=0.7200 | test=0.7070
+  Layer1 tau=1.003 | hop_w=[0.364, 0.320, 0.316] | R=[0.174, 0.043, 0.033]
+  WHITEBOX CHECK: H_half norm = 202.0257
+Epoch   20 | loss=0.4343 | val=0.6933 | test=0.7130
+  Layer1 tau=0.999 | hop_w=[0.340, 0.330, 0.330] | R=[0.037, 0.008, 0.008]
+  WHITEBOX CHECK: H_half norm = 202.0253
+Epoch   30 | loss=0.3382 | val=0.6933 | test=0.7130
+  Layer1 tau=0.999 | hop_w=[0.336, 0.332, 0.332] | R=[0.017, 0.003, 0.004]
+  WHITEBOX CHECK: H_half norm = 202.0253
+
+Early stop at epoch 31 (patience=20)
+------------------------------------------------------------
+
+============================================================
+FINAL RESULTS
+============================================================
+Best val  acc : 0.7367
+Best test acc : 0.7100
+Training time : 15.8s
+
+Final hop weights (Layer1):
+  hop-0: 0.3359
+  hop-1: 0.3320
+  hop-2: 0.3321
+  max-min spread = 0.0040  (UNIFORM)
+
+Final hop weights (Layer2):
+  hop-0: 0.3997
+  hop-1: 0.3054
+  hop-2: 0.2949
+  max-min spread = 0.1048  (DIFFERENTIATED)
+
+Final WHITEBOX CHECK: Layer1 H_half norm = 202.0253
+  -> PASS: H_half is non-zero, whitebox gradient step is active
+
+Dimension fix verification:
+  out_proj weight: [32, 1433]
+  in_dim=1433, subspace_dim=8
+  -> PASS: out_proj input dim == in_dim (1433), NOT subspace_dim (8)
+
+Result saved -> D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\g1_fixed_small_result.txt
+
+

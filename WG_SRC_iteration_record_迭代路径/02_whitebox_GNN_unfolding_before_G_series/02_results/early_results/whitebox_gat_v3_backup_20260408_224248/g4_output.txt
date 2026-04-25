@@ -1,0 +1,81 @@
+﻿======================================================================
+G4: Multi-scale Subspace Effective-Rank Driven Hop Weights
+======================================================================
+Loading Cora...
+  nodes=2708, features=1433, classes=7
+  train=140, val=300, test=1000
+
+============================================================
+Experiment: g4_base
+  hidden=64, subspace=16, hops=2, lr=0.005
+  ep  50 | loss=-0.2405 ce=0.2746 | val=0.6533 test=0.6470
+           L1 rank_eff=[2.41, 8.64, 1.68] hop_w=[0.003, 0.995, 0.002]
+           L2 rank_eff=[15.05, 8.87, 7.38] hop_w=[0.999, 0.001, 0.000]
+  ep 100 | loss=-0.4169 ce=0.1810 | val=0.6533 test=0.6650
+           L1 rank_eff=[1.76, 6.78, 1.21] hop_w=[0.004, 0.993, 0.002]
+           L2 rank_eff=[15.39, 7.56, 6.92] hop_w=[1.000, 0.000, 0.000]
+  Early stop at epoch 100
+  RESULT: val=0.6533  test=0.6470  time=285.2s
+
+============================================================
+Experiment: g4_tau_high
+  hidden=64, subspace=16, hops=2, lr=0.005
+  tau overridden to 2.0
+  ep  50 | loss=-0.2405 ce=0.2736 | val=0.6467 test=0.6440
+           L1 rank_eff=[2.24, 10.98, 1.43] hop_w=[0.012, 0.981, 0.008]
+           L2 rank_eff=[15.35, 6.96, 5.61] hop_w=[0.990, 0.007, 0.003]
+  Early stop at epoch 57
+  RESULT: val=0.6567  test=0.6460  time=336.2s
+
+============================================================
+Experiment: g4_tau_low
+  hidden=64, subspace=16, hops=2, lr=0.005
+  tau overridden to 0.5
+  ep  50 | loss=-0.2434 ce=0.2721 | val=0.6400 test=0.6450
+           L1 rank_eff=[2.61, 7.87, 1.96] hop_w=[0.000, 1.000, 0.000]
+           L2 rank_eff=[14.92, 9.80, 8.53] hop_w=[1.000, 0.000, 0.000]
+  Early stop at epoch 55
+  RESULT: val=0.6500  test=0.6380  time=324.0s
+
+============================================================
+Experiment: g4_hidden128
+  hidden=128, subspace=32, hops=2, lr=0.005
+  ep  50 | loss=-1.2504 ce=0.2577 | val=0.6133 test=0.6320
+           L1 rank_eff=[4.36, 11.46, 4.11] hop_w=[0.001, 0.998, 0.001]
+           L2 rank_eff=[29.18, 18.42, 15.23] hop_w=[1.000, 0.000, 0.000]
+  Early stop at epoch 59
+  RESULT: val=0.6333  test=0.6550  time=404.3s
+
+============================================================
+Experiment: g4_hop3
+  hidden=64, subspace=16, hops=3, lr=0.005
+  ep  50 | loss=-0.2554 ce=0.2622 | val=0.6200 test=0.6420
+           L1 rank_eff=[2.26, 7.61, 1.58, 1.18] hop_w=[0.008, 0.985, 0.004, 0.003]
+           L2 rank_eff=[15.19, 8.78, 8.69, 8.20] hop_w=[0.998, 0.001, 0.001, 0.000]
+  Early stop at epoch 60
+  RESULT: val=0.6333  test=0.6450  time=392.5s
+
+============================================================
+Experiment: g4_best
+  hidden=128, subspace=32, hops=2, lr=0.005
+  ep  50 | loss=-1.2504 ce=0.2577 | val=0.6133 test=0.6320
+           L1 rank_eff=[4.36, 11.46, 4.11] hop_w=[0.001, 0.998, 0.001]
+           L2 rank_eff=[29.18, 18.42, 15.23] hop_w=[1.000, 0.000, 0.000]
+  Early stop at epoch 59
+  RESULT: val=0.6333  test=0.6550  time=286.2s
+
+======================================================================
+SUMMARY TABLE
+======================================================================
+Experiment              Val Acc   Test Acc    Time(s)
+-------------------------------------------------------
+g4_base                  0.6533     0.6470      285.2
+g4_tau_high              0.6567     0.6460      336.2
+g4_tau_low               0.6500     0.6380      324.0
+g4_hidden128             0.6333     0.6550      404.3 <-- best
+g4_hop3                  0.6333     0.6450      392.5
+g4_best                  0.6333     0.6550      286.2
+
+Best config: g4_hidden128
+  Test accuracy: 0.6550
+

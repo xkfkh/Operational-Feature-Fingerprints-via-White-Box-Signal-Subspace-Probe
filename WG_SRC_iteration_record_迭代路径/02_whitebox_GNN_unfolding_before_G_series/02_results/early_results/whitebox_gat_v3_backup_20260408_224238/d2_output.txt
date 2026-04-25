@@ -1,0 +1,63 @@
+﻿=== Agent D2: GMCR2  2026-04-08 10:36:37 ===
+理论：Graph-aware MCR2，attention 权重 = Mahalanobis distance in subspace
+每层 = R^c(Z|G) 梯度上升一步 + L1 近端步
+
+D:\桌面\MSR实验复现与创新\whitebox_gat_v3_d2.py:45: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Cora: 2708 nodes, 1433 features
+
+--- iter1_base ---
+  [iter1_base] ep= 50  loss=-0.5492  ce=0.1715  mcr=-111.3872  val=0.5300  test=0.5320
+  [iter1_base] ep=100  loss=-0.6687  ce=0.1829  mcr=-120.9807  val=0.5800  test=0.5850
+  >> iter1_base: val=0.6300  test=0.6000
+
+--- iter2_mahal_prec ---
+  [iter2_mahal_prec] ep= 50  loss=0.0976  ce=0.2806  mcr=-111.8629  val=0.5400  test=0.5570
+  >> iter2_mahal_prec: val=0.6133  test=0.5940
+
+--- iter3_eta_low ---
+  [iter3_eta_low] ep= 50  loss=-0.5592  ce=0.0682  mcr=-92.5493  val=0.5667  test=0.5620
+  >> iter3_eta_low: val=0.6467  test=0.6050
+
+--- iter4_eta_high ---
+  [iter4_eta_high] ep= 50  loss=-0.6025  ce=0.1636  mcr=-122.5573  val=0.5333  test=0.5480
+  >> iter4_eta_high: val=0.5867  test=0.5700
+
+--- iter5_mcr_high ---
+  [iter5_mcr_high] ep= 50  loss=-6.0673  ce=0.6124  mcr=-160.6941  val=0.5567  test=0.5750
+  >> iter5_mcr_high: val=0.6167  test=0.5690
+
+--- iter6_mcr_low ---
+  [iter6_mcr_low] ep= 50  loss=0.2210  ce=0.0905  mcr=-73.0502  val=0.5367  test=0.5350
+  [iter6_mcr_low] ep=100  loss=0.1632  ce=0.0487  mcr=-76.7586  val=0.5800  test=0.6050
+  >> iter6_mcr_low: val=0.6200  test=0.6220
+
+--- iter7_heads4 ---
+  [iter7_heads4] ep= 50  loss=-0.6910  ce=0.1583  mcr=-107.8540  val=0.5467  test=0.5710
+  >> iter7_heads4: val=0.5833  test=0.5760
+
+--- iter8_best ---
+  >> iter8_best: val=0.5833  test=0.5990
+
+============================================================
+Agent D2 - GMCR2 实验结果汇总
+============================================================
+  iter1_base             val=0.6300  test=0.6000
+  iter2_mahal_prec       val=0.6133  test=0.5940
+  iter3_eta_low          val=0.6467  test=0.6050
+  iter4_eta_high         val=0.5867  test=0.5700
+  iter5_mcr_high         val=0.6167  test=0.5690
+  iter6_mcr_low          val=0.6200  test=0.6220
+  iter7_heads4           val=0.5833  test=0.5760
+  iter8_best             val=0.5833  test=0.5990
+
+最优: iter3_eta_low  val=0.6467  test=0.6050
+
+理论贡献：
+  - 将图结构编码进 MCR2 的协方差矩阵（邻域加权协方差）
+  - attention 权重由 Mahalanobis distance 推导，有 coding rate 理论依据
+  - 精度矩阵 diag(exp(log_precision)) 可学习，自适应特征重要性
+
+Written to D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\d2_result.txt
+
+

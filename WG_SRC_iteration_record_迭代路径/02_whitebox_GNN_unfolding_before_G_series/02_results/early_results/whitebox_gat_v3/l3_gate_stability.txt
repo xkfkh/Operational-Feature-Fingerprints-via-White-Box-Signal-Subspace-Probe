@@ -1,0 +1,28 @@
+﻿L3 Adaptive Gate GNN -- Stability Test
+======================================
+Seed=42:  val=0.7867, test=0.7820  (original)
+Seed=0:   val=0.7967, test=0.7960
+Seed=1:   val=0.7667, test=0.7920
+Seed=100: val=0.7833, test=0.7980
+--------------------------------------
+Mean val=0.7833 +/- 0.0125  (all 4 seeds)
+Mean test=0.7920 +/- 0.0071  (all 4 seeds)
+--------------------------------------
+Model config: hidden=64, hops=2, dropout=0.6, lr=0.005
+              eta=0.1, lambda_lap=0.1, lambda_mcr=0.005
+Dataset: Cora (train=140, val=300, test=1000)
+======================================
+Stability Notes:
+  - Val  range:  [0.7667, 0.7967]  spread=0.0300
+  - Test range:  [0.7820, 0.7980]  spread=0.0160
+  - All seeds val > 0.76, no anomalous runs detected.
+  - Test std (0.0071) is exceptionally tight -- test performance
+    is highly reproducible across random seeds.
+  - Val std (0.0125) is moderate -- within normal GNN variance
+    on Cora with small training set (140 nodes).
+  - Conclusion: MODEL IS STABLE. L3 Adaptive Gate GNN
+    consistently outperforms G1 baseline (val=0.7033, test=0.6800)
+    by +0.08 val / +0.09 test across all seeds.
+======================================
+
+

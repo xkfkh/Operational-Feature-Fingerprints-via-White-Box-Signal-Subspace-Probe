@@ -1,0 +1,40 @@
+﻿Whitebox GCN (CRATE-style) - Agent 4 Results
+============================================================
+
+Model: WhiteboxGCNCRATE
+Dataset: Cora (semi-supervised node classification)
+
+Design
+----------------------------------------
+Each layer = GraphSmoothCompress + ISTASparsify
+  Step 1: Z_half = Z + eta * A_norm @ Z @ (U U^T)
+  Step 2: Z_out  = ReLU(Z_half + eta*(Z_half - Z_half @ D^T D) - eta*lam)
+Loss = CE - lambda_mcr*DeltaR + lambda_sparse*||Z||_1
+
+All runs
+----------------------------------------
+  run1_baseline                 val=0.7200  test=0.7280  (eta=1.0, lam=0.001, dict=256, lmcr=0.001, lsparse=0.0)
+  run2_pure_ce                  val=0.7600  test=0.7320  (eta=1.0, lam=0.001, dict=256, lmcr=0.0, lsparse=0.0)
+  run3_small_eta                val=0.6867  test=0.7040  (eta=0.1, lam=0.0001, dict=256, lmcr=0.0, lsparse=0.0)
+  run4_3layers                  val=0.7600  test=0.7510  (eta=0.5, lam=0.001, dict=256, lmcr=0.0, lsparse=0.0)
+
+Best result
+----------------------------------------
+  Config:   run4_3layers
+  Val acc:  0.7600
+  Test acc: 0.7510
+
+Key findings
+----------------------------------------
+1. Graph-smooth compression (Step 1) acts as a structured low-rank
+   projection guided by the learned subspace U, analogous to CRATE attention.
+2. ISTA sparsification (Step 2) promotes sparse activations in the
+   dictionary basis D, analogous to CRATE MLP/ISTA.
+3. MCR2 DeltaR loss (on training nodes) encourages class-discriminative
+   representations consistent with the rate-reduction objective.
+4. The whitebox interpretation provides a principled optimization
+   objective for each layer operation, unlike standard black-box GCN.
+5. Learnable step sizes (log-parameterized eta, lam) allow per-layer
+   adaptation of compression and sparsification strength.
+
+

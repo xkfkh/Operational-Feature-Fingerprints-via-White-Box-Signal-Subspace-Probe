@@ -1,0 +1,32 @@
+﻿D:\����\MSRʵ�鸴���봴��\whitebox_gcn_crate.py:35: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+D:\����\MSRʵ�鸴���봴��\whitebox_gcn_crate.py:68: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\Context.cpp:767.)
+  return torch.sparse_coo_tensor(idx, val, sp_mat.shape)
+D:\����\MSRʵ�鸴���봴��\whitebox_gcn_crate.py:35: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+
+[run1_baseline] hidden=256 layers=2 rank=32 dict=256 eta=1.0 lam=0.001 lmcr=0.001 lsparse=1e-05 lr=0.01
+  ep  50 | ce=0.1001 dR=311.63 | val=0.6900 test=0.7120 [best val=0.7200 test=0.7280]
+  Early stop ep 54
+  => BEST val=0.7200  test=0.7280
+
+[run2_pure_ce] hidden=256 layers=2 rank=32 dict=256 eta=1.0 lam=0.001 lmcr=0.0 lsparse=0.0 lr=0.01
+  ep  50 | ce=0.0480 dR=0.00 | val=0.6600 test=0.7210 [best val=0.7600 test=0.7320]
+  Early stop ep 57
+  => BEST val=0.7600  test=0.7320
+
+[run3_small_eta] hidden=256 layers=2 rank=32 dict=256 eta=0.1 lam=0.0001 lmcr=0.001 lsparse=0.0 lr=0.01
+  ep  50 | ce=0.0265 dR=361.32 | val=0.5833 test=0.6220 [best val=0.6800 test=0.6840]
+  Early stop ep 68
+  => BEST val=0.6800  test=0.6840
+
+[run4_3layers] hidden=256 layers=3 rank=32 dict=256 eta=0.5 lam=0.001 lmcr=0.001 lsparse=0.0 lr=0.01
+  ep  50 | ce=0.1000 dR=330.81 | val=0.6867 test=0.7260 [best val=0.7233 test=0.7560]
+  Early stop ep 56
+  => BEST val=0.7233  test=0.7560
+
+Best: run4_3layers  test=0.7560
+
+Files written to D:/����/MSRʵ�鸴���봴��/results/whitebox_gcn_crate/
+
+

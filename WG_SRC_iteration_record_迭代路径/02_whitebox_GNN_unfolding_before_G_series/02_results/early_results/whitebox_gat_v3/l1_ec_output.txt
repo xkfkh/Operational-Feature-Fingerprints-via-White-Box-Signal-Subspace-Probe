@@ -1,0 +1,51 @@
+﻿L1 Innovation: Expansion + Compression Dual-Stream White-box GNN
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: L1 Expansion+Compression White-box GNN
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_compress': 0.1, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 150, 'patience': 30, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | loss=0.8352 | val=0.6900 | test=0.6930
+  [L1-EC] Layer1: expand_norm=0.0070 | compress_norm=0.0037 | tau=0.9973
+          hop_w=[0.389, 0.281, 0.331]
+          delta_R=[0.178, -0.148, 0.016]
+  [L1-EC] Layer2: expand_norm=0.0483 | compress_norm=0.2206 | tau=0.9995
+          hop_w=[0.993, 0.001, 0.006]
+          delta_R=[4.885, -2.091, -0.234]
+Epoch   20 | loss=0.5877 | val=0.6933 | test=0.6890
+  [L1-EC] Layer1: expand_norm=0.0018 | compress_norm=0.0009 | tau=0.9986
+          hop_w=[0.351, 0.316, 0.333]
+          delta_R=[0.057, -0.047, 0.005]
+  [L1-EC] Layer2: expand_norm=0.0257 | compress_norm=0.0791 | tau=1.0003
+          hop_w=[0.886, 0.033, 0.081]
+          delta_R=[2.234, -1.060, -0.164]
+Epoch   30 | loss=0.4413 | val=0.6867 | test=0.6790
+  [L1-EC] Layer1: expand_norm=0.0006 | compress_norm=0.0003 | tau=0.9997
+          hop_w=[0.339, 0.328, 0.333]
+          delta_R=[0.017, -0.014, 0.000]
+  [L1-EC] Layer2: expand_norm=0.0064 | compress_norm=0.0110 | tau=1.0010
+          hop_w=[0.540, 0.196, 0.263]
+          delta_R=[0.647, -0.365, -0.073]
+Epoch   40 | loss=0.3624 | val=0.6733 | test=0.6820
+  [L1-EC] Layer1: expand_norm=0.0002 | compress_norm=0.0001 | tau=1.0001
+          hop_w=[0.335, 0.331, 0.333]
+          delta_R=[0.007, -0.005, -0.000]
+  [L1-EC] Layer2: expand_norm=0.0015 | compress_norm=0.0020 | tau=0.9996
+          hop_w=[0.379, 0.298, 0.323]
+          delta_R=[0.155, -0.085, -0.007]
+Epoch   50 | loss=0.2804 | val=0.6867 | test=0.6850
+  [L1-EC] Layer1: expand_norm=0.0001 | compress_norm=0.0000 | tau=1.0002
+          hop_w=[0.334, 0.333, 0.333]
+          delta_R=[0.002, -0.002, -0.000]
+  [L1-EC] Layer2: expand_norm=0.0007 | compress_norm=0.0009 | tau=0.9997
+          hop_w=[0.353, 0.319, 0.328]
+          delta_R=[0.068, -0.035, -0.006]
+Early stop at epoch 51
+============================================================
+FINAL: best_val=0.7000 | best_test=0.6880 | time=114.9s
+G1 baseline: val=0.7033 | test=0.6800
+Delta vs G1: val=-0.0033 | test=+0.0080
+============================================================
+

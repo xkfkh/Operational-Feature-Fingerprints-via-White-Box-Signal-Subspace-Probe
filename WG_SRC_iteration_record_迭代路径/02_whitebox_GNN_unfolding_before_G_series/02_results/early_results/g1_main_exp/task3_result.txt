@@ -1,0 +1,9 @@
+﻿公平对比表
+配置         模型     val     test    说明
+-------------------------------------------------------
+64/16      F3     0.767  0.782  Gumbel learnable hop
+64/16      G1     0.823  0.847  CR-driven hop
+128/32     F3     0.827  0.804  Gumbel learnable hop
+128/32     G1     0.607  0.625  CR-driven hop
+
+

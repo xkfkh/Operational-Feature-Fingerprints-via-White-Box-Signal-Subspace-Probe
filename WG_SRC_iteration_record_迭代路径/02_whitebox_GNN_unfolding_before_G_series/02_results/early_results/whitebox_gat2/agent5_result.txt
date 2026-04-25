@@ -1,0 +1,32 @@
+﻿agent5_result.txt  --  White-box GAT (CRATE sparse-rate-reduction on graphs)
+============================================================
+
+Method: WhiteboxGAT2
+  Block = graph-constrained masked MSSA (compression)
+        + graph-aware ISTA sparsification
+  Loss  = CE + lambda_mcr*(-DeltaR) + lambda_orth*L_orth
+
+Best config index : 2
+Best val  accuracy: 0.7140
+Best test accuracy: 0.7020
+
+All configs:
+  Config 0: val=0.1620  test=0.1490  hidden=64  K=4  eta=0.5  lam_sp=0.05
+  Config 1: val=0.1620  test=0.1490  hidden=128  K=8  eta=0.3  lam_sp=0.02
+  Config 2: val=0.7140  test=0.7020  hidden=64  K=4  eta=0.3  lam_sp=0.01
+  Config 3: val=0.1560  test=0.1440  hidden=64  K=4  eta=0.3  lam_sp=0.01
+  Config 4: val=0.4720  test=0.4680  hidden=128  K=4  eta=0.2  lam_sp=0.005
+
+Comparison with other agents (from available result files):
+  Agent 1 (MCR2+Orth MLP, synthetic): test_acc=0.7943 (mcr2_orth), 1.0 (ce/mcr2)
+  Agent 2 (whitebox_gcn): result not available at run time
+  Agent 3 (whitebox_gat PRISM): result not available at run time
+  Agent 4 (whitebox_gcn2): result not available at run time
+
+Key findings:
+  1. CRATE-style sparse rate reduction can be ported to graphs by masking
+     the MSSA attention to graph neighborhoods.
+  2. The ISTA sparsification step operates node-locally, no graph structure needed.
+  3. MCR2 DeltaR loss helps separate class representations in the last hidden layer.
+  4. lambda_orth should be small (0.001) to avoid disrupting CE (per Agent 1 findings).
+

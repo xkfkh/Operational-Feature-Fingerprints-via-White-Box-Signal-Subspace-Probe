@@ -1,0 +1,22 @@
+﻿{
+  "device": "cpu",
+  "dataset": "synthetic",
+  "final_train_acc": 1.0,
+  "final_test_acc": 1.0,
+  "mcr2_delta_r_by_layer": [
+    9.066291090427953,
+    8.040377891615377,
+    9.473277044185512,
+    9.785616000994029,
+    6.840193716570714
+  ],
+  "subspace_coherence_by_layer": [
+    0.4161178489526113,
+    0.5769403212600284,
+    0.9547460357348124,
+    0.9938370903333028,
+    1.0
+  ],
+  "output_dir": "D:\\\u684c\u9762\\MSR\u5b9e\u9a8c\u590d\u73b0\u4e0e\u521b\u65b0\\results\\mcr2_trace"
+}
+

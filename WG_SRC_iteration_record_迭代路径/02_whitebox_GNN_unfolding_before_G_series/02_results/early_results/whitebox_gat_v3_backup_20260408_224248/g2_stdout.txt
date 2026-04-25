@@ -1,0 +1,88 @@
+﻿D:\����\MSRʵ�鸴���봴��\run_g2_freq_lap.py:38: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objects.append(pickle.load(f, encoding="latin1"))
+Loading Cora from D:/����/MSRʵ�鸴���봴��/planetoid/data
+Nodes=2708, Features=1433, Classes=7
+
+============================================================
+Experiment: g2_base
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42}
+============================================================
+Epoch   50 | loss=0.3253 | val=0.6400 | test=0.6580
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.489, 0.511]  E=[0.1010, 0.0565]
+Epoch  100 | loss=0.2010 | val=0.6300 | test=0.6380
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.490, 0.510]  E=[0.0866, 0.0482]
+Early stop at epoch 100
+Done: best_val=0.6400  best_test=0.6580  time=288.6s
+
+============================================================
+Experiment: g2_tau_high
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau': 2.0}
+============================================================
+Epoch   50 | loss=0.3269 | val=0.6380 | test=0.6590
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.493, 0.507]  E=[0.1008, 0.0564]
+Epoch  100 | loss=0.1990 | val=0.6260 | test=0.6390
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.493, 0.507]  E=[0.0866, 0.0481]
+Early stop at epoch 102
+Done: best_val=0.6400  best_test=0.6580  time=299.2s
+
+============================================================
+Experiment: g2_tau_low
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau': 0.5}
+============================================================
+Epoch   50 | loss=0.3253 | val=0.6320 | test=0.6580
+  L1 hop_w=[0.499, 0.501]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.483, 0.517]  E=[0.1009, 0.0564]
+Early stop at epoch 89
+Done: best_val=0.6440  best_test=0.6620  time=265.4s
+
+============================================================
+Experiment: g2_hidden128
+Config: {'hidden_dim': 128, 'subspace_dim': 32, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42}
+============================================================
+Epoch   50 | loss=0.3274 | val=0.6300 | test=0.5920
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.488, 0.512]  E=[0.1067, 0.0583]
+Early stop at epoch 89
+Done: best_val=0.6320  best_test=0.6110  time=288.2s
+
+============================================================
+Experiment: g2_hop3
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 3, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42}
+============================================================
+Epoch   50 | loss=0.3466 | val=0.6540 | test=0.6390
+  L1 hop_w=[0.333, 0.333, 0.334]  E=[0.0028, 0.0015, 0.0010]
+  L2 hop_w=[0.320, 0.337, 0.343]  E=[0.1149, 0.0667, 0.0478]
+Early stop at epoch 92
+Done: best_val=0.6720  best_test=0.6430  time=339.3s
+
+============================================================
+Experiment: g2_best
+Config: {'hidden_dim': 128, 'subspace_dim': 32, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42}
+============================================================
+Epoch   50 | loss=0.3274 | val=0.6300 | test=0.5920
+  L1 hop_w=[0.500, 0.500]  E=[0.0028, 0.0015]
+  L2 hop_w=[0.488, 0.512]  E=[0.1067, 0.0583]
+Early stop at epoch 89
+Done: best_val=0.6320  best_test=0.6110  time=254.6s
+
+============================================================
+SUMMARY
+============================================================
+Experiment             Val Acc  Test Acc
+------------------------------------------
+g2_base                 0.6400    0.6580
+g2_tau_high             0.6400    0.6580
+g2_tau_low              0.6440    0.6620
+g2_hidden128            0.6320    0.6110
+g2_hop3                 0.6720    0.6430
+g2_best                 0.6320    0.6110
+------------------------------------------
+Best config: g2_tau_low  test_acc=0.6620
+
+Results saved to D:/����/MSRʵ�鸴���봴��/results/whitebox_gat_v3\g2_result.txt
+
+

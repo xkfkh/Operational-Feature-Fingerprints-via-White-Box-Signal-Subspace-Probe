@@ -1,0 +1,56 @@
+﻿=== Agent E5: GL-MSSD v2  2026-04-08 12:12:24 ===
+改进：per-hop Laplacian 权重 + 动态多跳传播（每层重新传播）
+
+Cora: 2708 nodes, 1433 features, 7 classes
+
+--- iter1_base ---
+  [iter1_base] ep= 50  loss=0.0914  ce=0.3175  val=0.7100  test=0.7420  hop_w=[0.298 0.361 0.341]
+  >> iter1_base: val=0.7200  test=0.7460
+
+--- iter2_hop1 ---
+  [iter2_hop1] ep= 50  loss=0.0070  ce=0.2475  val=0.7100  test=0.7280  hop_w=[0.494 0.506]
+  >> iter2_hop1: val=0.7200  test=0.7170
+
+--- iter3_hop3 ---
+  [iter3_hop3] ep= 50  loss=0.1888  ce=0.3815  val=0.7033  test=0.7390  hop_w=[0.235 0.293 0.245 0.227]
+  >> iter3_hop3: val=0.7067  test=0.7330
+
+--- iter4_lap_low ---
+  [iter4_lap_low] ep= 50  loss=0.0877  ce=0.3212  val=0.7033  test=0.7230  hop_w=[0.301 0.363 0.336]
+  >> iter4_lap_low: val=0.7200  test=0.7300
+
+--- iter5_lap_high ---
+  [iter5_lap_high] ep= 50  loss=0.0698  ce=0.2975  val=0.7167  test=0.7470  hop_w=[0.309 0.360 0.331]
+  >> iter5_lap_high: val=0.7267  test=0.7470
+
+--- iter6_sub32 ---
+  [iter6_sub32] ep= 50  loss=0.3189  ce=0.3898  val=0.7067  test=0.7300  hop_w=[0.300 0.351 0.349]
+  >> iter6_sub32: val=0.7233  test=0.7280
+
+--- iter7_eps_03 ---
+  [iter7_eps_03] ep= 50  loss=0.1004  ce=0.3214  val=0.7167  test=0.7410  hop_w=[0.293 0.352 0.354]
+  >> iter7_eps_03: val=0.7233  test=0.7430
+
+--- iter8_best ---
+  [iter8_best] ep= 50  loss=0.3289  ce=0.3956  val=0.7200  test=0.7290  hop_w=[0.301 0.340 0.359]
+  >> iter8_best: val=0.7267  test=0.7340
+
+============================================================
+Agent E5 - GL-MSSD v2 实验结果汇总
+============================================================
+  iter1_base           val=0.7200  test=0.7460
+  iter2_hop1           val=0.7200  test=0.7170
+  iter3_hop3           val=0.7067  test=0.7330
+  iter4_lap_low        val=0.7200  test=0.7300
+  iter5_lap_high       val=0.7267  test=0.7470
+  iter6_sub32          val=0.7233  test=0.7280
+  iter7_eps_03         val=0.7233  test=0.7430
+  iter8_best           val=0.7267  test=0.7340
+
+最优: iter5_lap_high  val=0.7267  test=0.7470
+
+理论贡献：
+  - per-hop Laplacian 权重：不同尺度的图平滑强度可独立学习
+  - 动态多跳传播：每层重新传播，而非固定预计算，表达能力更强
+  - 与 E4 对比可验证动态传播 vs 静态预计算的差异
+

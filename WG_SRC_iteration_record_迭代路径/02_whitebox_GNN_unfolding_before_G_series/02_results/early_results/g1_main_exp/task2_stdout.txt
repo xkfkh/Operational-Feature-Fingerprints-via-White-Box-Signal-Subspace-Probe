@@ -1,0 +1,53 @@
+﻿Task2: g1_base multi-seed stability
+
+Running seed=0...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task2_multiseed.py:21: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  [seed=0] early stop ep=113
+  [seed=0] val=0.7300  test=0.7730  time=735.9s
+
+Running seed=1...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task2_multiseed.py:21: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namesp  [seed=0] early stop at epoch 237
+  [seed=0] best_val=0.7633  best_test=0.7910  time=2923.9s
+
+Running  [seed=1] early stop ep=353
+  [seed=1] val=0.8333  test=0.8660  time=2483.0s
+
+Running seed=2...
+  [seed=2] early stop ep=95
+  [seed=2] val=0.7700  test=0.7990  time=620.6s
+
+Running seed=3...
+  [seed=3] early stop ep=194
+  [seed=3] val=0.7833  test=0.8110  time=1635.0s
+  [seed=1] early sto  [seed=4] early stop ep=216
+  [seed=4] val=0.8033  test=0.8160  time=1618.2s
+
+================  [seed=2] early stop at epoch 230
+  [seed=2] best_val=0.8000  best_test=0.8320  time=2263.8s
+
+Running seed=3 ...
+  [seed=3] early stop at epoch 368
+  [seed=3] best_val=0.8600  best_test=0.8620  time=1415.4s
+
+Running seed=4 ...
+  [seed=4] early stop at epoch 104
+  [seed=4] best_val=0.7933  best_test=0.8090  time=127.0s
+
+==================================================
+SUMMARY
+Seed          Val     Test
+--------------------------
+0          0.7633   0.7910
+1          0.7067   0.6660
+2          0.8000   0.8320
+3          0.8600   0.8620
+4          0.7933   0.8090
+--------------------------
+mean       0.7847   0.7920
+std        0.0500   0.0673
+
+Results saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task2_result.txt
+task2 done
+
+

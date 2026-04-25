@@ -1,0 +1,36 @@
+﻿Whitebox GAT (CRATE-style) Results
+============================================================
+
+Final test_acc:  0.8080
+Final val_acc:   0.7833
+Best config name: base
+
+Best hyperparameters:
+  hidden_dim: 64
+  num_heads: 7
+  subspace_dim: 16
+  eta: 0.5
+  lambda_sparse: 0.05
+  lambda_mcr: 0.01
+  lambda_orth_U: 0.01
+  lambda_l1: 0.001
+  dropout: 0.5
+  lr: 0.005
+  weight_decay: 0.0005
+  epochs: 200
+  patience: 20
+
+All runs (sorted by val_acc):
+  base: val=0.7833, test=0.8080
+
+Key findings:
+1. CRATE-style MSSA on graphs: attention weights from subspace
+   projection correlations (not full-space cosine similarity).
+2. Each head corresponds to an orthogonal subspace U_k in R^{d x r}.
+3. Graph masking restricts attention to neighbourhood N(i).
+4. ISTA sparsification step promotes sparse node representations.
+5. Subspace orthogonality loss L_orth_U keeps heads diverse.
+6. Agent 1 finding: lambda_orth should be small (0.001-0.01)
+   to avoid competing with CE loss.
+
+

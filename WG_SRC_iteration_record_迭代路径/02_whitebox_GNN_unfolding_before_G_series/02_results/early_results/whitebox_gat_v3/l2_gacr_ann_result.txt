@@ -1,0 +1,22 @@
+﻿L2-A GACR+Annealed Result
+========================================
+Config: l2_gacr_annealed (hybrid: GACR weighting + std CR gradient)
+  hidden_dim=64, subspace_dim=16, num_hops=2
+  eps=0.5, eta=0.5 (same as Agent4 proven values)
+  lambda_lap=0.1, epochs=200, patience=50
+  tau_min=0.1, tau_max=1.0 (cosine annealing)
+  lambda_div=0.01 (hop diversity regularization)
+  delta_R normalization: ON (GACR delta_R)
+  graph-aware coding rate: ON for hop weights (alpha learnable)
+----------------------------------------
+Best Val  Acc: 0.6933
+Best Test Acc: 0.6890
+----------------------------------------
+G1   Baseline: val=0.7033, test=0.6800
+Agent4 (tau) : val=0.6933, test=0.6920
+Agent5 (GACR): val=0.7067, test=0.6870
+Delta vs G1  : val=-0.0100, test=+0.0090
+Delta vs A4  : val=+0.0000, test=-0.0030
+Delta vs A5  : val=-0.0134, test=+0.0020
+========================================
+

@@ -1,0 +1,45 @@
+﻿Task1: Multi-dataset Generalization (g1_base config)
+
+Loading Cora...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task1_generalization.py:41: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  nodes=2708 feat=1433 classes=7
+  config: hidden=64 sub=16
+  [Cora] epoch=100 loss=0.1488 val=0.7967 test=0.8220
+  [Cora] epoch=200 loss=0.0569 val=0.8067 test=0.8200
+  [Cora] early stop at epoch 268
+  [Cora] best val=0.8367 test=0.8400 time=1882.4s
+
+Loading CiteSeer...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task1_generalization.py:70: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  nodes=3327 feat=3703 classes=6
+  config: hidden=128 sub=32
+  [CiteSeer] epoch=100 loss=0.1326 val=0.6680 test=0.6400
+  [CiteSeer] epoch=200 loss=0.0569 val=0.7540 test=0.7390
+  [CiteSeer] epoch=300 loss=0.0195 val=0.7880 test=0.7810
+  [CiteSeer] epoch=400 loss=0.0129 val=0.7760 test=0.7680
+  [CiteSeer] best val=0.8140 test=0.7900 time=1164.4s
+
+Loading PubMed...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task1_generalization.py:112: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  nodes=19717 feat=500 classes=3
+  config: hidden=128 sub=32
+  [PubMed] early stop at epoch 96
+  [PubMed] best val=0.7980 test=0.7650 time=1473.3s
+
+
+Generalization Results
+-----------------------------------------------------
+Dataset        Nodes    Feat  Classes     val    test
+-----------------------------------------------------
+Cora            2708    1433        7   0.837   0.840
+CiteSeer        3327    3703        6   0.814   0.790
+PubMed         19717     500        3   0.798   0.765
+-----------------------------------------------------
+
+Result saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task1_result.txt
+Flag written to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task1_done.flag
+
+

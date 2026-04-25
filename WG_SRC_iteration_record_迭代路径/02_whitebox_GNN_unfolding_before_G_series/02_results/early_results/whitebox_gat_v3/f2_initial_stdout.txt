@@ -1,0 +1,40 @@
+﻿=== Agent F2 (vectorized): Spectral Proximal Gradient  2026-04-08 19:16:35 ===
+Bug fix: eigvals[-k:] (largest), not [:k] (all zeros)
+Speedup: vectorized Phi=V^T H, no inner loop over spectral components
+
+D:\����\MSRʵ�鸴���봴��\run_f2_initial.py:33: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Cora: 2708 nodes, 1433 features, 7 classes
+  Computing top-16 eigenvectors via eigsh (sparse, fast)...
+  Eigenvalue range: [1.431972, 1.482631]
+
+
+--- f2_base ---
+  [f2_base] ep= 50  loss=1.0050  ce=1.3264  val=0.3700  test=0.3570  hop_w=[0.336 0.361 0.303]  top_spec=[9, 5, 14]
+  [f2_base] ep=100  loss=-0.2107  ce=0.2651  val=0.5067  test=0.5180  hop_w=[0.369 0.350 0.282]  top_spec=[11, 2, 10]
+  >> f2_base: val=0.5367  test=0.5070
+
+--- f2_lap_high ---
+  [f2_lap_high] ep= 50  loss=0.1029  ce=0.4721  val=0.5067  test=0.5100  hop_w=[0.366 0.335 0.299]  top_spec=[8, 15, 6]
+  >> f2_lap_high: val=0.5367  test=0.5170
+
+--- f2_hidden128 ---
+  >> f2_hidden128: val=0.3000  test=0.3190
+
+============================================================
+Agent F2 (vectorized) - ����ʵ����
+============================================================
+  f2_base              val=0.5367  test=0.5070
+  f2_lap_high          val=0.5367  test=0.5170
+  f2_hidden128         val=0.3000  test=0.3190
+
+����: f2_base  val=0.5367  test=0.5070
+
+�׺����۹��ף����򣩣�
+  - ÿ�� = ������ coding rate Ŀ�꺯����һ�� proximal gradient
+  - spec_w �ɽ��ͣ���ЩƵ�ʶԷ��������ã���Ŀ�꺯���Ƶ���
+  - �� F3�����򣩶Աȣ����� vs ���� proximal gradient �Ĳ���
+
+Written to D:/����/MSRʵ�鸴���봴��/results/whitebox_gat_v3\f2_result.txt
+
+

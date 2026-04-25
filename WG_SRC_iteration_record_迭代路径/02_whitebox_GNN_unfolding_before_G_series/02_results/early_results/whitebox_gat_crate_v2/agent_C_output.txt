@@ -1,0 +1,42 @@
+﻿D:\桌面\MSR实验复现与创新\whitebox_gat_v2_hparam.py:19: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Loading Cora...
+Running base_fixed...
+  base_fixed: val=0.7800  test=0.7900
+Running lr_high...
+  lr_high: val=0.7367  test=0.7840
+Running lr_low...
+  lr_low: val=0.7767  test=0.7730
+Running drop06...
+  drop06: val=0.7833  test=0.7920
+Running mcr_small...
+  mcr_small: val=0.7500  test=0.7840
+Running mcr_large...
+  mcr_large: val=0.7567  test=0.7920
+Running sparse_small...
+  sparse_small: val=0.7700  test=0.7840
+Running sparse_large...
+  sparse_large: val=0.7600  test=0.7940
+Running orth_small...
+  orth_small: val=0.7500  test=0.7290
+Running best_combo...
+  best_combo: val=0.7833  test=0.8070
+Whitebox GAT CRATE - Hyperparameter Search Results
+============================================================
+
+  base_fixed      val=0.7800  test=0.7900
+  lr_high         val=0.7367  test=0.7840
+  lr_low          val=0.7767  test=0.7730
+  drop06          val=0.7833  test=0.7920
+  mcr_small       val=0.7500  test=0.7840
+  mcr_large       val=0.7567  test=0.7920
+  sparse_small    val=0.7700  test=0.7840
+  sparse_large    val=0.7600  test=0.7940
+  orth_small      val=0.7500  test=0.7290
+  best_combo      val=0.7833  test=0.8070
+
+Best: drop06  val=0.7833  test=0.7920
+
+Written to D:/桌面/MSR实验复现与创新/results/whitebox_gat_crate_v2\agent_C_result.txt
+
+

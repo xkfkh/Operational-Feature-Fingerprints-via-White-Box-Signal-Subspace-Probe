@@ -1,0 +1,32 @@
+﻿Task6: hidden128 Crash Diagnosis
+Testing 4 hop weight strategies: raw / scaled / relative / znorm
+Config: hidden=128, subspace=32, Cora
+
+
+============================================================
+Experiment: hidden128_raw  weight_mode=raw
+hidden=128  subspace=32
+============================================================
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task6_hidden128_diag.py:36: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  in_dim=1433, hidden=128, subspace=32, num_classes=7
+  Epoch   50 | loss=0.2521 | val=0.5600 | test=0.5710
+    tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[21.553, 3.252, 1.263]
+  Epoch  100 | loss=0.1251 | val=0.5933 | test=0.6140
+    tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.961, 1.046, 0.175]
+  Epoch  150 | loss=0.0767 | val=0.5967 | test=0.6310
+    tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.073, 0.396, 0.017]
+  Early stop at epoch 160
+  Best val=0.6067 | Best test=0.6250 | Time=308.8s
+
+============================================================
+Experiment: hidden128_scaled  weight_mode=scaled
+hidden=128  subspace=32
+============================================================
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task6_hidden128_diag.py:36: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  with open(f"{data_dir}/ind.cora.{n}", 'rb') as f:
+  in_dim=1433, hidden=128, subspace=32, num_classes=7
+  Epoch   50 | loss=0.2085 | val=0.7800 | test=0.7890
+    tau=1.025 | hop_w=[0.391, 0.310, 0.299] | R=[20.557, 12.993, 11.749]
+
+

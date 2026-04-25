@@ -1,0 +1,52 @@
+﻿Task 4: Hop Selection Ablation
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task4_hop_ablation.py:21: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding="latin1"))
+Data: n=2708, d=1433, classes=7
+
+==================================================
+Mode: fixed_hop0
+  Epoch  100 | val=0.5933 | test=0.5800 | w1=[1.0, 0.0, 0.0]
+  Epoch  200 | val=0.6100 | test=0.6040 | w1=[1.0, 0.0, 0.0]
+  Early stop ep=277
+  [fixed_hop0] val=0.6700  test=0.6450  time=1534.1s
+
+==================================================
+Mode: fixed_hop1
+  Early stop ep=97
+  [fixed_hop1] val=0.7667  test=0.7790  time=532.3s
+
+==================================================
+Mode: fixed_hop2
+  Epoch  100 | val=0.7700 | test=0.7960 | w1=[0.0, 0.0, 1.0]
+  Early stop ep=172
+  [fixed_hop2] val=0.7833  test=0.7940  time=839.2s
+
+==================================================
+Mode: uniform
+  Epoch  100 | val=0.7533 | test=0.7960 | w1=[0.333, 0.333, 0.333]
+  Early stop ep=103
+  [uniform] val=0.7567  test=0.7720  time=529.6s
+
+==================================================
+Mode: learnable
+  Epoch  100 | val=0.7833 | test=0.8060 | w1=[0.314, 0.345, 0.34]
+  Early stop ep=111
+  [learnable] val=0.7967  test=0.7950  time=884.4s
+
+==================================================
+Mode: cr_driven
+  Epoch  100 | val=0.7433 | test=0.7860 | w1=[0.138, 0.845, 0.017]
+  Epoch  200 | val=0.7900 | test=0.8230 | w1=[0.127, 0.867, 0.006]
+  Early stop ep=205
+  [cr_driven] val=0.8000  test=0.8290  time=1674.2s
+
+==================================================
+fixed_hop0         0.6700   0.6450
+fixed_hop1         0.7667   0.7790
+fixed_hop2         0.7833   0.7940
+uniform            0.7567   0.7720
+learnable          0.7967   0.7950
+cr_driven          0.8000   0.8290 <-- best
+Saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task4_result.txt
+
+

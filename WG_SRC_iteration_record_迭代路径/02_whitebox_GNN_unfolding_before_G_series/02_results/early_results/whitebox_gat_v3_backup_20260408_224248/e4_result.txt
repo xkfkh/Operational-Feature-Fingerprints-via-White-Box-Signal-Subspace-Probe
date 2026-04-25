@@ -1,0 +1,62 @@
+﻿=== Agent E4: GL-MSSD v1  2026-04-08 12:12:24 ===
+融合 D1 (Laplacian 正则) + D4 (多尺度子空间) + Hessian attention
+
+Cora: 2708 nodes, 1433 features, 7 classes
+
+--- iter1_base ---
+  [iter1_base] ep= 50  loss=0.1963  ce=0.4663  val=0.6200  test=0.6160  hop_w=[0.350 0.325 0.325]
+  >> iter1_base: val=0.6367  test=0.6110
+
+--- iter2_hop1 ---
+  [iter2_hop1] ep= 50  loss=0.1534  ce=0.4081  val=0.5667  test=0.6000  hop_w=[0.527 0.473]
+  [iter2_hop1] ep=100  loss=-0.2730  ce=0.1375  val=0.5633  test=0.6120  hop_w=[0.507 0.493]
+  >> iter2_hop1: val=0.6000  test=0.6030
+
+--- iter3_hop3 ---
+  [iter3_hop3] ep= 50  loss=0.2265  ce=0.5060  val=0.5567  test=0.5830  hop_w=[0.233 0.264 0.276 0.227]
+  [iter3_hop3] ep=100  loss=-0.2389  ce=0.1829  val=0.5733  test=0.5880  hop_w=[0.240 0.252 0.274 0.234]
+  >> iter3_hop3: val=0.5900  test=0.6000
+
+--- iter4_lap_low ---
+  [iter4_lap_low] ep= 50  loss=0.2158  ce=0.4837  val=0.6167  test=0.6110  hop_w=[0.355 0.326 0.319]
+  [iter4_lap_low] ep=100  loss=-0.1841  ce=0.2436  val=0.5700  test=0.5860  hop_w=[0.349 0.330 0.321]
+  >> iter4_lap_low: val=0.6300  test=0.6080
+
+--- iter5_lap_high ---
+  [iter5_lap_high] ep= 50  loss=0.2107  ce=0.4690  val=0.6167  test=0.6180  hop_w=[0.337 0.324 0.339]
+  >> iter5_lap_high: val=0.6167  test=0.6160
+
+--- iter6_sub32 ---
+  [iter6_sub32] ep= 50  loss=0.4363  ce=0.5915  val=0.5700  test=0.5890  hop_w=[0.340 0.329 0.331]
+  [iter6_sub32] ep=100  loss=-0.0828  ce=0.2490  val=0.5733  test=0.5790  hop_w=[0.331 0.321 0.348]
+  >> iter6_sub32: val=0.6033  test=0.5700
+
+--- iter7_eps_03 ---
+  [iter7_eps_03] ep= 50  loss=0.2355  ce=0.4953  val=0.6100  test=0.6060  hop_w=[0.337 0.332 0.331]
+  [iter7_eps_03] ep=100  loss=-0.1963  ce=0.2353  val=0.5600  test=0.5880  hop_w=[0.333 0.335 0.332]
+  >> iter7_eps_03: val=0.6300  test=0.6110
+
+--- iter8_best ---
+  [iter8_best] ep= 50  loss=0.4771  ce=0.6162  val=0.5700  test=0.5850  hop_w=[0.334 0.333 0.333]
+  [iter8_best] ep=100  loss=-0.0742  ce=0.2567  val=0.5600  test=0.5680  hop_w=[0.329 0.330 0.341]
+  >> iter8_best: val=0.5967  test=0.5740
+
+============================================================
+Agent E4 - GL-MSSD v1 实验结果汇总
+============================================================
+  iter1_base           val=0.6367  test=0.6110
+  iter2_hop1           val=0.6000  test=0.6030
+  iter3_hop3           val=0.5900  test=0.6000
+  iter4_lap_low        val=0.6300  test=0.6080
+  iter5_lap_high       val=0.6167  test=0.6160
+  iter6_sub32          val=0.6033  test=0.5700
+  iter7_eps_03         val=0.6300  test=0.6110
+  iter8_best           val=0.5967  test=0.5740
+
+最优: iter1_base  val=0.6367  test=0.6110
+
+理论贡献：
+  - 目标函数同时包含 coding rate、Laplacian 正则、多尺度子空间正交约束
+  - 每层严格推导自目标函数的 proximal gradient
+  - Hessian attention + 多跳聚合 + Laplacian 平滑，三者统一在一个框架
+

@@ -1,0 +1,517 @@
+﻿[2026-04-08 22:44:01] 检查 #1
+- 目录文件列表: 目录为空（无任何输出文件）
+- 进程状态: 未检测到 Python 进程运行
+- 是否有卡住的实验: 实验尚未启动（目录为空，无进程）
+- 处理措施: 仅记录，等待实验启动后继续监控
+
+
+[2026-04-08 23:14:15] 检查 #2
+- 目录文件列表:
+total 5
+drwxr-xr-x 1 ASUS 197121   0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121   0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 283 Apr  8 22:44 monitor_log.txt
+- 进程状态: python.exe                  103796 Console                    1    486,684 K
+python.exe                  103428 Console                    1    498,480 K
+python.exe                  102120 Console                    1    600,228 K
+python.exe                  105292 Console                    1    512,604 K
+python.exe                  105808 Console                    1     54,616 K
+python.exe                  105672 Console                    1    547,324 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1819 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-08 23:14:31] 检查 #2
+- 目录文件列表:
+total 8
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 1116 Apr  8 23:14 monitor_log.txt
+- 进程状态: python.exe                  103796 Console                    1    483,392 K
+python.exe                  102120 Console                    1    575,992 K
+python.exe                  105292 Console                    1    524,924 K
+python.exe                  105808 Console                    1     58,176 K
+python.exe                  105672 Console                    1    502,480 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-08 23:44:21] 检查 #3
+- 目录文件列表:
+total 8
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 1844 Apr  8 23:14 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    153,092 K
+python.exe                  105292 Console                    1    169,616 K
+python.exe                  105808 Console                    1      5,516 K
+python.exe                  105672 Console                    1    194,584 K
+python.exe                  107204 Console                    1    167,836 K
+python.exe                  109988 Console                    1    164,188 K
+python.exe                  109108 Console                    1    192,212 K
+python.exe                  113388 Console                    1    241,216 K
+python.exe                  103504 Console                    1    141,076 K
+python.exe                  114888 Console                    1    244,048 K
+python.exe                  116720 Console                    1    295,796 K
+python.exe                  120608 Console                    1    110,896 K
+python.exe                   58816 Console                    1    277,520 K
+python.exe                  120460 Console                    1    111,020 K
+python.exe                  122048 Console                    1    263,652 K
+python.exe                  121976 Console                    1     80,460 K
+python.exe                  121956 Console                    1    263,296 K
+python.exe                  122188 Console                    1    118,192 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1797 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-08 23:44:34] 检查 #3
+- 目录文件列表:
+total 8
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 3604 Apr  8 23:44 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    155,176 K
+python.exe                  105292 Console                    1    210,824 K
+python.exe                  105808 Console                    1      5,172 K
+python.exe                  105672 Console                    1    246,668 K
+python.exe                  107204 Console                    1    192,684 K
+python.exe                  109988 Console                    1    152,940 K
+python.exe                  109108 Console                    1    195,036 K
+python.exe                  113388 Console                    1    280,272 K
+python.exe                  103504 Console                    1    139,884 K
+python.exe                  114888 Console                    1    188,064 K
+python.exe                  116720 Console                    1    316,732 K
+python.exe                  120608 Console                    1    202,900 K
+python.exe                   58816 Console                    1    298,164 K
+python.exe                  120460 Console                    1    107,208 K
+python.exe                  122048 Console                    1    268,372 K
+python.exe                  121976 Console                    1     85,108 K
+python.exe                  121956 Console                    1    264,108 K
+python.exe                  122188 Console                    1    114,296 K
+python.exe                  125712 Console                    1     40,056 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 00:14:31] 检查 #4
+- 目录文件列表:
+total 12
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 5410 Apr  8 23:44 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    211,536 K
+python.exe                  105292 Console                    1    225,512 K
+python.exe                  105808 Console                    1      1,252 K
+python.exe                  105672 Console                    1    142,828 K
+python.exe                  107204 Console                    1    210,804 K
+python.exe                  109988 Console                    1    205,336 K
+python.exe                  109108 Console                    1    367,612 K
+python.exe                  113388 Console                    1    104,656 K
+python.exe                  103504 Console                    1    246,748 K
+python.exe                  114888 Console                    1    154,728 K
+python.exe                  116720 Console                    1    201,804 K
+python.exe                  120608 Console                    1    112,372 K
+python.exe                  120460 Console                    1     91,588 K
+python.exe                  122048 Console                    1    174,424 K
+python.exe                  121976 Console                    1     72,044 K
+python.exe                  121956 Console                    1    102,000 K
+python.exe                  122188 Console                    1    105,952 K
+python.exe                  129332 Console                    1     68,832 K
+python.exe                  131148 Console                    1     75,080 K
+python.exe                  130120 Console                    1    262,380 K
+python.exe                  138932 Console                    1    163,228 K
+python.exe                  147440 Console                    1    422,220 K
+python.exe                  146604 Console                    1    481,404 K
+python.exe                  148316 Console                    1    533,984 K
+python.exe                  150496 Console                    1     41,436 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1809 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 00:14:47] 检查 #4
+- 目录文件列表:
+total 12
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 5410 Apr  8 23:44 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    135,468 K
+python.exe                  105292 Console                    1    201,412 K
+python.exe                  105808 Console                    1      1,120 K
+python.exe                  105672 Console                    1    200,464 K
+python.exe                  107204 Console                    1    155,560 K
+python.exe                  109988 Console                    1    153,044 K
+python.exe                  109108 Console                    1    267,044 K
+python.exe                  113388 Console                    1    422,508 K
+python.exe                  103504 Console                    1    210,644 K
+python.exe                  114888 Console                    1    161,832 K
+python.exe                  116720 Console                    1    172,848 K
+python.exe                  120608 Console                    1     91,348 K
+python.exe                  120460 Console                    1    112,156 K
+python.exe                  122048 Console                    1    256,048 K
+python.exe                  121976 Console                    1     73,432 K
+python.exe                  121956 Console                    1    108,952 K
+python.exe                  122188 Console                    1    112,928 K
+python.exe                  129332 Console                    1     71,536 K
+python.exe                  131148 Console                    1     74,948 K
+python.exe                  130120 Console                    1    196,508 K
+python.exe                  138932 Console                    1    167,320 K
+python.exe                  147440 Console                    1    342,240 K
+python.exe                  146604 Console                    1    455,128 K
+python.exe                  148316 Console                    1    465,148 K
+python.exe                  151228 Console                    1     60,164 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 00:44:56] 检查 #5
+- 目录文件列表:
+total 16
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 9979 Apr  9 00:15 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    200,668 K
+python.exe                  105292 Console                    1    225,660 K
+python.exe                  105808 Console                    1      1,744 K
+python.exe                  105672 Console                    1    244,676 K
+python.exe                  107204 Console                    1    245,672 K
+python.exe                  109988 Console                    1    211,916 K
+python.exe                  109108 Console                    1    198,132 K
+python.exe                  113388 Console                    1    201,324 K
+python.exe                  103504 Console                    1    185,940 K
+python.exe                  114888 Console                    1    303,412 K
+python.exe                  116720 Console                    1    187,936 K
+python.exe                  130120 Console                    1    209,700 K
+python.exe                  138932 Console                    1    235,916 K
+python.exe                  147440 Console                    1    177,232 K
+python.exe                  146604 Console                    1    188,968 K
+python.exe                  148316 Console                    1    216,364 K
+python.exe                  161648 Console                    1    152,108 K
+python.exe                  160464 Console                    1    180,672 K
+python.exe                  170388 Console                    1    452,764 K
+python.exe                  162924 Console                    1    453,420 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1802 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 00:45:10] 检查 #5
+- 目录文件列表:
+total 16
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121    0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 9979 Apr  9 00:15 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    191,284 K
+python.exe                  105292 Console                    1    271,716 K
+python.exe                  105808 Console                    1      1,976 K
+python.exe                  105672 Console                    1    146,948 K
+python.exe                  107204 Console                    1    219,764 K
+python.exe                  109988 Console                    1    160,548 K
+python.exe                  109108 Console                    1    199,300 K
+python.exe                  113388 Console                    1    217,288 K
+python.exe                  103504 Console                    1    156,420 K
+python.exe                  114888 Console                    1    214,828 K
+python.exe                  116720 Console                    1    229,188 K
+python.exe                  130120 Console                    1    200,676 K
+python.exe                  138932 Console                    1    164,960 K
+python.exe                  147440 Console                    1    147,820 K
+python.exe                  146604 Console                    1    187,712 K
+python.exe                  148316 Console                    1    249,796 K
+python.exe                  161648 Console                    1    154,732 K
+python.exe                  160464 Console                    1    180,464 K
+python.exe                  170388 Console                    1    456,836 K
+python.exe                  162924 Console                    1    457,324 K
+python.exe                  161352 Console                    1     40,988 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 01:15:12] 检查 #6
+- 目录文件列表:
+total 20
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 13855 Apr  9 00:45 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    156,264 K
+python.exe                  105292 Console                    1    252,692 K
+python.exe                  105808 Console                    1        784 K
+python.exe                  105672 Console                    1    246,420 K
+python.exe                  107204 Console                    1    145,812 K
+python.exe                  109988 Console                    1    215,588 K
+python.exe                  103504 Console                    1    149,804 K
+python.exe                  114888 Console                    1    356,360 K
+python.exe                  130120 Console                    1    657,132 K
+python.exe                  138932 Console                    1    659,096 K
+python.exe                  147440 Console                    1    165,588 K
+python.exe                  146604 Console                    1    180,208 K
+python.exe                  148316 Console                    1    242,800 K
+python.exe                  161648 Console                    1    100,756 K
+python.exe                  160464 Console                    1    103,460 K
+python.exe                  170388 Console                    1     88,992 K
+python.exe                  162924 Console                    1    112,876 K
+python.exe                  172608 Console                    1    116,320 K
+python.exe                  172388 Console                    1    108,156 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1802 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 01:15:17] 检查 #6
+- 目录文件列表:
+total 20
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 13855 Apr  9 00:45 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    188,912 K
+python.exe                  105292 Console                    1    153,456 K
+python.exe                  105808 Console                    1        552 K
+python.exe                  105672 Console                    1    172,592 K
+python.exe                  107204 Console                    1    167,676 K
+python.exe                  109988 Console                    1    182,744 K
+python.exe                  103504 Console                    1    142,556 K
+python.exe                  114888 Console                    1    336,568 K
+python.exe                  130120 Console                    1    661,756 K
+python.exe                  138932 Console                    1    666,176 K
+python.exe                  147440 Console                    1    206,268 K
+python.exe                  146604 Console                    1    184,320 K
+python.exe                  148316 Console                    1    175,300 K
+python.exe                  161648 Console                    1    107,316 K
+python.exe                  160464 Console                    1    107,356 K
+python.exe                  170388 Console                    1    111,272 K
+python.exe                  162924 Console                    1    112,900 K
+python.exe                  172608 Console                    1    120,292 K
+python.exe                  172388 Console                    1    115,108 K
+python.exe                  179204 Console                    1      1,944 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 01:45:20] 检查 #7
+- 目录文件列表:
+total 24
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 17583 Apr  9 01:15 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    235,812 K
+python.exe                  105292 Console                    1    193,712 K
+python.exe                  105808 Console                    1         28 K
+python.exe                  105672 Console                    1    129,384 K
+python.exe                  107204 Console                    1    150,152 K
+python.exe                  109988 Console                    1    194,652 K
+python.exe                  103504 Console                    1    197,084 K
+python.exe                  130120 Console                    1  3,580,012 K
+python.exe                  138932 Console                    1    665,724 K
+python.exe                  147440 Console                    1    194,084 K
+python.exe                  146604 Console                    1    141,424 K
+python.exe                  148316 Console                    1    149,328 K
+python.exe                  161648 Console                    1    108,108 K
+python.exe                  160464 Console                    1    107,968 K
+python.exe                  170388 Console                    1     86,924 K
+python.exe                  162924 Console                    1    106,360 K
+python.exe                  172608 Console                    1    107,420 K
+python.exe                  172388 Console                    1     99,432 K
+python.exe                  175876 Console                    1        804 K
+python.exe                  179176 Console                    1        252 K
+python.exe                  173300 Console                    1      6,288 K
+python.exe                  181424 Console                    1      2,060 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1797 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 01:45:49] 检查 #7
+- 目录文件列表:
+total 24
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 19655 Apr  9 01:45 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    354,308 K
+python.exe                  105292 Console                    1    220,900 K
+python.exe                  105808 Console                    1         24 K
+python.exe                  105672 Console                    1    156,984 K
+python.exe                  107204 Console                    1    149,248 K
+python.exe                  109988 Console                    1    128,740 K
+python.exe                  103504 Console                    1    181,736 K
+python.exe                  130120 Console                    1  3,532,876 K
+python.exe                  138932 Console                    1    656,596 K
+python.exe                  147440 Console                    1    197,112 K
+python.exe                  146604 Console                    1    183,436 K
+python.exe                  148316 Console                    1    150,608 K
+python.exe                  161648 Console                    1     87,960 K
+python.exe                  160464 Console                    1     85,112 K
+python.exe                  170388 Console                    1    107,616 K
+python.exe                  162924 Console                    1    100,052 K
+python.exe                  172608 Console                    1    100,144 K
+python.exe                  172388 Console                    1    100,684 K
+python.exe                  175876 Console                    1        948 K
+python.exe                  179176 Console                    1        144 K
+python.exe                  173300 Console                    1      2,996 K
+python.exe                  181424 Console                    1        380 K
+python.exe                  182316 Console                    1     15,000 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 02:15:47] 检查 #8
+- 目录文件列表:
+total 28
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 21773 Apr  9 01:46 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    188,308 K
+python.exe                  105292 Console                    1    206,996 K
+python.exe                  105808 Console                    1        176 K
+python.exe                  105672 Console                    1    222,136 K
+python.exe                  107204 Console                    1    180,752 K
+python.exe                  109988 Console                    1    236,888 K
+python.exe                  103504 Console                    1    142,816 K
+python.exe                  138932 Console                    1    664,456 K
+python.exe                  147440 Console                    1    130,400 K
+python.exe                  146604 Console                    1    131,996 K
+python.exe                  148316 Console                    1    130,872 K
+python.exe                  161648 Console                    1    108,192 K
+python.exe                  160464 Console                    1    107,984 K
+python.exe                  170388 Console                    1    101,268 K
+python.exe                  162924 Console                    1    107,488 K
+python.exe                  172608 Console                    1     99,704 K
+python.exe                  172388 Console                    1    106,584 K
+python.exe                  175876 Console                    1      4,196 K
+python.exe                  179176 Console                    1        904 K
+python.exe                  173300 Console                    1      1,216 K
+python.exe                  181424 Console                    1      3,808 K
+python.exe                  182316 Console                    1         20 K
+python.exe                  176660 Console                    1     41,176 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1792 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 02:16:02] 检查 #8
+- 目录文件列表:
+total 28
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 23922 Apr  9 02:15 monitor_log.txt
+- 进程状态: python.exe                  102120 Console                    1    212,252 K
+python.exe                  105292 Console                    1    165,504 K
+python.exe                  105808 Console                    1        176 K
+python.exe                  105672 Console                    1    150,488 K
+python.exe                  107204 Console                    1    206,260 K
+python.exe                  109988 Console                    1    161,824 K
+python.exe                  103504 Console                    1    211,340 K
+python.exe                  138932 Console                    1    664,340 K
+python.exe                  147440 Console                    1    167,080 K
+python.exe                  146604 Console                    1    206,428 K
+python.exe                  148316 Console                    1    178,768 K
+python.exe                  161648 Console                    1    108,268 K
+python.exe                  160464 Console                    1     85,644 K
+python.exe                  170388 Console                    1    101,260 K
+python.exe                  162924 Console                    1    108,092 K
+python.exe                  172608 Console                    1    102,128 K
+python.exe                  172388 Console                    1    107,724 K
+python.exe                  175876 Console                    1      4,196 K
+python.exe                  179176 Console                    1      1,256 K
+python.exe                  173300 Console                    1      1,216 K
+python.exe                  181424 Console                    1      3,808 K
+python.exe                  182316 Console                    1         20 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 02:45:54] 检查 #9
+- 目录文件列表:
+total 32
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 25963 Apr  9 02:16 monitor_log.txt
+- 进程状态: python.exe                  105292 Console                    1    142,084 K
+python.exe                  105808 Console                    1        128 K
+python.exe                  107204 Console                    1    190,984 K
+python.exe                  109988 Console                    1    159,468 K
+python.exe                  138932 Console                    1  3,488,368 K
+python.exe                  147440 Console                    1    258,716 K
+python.exe                  146604 Console                    1    135,136 K
+python.exe                  148316 Console                    1    137,396 K
+python.exe                  172608 Console                    1    101,376 K
+python.exe                  172388 Console                    1    112,172 K
+python.exe                  175876 Console                    1        432 K
+python.exe                  179176 Console                    1      2,420 K
+python.exe                  173300 Console                    1      3,152 K
+python.exe                  181424 Console                    1        676 K
+python.exe                  182316 Console                    1      4,756 K
+python.exe                  181392 Console                    1      1,900 K
+python.exe                  179096 Console                    1    199,712 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1792 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 02:46:08] 检查 #9
+- 目录文件列表:
+total 32
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 27650 Apr  9 02:46 monitor_log.txt
+- 进程状态: python.exe                  105292 Console                    1    168,728 K
+python.exe                  105808 Console                    1        272 K
+python.exe                  107204 Console                    1    221,612 K
+python.exe                  109988 Console                    1    194,552 K
+python.exe                  138932 Console                    1  3,527,320 K
+python.exe                  147440 Console                    1    243,080 K
+python.exe                  146604 Console                    1    198,632 K
+python.exe                  148316 Console                    1    152,700 K
+python.exe                  172608 Console                    1    109,292 K
+python.exe                  172388 Console                    1    109,928 K
+python.exe                  175876 Console                    1        420 K
+python.exe                  179176 Console                    1      1,172 K
+python.exe                  173300 Console                    1      3,972 K
+python.exe                  181424 Console                    1        468 K
+python.exe                  182316 Console                    1      4,408 K
+python.exe                  181392 Console                    1      1,916 K
+python.exe                  179096 Console                    1    201,528 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+[2026-04-09 03:16:01] 检查 #10
+- 目录文件列表:
+total 36
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 29306 Apr  9 02:46 monitor_log.txt
+- 进程状态: python.exe                  105808 Console                    1      3,256 K
+python.exe                  147440 Console                    1    195,444 K
+python.exe                  146604 Console                    1    192,336 K
+python.exe                  148316 Console                    1    222,632 K
+python.exe                  175876 Console                    1     32,648 K
+python.exe                  179176 Console                    1      6,488 K
+python.exe                  173300 Console                    1     30,196 K
+python.exe                  181424 Console                    1     34,504 K
+python.exe                  181392 Console                    1      5,536 K
+python.exe                  179096 Console                    1    833,272 K
+python.exe                  186672 Console                    1      5,912 K
+python.exe                  185264 Console                    1      7,644 K
+python.exe                  184116 Console                    1     17,300 K
+python.exe                  141140 Console                    1     17,348 K
+python.exe                  183532 Console                    1     17,388 K
+python.exe                  187912 Console                    1      8,304 K
+python.exe                  192824 Console                    1     17,344 K
+python.exe                  161372 Console                    1     17,324 K
+python.exe                  193400 Console                    1      8,464 K
+python.exe                  129952 Console                    1      3,712 K
+python.exe                  188588 Console                    1     15,096 K
+python.exe                  178740 Console                    1      1,940 K
+- 是否有卡住的实验: 最新文件 monitor_log.txt 在 1795 秒前更新，运行正常
+- 处理措施: Python 进程存在，继续监控
+[2026-04-09 03:16:12] 检查 #10
+- 目录文件列表:
+total 36
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:43 .
+drwxr-xr-x 1 ASUS 197121     0 Apr  8 22:42 ..
+-rw-r--r-- 1 ASUS 197121 31379 Apr  9 03:16 monitor_log.txt
+- 进程状态: python.exe                  105808 Console                    1      3,356 K
+python.exe                  147440 Console                    1    310,984 K
+python.exe                  146604 Console                    1    148,244 K
+python.exe                  148316 Console                    1    269,992 K
+python.exe                  175876 Console                    1     29,336 K
+python.exe                  179176 Console                    1      6,488 K
+python.exe                  173300 Console                    1     19,500 K
+python.exe                  181424 Console                    1     34,236 K
+python.exe                  181392 Console                    1      5,580 K
+python.exe                  179096 Console                    1    835,264 K
+python.exe                  186672 Console                    1      6,040 K
+python.exe                  185264 Console                    1      7,644 K
+python.exe                  184116 Console                    1     23,044 K
+python.exe                  141140 Console                    1     23,080 K
+python.exe                  183532 Console                    1     22,980 K
+python.exe                  187912 Console                    1      8,324 K
+python.exe                  192824 Console                    1     23,072 K
+python.exe                  161372 Console                    1     23,140 K
+python.exe                  193400 Console                    1      8,812 K
+python.exe                  129952 Console                    1      3,712 K
+python.exe                  188588 Console                    1     23,036 K
+python.exe                  178740 Console                    1      1,940 K
+python.exe                  193264 Console                    1      1,948 K
+- 是否有卡住的实验: 实验正在运行（检测到 Python 进程）
+- 处理措施: 正常，继续监控
+
+
+

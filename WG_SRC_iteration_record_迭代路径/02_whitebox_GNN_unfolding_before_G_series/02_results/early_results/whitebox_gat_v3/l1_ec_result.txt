@@ -1,0 +1,13 @@
+﻿L1 Expansion+Compression Result
+========================================
+Config: l1_ec (hidden=32, subspace=8, num_hops=2)
+  epochs=150, patience=30, lambda_compress=0.1
+----------------------------------------
+Best Val  Acc: 0.7000
+Best Test Acc: 0.6880
+----------------------------------------
+G1 Baseline: val=0.7033, test=0.6800
+Delta val:  -0.0033
+Delta test: +0.0080
+========================================
+

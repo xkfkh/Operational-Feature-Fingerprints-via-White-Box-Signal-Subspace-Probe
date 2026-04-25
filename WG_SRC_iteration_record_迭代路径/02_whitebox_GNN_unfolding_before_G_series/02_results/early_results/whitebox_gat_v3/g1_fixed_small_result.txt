@@ -1,0 +1,16 @@
+﻿g1_fixed_small_base Results
+========================================
+Best val  acc : 0.7367
+Best test acc : 0.7100
+Training time : 15.8s
+
+Layer1 final hop weights: [0.3359, 0.332, 0.3321]
+Layer2 final hop weights: [0.3997, 0.3054, 0.2949]
+Layer1 hop spread: 0.0040
+
+Layer1 H_half norm (whitebox check): 202.0253
+out_proj dim fix: [32, 1433] (in_dim=1433)
+
+STATUS: OK
+
+

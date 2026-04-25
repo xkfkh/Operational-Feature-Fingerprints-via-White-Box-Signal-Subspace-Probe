@@ -1,0 +1,17 @@
+﻿L1 Tau Annealing Result
+========================================
+Config: l1_tau_annealing
+  hidden_dim=32, subspace_dim=8, num_hops=2
+  epochs=150, patience=30
+  tau_min=0.1, tau_max=1.0 (cosine annealing)
+  lambda_div=0.01 (hop diversity regularization)
+  delta_R normalization: ON
+----------------------------------------
+Best Val  Acc: 0.6967
+Best Test Acc: 0.6920
+----------------------------------------
+G1 Baseline: val=0.7033, test=0.6800
+Delta Val:  -0.0066
+Delta Test: +0.0120
+========================================
+

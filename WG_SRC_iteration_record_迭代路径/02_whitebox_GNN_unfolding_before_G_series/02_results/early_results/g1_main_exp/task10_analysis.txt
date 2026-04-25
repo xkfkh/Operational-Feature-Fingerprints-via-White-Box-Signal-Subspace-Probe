@@ -1,0 +1,240 @@
+﻿实验体2b 分析报告
+生成日期：2026-04-09
+数据来源：task1~task7 result.txt（直接读取，未经人工修改）
+
+========================================
+## 1. 主要发现
+========================================
+
+### G1 vs F3 性能对比
+
+公平对比实验（task3）在两种隐层配置下测试了 G1（CR-driven hop）与 F3（Gumbel learnable hop）：
+
+  配置 hidden=64, subspace=16：
+    F3: val=0.767, test=0.782
+    G1: val=0.823, test=0.847
+    G1 相对 F3 提升：test +0.065（+8.3%）
+
+  配置 hidden=128, subspace=32：
+    F3: val=0.827, test=0.804
+    G1: val=0.607, test=0.625
+    G1 在此配置下严重退化，低于 F3 约 0.179（test）
+
+结论：G1 在标准配置（hidden=64）下明显优于 F3，但在 hidden=128 时因 hop 权重坍缩而失效。
+CR-driven hop 的优势依赖于 coding rate 数值的合理尺度，当隐层维度增大时需要额外的归一化处理。
+
+### CR-driven hop selection 的有效性证据
+
+hop 选择消融实验（task4，Cora，hidden=64）：
+
+  fixed_hop0:  test=0.645
+  fixed_hop1:  test=0.779
+  fixed_hop2:  test=0.794
+  uniform:     test=0.772
+  learnable:   test=0.795
+  cr_driven:   test=0.829  <-- 最优
+
+cr_driven 比次优的 learnable 高 0.034（test），比 uniform 高 0.057，比 fixed_hop0 高 0.184。
+这表明 coding rate 信号确实携带了有效的 hop 选择信息，而非仅靠可学习参数拟合。
+
+模块消融实验（task5）中，uniform_hop 比 full 低 0.035（test），learnable_hop 比 full 低 0.063（test），
+进一步印证 cr_driven 是三种 hop 策略中最优的。
+
+### 各模块贡献分析
+
+模块消融（task5，Cora，full model test=0.840）：
+
+  no_layernorm:  test=0.397，下降 -0.443  -- 最关键模块
+  no_mcr:        test=0.742，下降 -0.098  -- 第二重要
+  no_orth:       test=0.804，下降 -0.036  -- 有贡献但非核心
+  no_threshold:  test=0.835，下降 -0.005  -- 几乎无影响
+  one_layer:     test=0.866，提升 +0.026  -- 反常现象（见第4节）
+
+LayerNorm 是模型正常工作的基础，去除后性能崩溃至接近随机水平（7类分类随机基线约0.143）。
+MCR2 损失贡献显著（-0.098），验证了 coding rate 正则化的必要性。
+正交约束（orth）贡献适中（-0.036），与理论预期一致。
+
+========================================
+## 2. 消融实验结论
+========================================
+
+### hop 选择机制
+
+task4 结果（test accuracy）：
+  cr_driven(0.829) > learnable(0.795) > fixed_hop2(0.794) > fixed_hop1(0.779) > uniform(0.772) > fixed_hop0(0.645)
+
+cr_driven 相比 learnable 的优势（+0.034）说明：coding rate 提供了比纯梯度学习更稳定的 hop 选择信号。
+fixed_hop2 接近 learnable，说明 2-hop 邻域对 Cora 本身就是较优选择，但 cr_driven 能自适应地利用这一信息。
+fixed_hop0（仅自环）性能最差（0.645），说明图结构信息对节点分类至关重要。
+
+### 关键模块贡献排序
+
+  LayerNorm >> MCR2 loss > orth regularization >> threshold
+
+LayerNorm 的极端重要性（去除后 -0.443）表明：在多跳聚合后特征尺度差异极大，
+归一化是保证训练稳定性的前提条件，而非可选的优化手段。
+
+MCR2 loss 的贡献（-0.098）验证了 coding rate 目标函数在图节点分类任务上的有效性，
+与 MCR² 理论预期（最大化类间编码率差异）一致。
+
+正交约束（-0.036）贡献较小，可能因为 CE loss 本身已经隐式地推动类间分离，
+orth 的额外约束在 Cora 这类低类别数（7类）数据集上边际效益有限。
+
+threshold 几乎无影响（-0.005），说明当前阈值设置对模型行为影响极小，
+可能阈值本身在训练过程中很少被触发。
+
+### tau 温度参数的影响
+
+task7 结果（Cora，hidden=64）：
+
+  tau=0.5（过小）：test=0.585，hop 权重极度集中（hop0 权重≈1.000），entropy≈0，退化为单跳
+  tau=1.0（最优）：test=0.853，hop 权重分布合理，Layer1 entropy≈0.87-1.09
+  tau=2.0（过大）：test=0.764，hop 权重过于分散，信号稀释
+  learnable tau：  test=0.840，tau 自动收敛至约 1.03-1.05，接近最优固定值
+  anneal（2→1）：  test=0.803，介于 tau=2.0 和 tau=1.0 之间
+
+tau=0.5 时 Layer2 的 hop 权重完全坍缩（entropy=0.000），说明过小的温度会导致 softmax 退化为 argmax，
+破坏梯度流动，使 cr_driven 机制失效。
+
+learnable tau 最终稳定在 ~1.03，与最优固定值 tau=1.0 高度吻合，
+说明 tau=1.0 是该任务的自然均衡点，learnable 方案可作为自动调参的替代。
+
+anneal 方案（从 2.0 退火至 1.0）未能超越固定 tau=1.0，可能因为退火速度过慢，
+在高 tau 阶段浪费了过多训练步骤。
+
+========================================
+## 3. 泛化性分析
+========================================
+
+### 跨数据集表现
+
+task1 结果（G1，cr_driven hop，标准配置）：
+
+  Cora     (2708节点, 1433特征, 7类):  val=0.837, test=0.840
+  CiteSeer (3327节点, 3703特征, 6类):  val=0.814, test=0.790
+  PubMed   (19717节点, 500特征, 3类):  val=0.798, test=0.765
+
+G1 在三个标准引文网络数据集上均取得了合理的性能，表明模型具备基本的跨数据集泛化能力。
+
+性能排序：Cora > CiteSeer > PubMed（test accuracy）。
+PubMed 性能相对较低（0.765），可能原因：
+  1. PubMed 节点数最多（19717），图结构更复杂，固定 hop 数可能不足；
+  2. PubMed 特征维度较低（500），信息密度不同；
+  3. 仅3个类别，类间分离相对容易，但 MCR2 在低类别数时 coding rate 差异信号可能较弱。
+
+CiteSeer 的 val/test 差距（0.814 vs 0.790，差 0.024）略大于 Cora（0.837 vs 0.840，差 -0.003），
+提示 CiteSeer 上存在轻微过拟合或验证集/测试集分布差异。
+
+### 多种子稳定性
+
+task2 结果（Cora，5个随机种子）：
+
+  Seed 0: val=0.763, test=0.791
+  Seed 1: val=0.707, test=0.666  <-- 最差
+  Seed 2: val=0.800, test=0.832
+  Seed 3: val=0.860, test=0.862  <-- 最优
+  Seed 4: val=0.793, test=0.809
+
+  val:  mean=0.7847, std=0.0500
+  test: mean=0.7920, std=0.0673
+
+标准差 std=0.0673（test）相对均值 0.792 约为 8.5%，波动幅度中等偏高。
+Seed 1 的 test=0.666 明显低于其他种子，是一个异常低点，拉高了整体方差。
+去除 Seed 1 后，剩余4个种子 test mean≈0.824，std≈0.028，稳定性显著改善。
+
+这提示模型对初始化较为敏感，存在一定概率陷入次优解。
+建议在正式报告中使用多种子均值±标准差，并注明异常种子情况。
+
+注：task2 的均值（0.792）低于 task1 的 Cora 结果（0.840），
+差异来源可能是 task1 使用了特定的最优种子，而 task2 是5种子平均。
+
+========================================
+## 4. 局限性与改进方向
+========================================
+
+### hidden=128 坍缩问题及 scaled 修复方案
+
+问题描述（task6）：
+  当 hidden=128, subspace=32 时，raw 权重模式（w=softmax(R/tau)）导致严重坍缩：
+    - hop 权重退化为 [1.000, 0.000, 0.000]，仅使用 0-hop（自环）
+    - 最终 test accuracy 仅 0.530，接近随机水平
+    - 训练过程中 R 值随 epoch 增加而单调下降（R=[20.77, 1.44, 0.31] at ep100），
+      说明模型在"压缩"高阶邻域的 coding rate，而非利用它
+
+根本原因：
+  hidden=128 时 coding rate R 的绝对值远大于 hidden=64（R≈20 vs R≈8），
+  softmax(R/tau) 在大 R 差异下极度敏感，微小的 R 差异被放大为接近 one-hot 的权重分布，
+  导致梯度无法有效传播到 hop1、hop2 的参数。
+
+修复方案对比（task6）：
+  raw（w=softmax(R/tau)）：          test=0.530  -- 坍缩
+  relative（w=softmax((R-R0)/tau)）：test=0.530  -- 同样坍缩，锚定 R0 未解决尺度问题
+  znorm（w=softmax(zscore(R)/tau)）：test=0.719  -- 有改善但不稳定
+  scaled（w=softmax(R/d/tau)）：     test=0.794  -- 最优，除以 subspace_dim 归一化
+
+scaled 方案将 R 除以子空间维度 d（=32），有效压缩了 R 的绝对尺度，
+使 softmax 输入回到合理范围，hop 权重分布恢复为 [0.391, 0.310, 0.299]（接近均匀），
+模型得以正常利用多跳信息。
+
+改进建议：
+  1. 将 scaled 模式设为默认，或根据 hidden 维度自动选择归一化策略；
+  2. 考虑对 R 值做 min-max 归一化而非除以固定维度，以适应不同数据集的 R 分布；
+  3. 在 hidden=128 配置下，scaled 的 test=0.794 仍低于 hidden=64 的 test=0.840，
+     说明维度增大带来的收益尚未完全释放，值得进一步探索。
+
+### one_layer 反而更好的现象分析
+
+task5 模块消融中，one_layer 变体（单层 GNN）的 test=0.866，比 full model（0.840）高 +0.026，
+这是一个反直觉的结果。
+
+可能解释：
+
+  1. 过平滑（Over-smoothing）：
+     full model 使用两层 GNN + 多跳聚合，等效感受野更大，
+     在 Cora 这类同质性较强的图上可能导致节点表示过度平滑，
+     而 one_layer 的浅层结构恰好避免了这一问题。
+
+  2. 参数冗余：
+     Cora 是相对简单的数据集（7类，同质性高），
+     两层网络的额外参数可能引入过拟合，而 one_layer 的隐式正则化效果更好。
+
+  3. 训练动态差异：
+     two-layer 模型的 hop 权重在两层之间存在交互，
+     task7 数据显示 Layer2 的 hop 权重几乎总是坍缩为 [1.000, 0.000, 0.000]，
+     说明第二层实际上退化为单跳，two-layer 的优势未能充分发挥。
+     one_layer 避免了这种层间干扰。
+
+  4. CR 信号在浅层更纯净：
+     单层时 coding rate 直接反映输入特征的结构，
+     多层时 coding rate 是经过变换后的表示，可能引入噪声。
+
+改进建议：
+  - 对 Cora 等小型同质图，one_layer 可能是更合适的默认配置；
+  - 对大型异质图（如 OGB 数据集），two_layer 的优势可能更明显；
+  - 针对 Layer2 hop 权重坍缩问题，可尝试对每层独立施加 scaled 归一化，
+    或引入层间 hop 权重共享约束。
+
+========================================
+## 5. 自检说明
+========================================
+
+task8_summary.txt 在本报告生成时尚未存在（实验体2a 尚未完成汇总），
+无法进行交叉核验。
+
+本报告所有数字均直接引用自以下原始文件：
+  - task1_result.txt：跨数据集泛化数字
+  - task2_result.txt：多种子均值/标准差
+  - task3_result.txt：G1 vs F3 公平对比
+  - task4_result.txt：hop 消融各模式 test accuracy
+  - task5_result.txt：模块消融 vs_full 差值
+  - task6_result.txt：hidden=128 各权重模式 test accuracy
+  - task7_result.txt：tau 各方案 val/test accuracy
+
+待 task8_summary.txt 生成后，建议实验体2a 核对以下关键数字：
+  - G1 Cora test=0.840（task1 / task5 full baseline 一致）
+  - cr_driven test=0.829（task4）
+  - scaled best test=0.794（task6）
+  - tau_fixed_10 test=0.853（task7，注意：task7 summary 写的是 0.8530，
+    但 epoch 200 log 显示 test=0.8550，best val=0.8400 对应的 best test 应以 summary 为准：0.8530）
+
+

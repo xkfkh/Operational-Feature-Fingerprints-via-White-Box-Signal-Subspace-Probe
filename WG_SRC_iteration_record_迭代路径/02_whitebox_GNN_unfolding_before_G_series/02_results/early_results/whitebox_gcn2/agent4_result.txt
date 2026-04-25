@@ -1,0 +1,48 @@
+﻿whitebox_gcn2.py (Agent 4) experiment results
+============================================================
+
+Method: ReduNet full unrolled gradient ascent + graph aggregation + ISTA
+
+Architecture:
+  - Input projection (linear, xavier init)
+  - 2 x ReduNetGCNLayer (LayerNorm + E^l + C_k^l + A_norm agg + ISTA)
+  - Output classifier (linear)
+
+Layer math:
+  E^l   = (I + alpha/n * H^T H)^{-1}
+  C_k^l = (I + alpha/n_k * H_k^T H_k)^{-1}
+  H'    = H + eta*(H @ E - A_norm @ sum_k(gamma_k*(H*pi_k) @ C_k))
+  H_out = ISTA(H', threshold)
+
+Loss = CE - lambda_mcr * DeltaR + lambda_orth * L_orth
+
+Key insight: DeltaR >> CE, so lambda_mcr must be tiny (< 1e-4)
+
+Results:
+  CE_dominant             val=0.3320  test=0.2830
+  tiny_mcr                val=0.3320  test=0.2840
+  h128_tiny_mcr           val=0.4520  test=0.4470
+  no_mcr                  val=0.3320  test=0.2840
+  no_mcr_h128             val=0.4680  test=0.4400
+  no_mcr_drop03           val=0.4360  test=0.4060
+
+Best config:   h128_tiny_mcr
+Best val acc:  0.4520
+Best test acc: 0.4470
+Target >0.75:  NO
+
+Best hyperparameters:
+  hidden_dim: 128
+  eta: 0.5
+  alpha: 0.5
+  lambda_sparse: 0.005
+  dropout: 0.5
+  lr: 0.01
+  weight_decay: 0.0005
+  lambda_mcr: 1e-05
+  lambda_orth: 1e-05
+  epochs: 300
+  patience: 30
+  seed: 42
+
+

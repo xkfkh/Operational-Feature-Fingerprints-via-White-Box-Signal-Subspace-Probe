@@ -1,0 +1,10 @@
+﻿G1 Small Clean Result
+========================================
+Config: g1_base_small
+  hidden_dim=32, subspace_dim=8, num_hops=2
+  epochs=150, patience=30
+----------------------------------------
+Best Val  Acc: 0.7033
+Best Test Acc: 0.6800
+========================================
+

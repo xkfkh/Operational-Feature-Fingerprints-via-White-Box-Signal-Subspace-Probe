@@ -1,0 +1,182 @@
+﻿QC Log - G1 Main Experiment
+Date: 2026-04-09
+QC Agent: development-sonnet-4-6
+========================================================
+
+## TASK1: Multi-dataset Generalization
+
+### Bugs Found and Fixed
+File: D:/桌面/MSR实验复现与创新/experiments_g1/task1_generalization.py
+
+BUG 1 (CiteSeer - CRITICAL): load_citeseer used sp.vstack((allx, tx)) which
+  produces wrong node count. CiteSeer test indices are non-contiguous and can
+  exceed allx.shape[0]+tx.shape[0]-1. The original code then did
+  features[test_idx_raw, :] = features[test_idx_sorted, :] which shuffled
+  rows within the wrong-sized matrix, corrupting all test node features.
+  FIX: Zero-pad feature matrix to num_nodes=max(max(test_idx_raw), allx+tx-1)+1,
+       then place allx rows at [0:allx.shape[0]] and tx rows at exact test_idx
+       positions using enumerate(test_idx_sorted).
+
+BUG 2 (CiteSeer - CRITICAL): Row-normalization applied (lines 88-89 in old code).
+  load_cora does NOT row-normalize. Inconsistent normalization causes the model
+  to see a completely different feature distribution for CiteSeer vs Cora,
+  leading to val=0.38, test=0.17 (near-random for 6 classes).
+  FIX: Removed row-normalization from load_citeseer.
+
+BUG 3 (PubMed - CRITICAL): Same row-normalization bug (lines 126-127 in old code).
+  PubMed TF-IDF features should not be re-normalized. This caused val=0.437,
+  test=0.407 (well below expected 0.75-0.82 range).
+  FIX: Removed row-normalization from load_pubmed.
+
+BUG 4 (CiteSeer val split): Old code returned range(200,500) = 300 nodes for val.
+  Standard split is 500 val nodes. Fixed to range(200,700).
+
+BUG 5 (PubMed val split): Old code returned range(200,500) = 300 nodes for val.
+  Standard split is 500 val nodes. Fixed to range(200,700).
+
+### Original (buggy) results:
+  Cora:     val=0.797  test=0.822  (OK - no normalization bug here)
+  CiteSeer: val=0.380  test=0.166  (FAIL - expected 0.65-0.75)
+  PubMed:   val=0.437  test=0.407  (FAIL - expected 0.75-0.82)
+
+### Re-run status: IN PROGRESS (started 2026-04-09 00:00)
+  task1_generalization.py re-run with all 3 bugs fixed.
+  Cora training in progress (estimated ~1700s based on prior runs).
+  Result will be written to task1_result.txt when complete.
+
+========================================================
+
+## TASK2: Multi-seed Stability (seeds 0-4, Cora)
+
+### Status: INCOMPLETE - no task2_result.txt
+  task2_stdout.txt is garbled/interleaved from two concurrent runs.
+
+### Partial results extracted from stdout (first run, seeds 0-2):
+  seed=0: val=0.7633  test=0.7910  (OK)
+  seed=1: val=0.7533  test=0.7660  (OK)
+  seed=2: val=0.7900  test=0.7530  (OK)
+  seeds 3,4: not visible (stdout truncated/interleaved)
+
+### Second run in stdout (appears to be a different dataset - likely CiteSeer):
+  seed=0: val=0.1667  test=0.1400  (FAIL - this is the CiteSeer bug, not Cora)
+  seed=1: val=0.3033  test=0.3150  (FAIL)
+  seed=2: val=0.3067  test=0.3170  (FAIL)
+  NOTE: task2_multiseed.py only uses load_cora, so these low values suggest
+  the second run was a different script running concurrently and stdout got mixed.
+  The Cora seeds 0-2 results (0.75-0.79) are within expected range.
+
+### QC verdict: Need clean re-run to get task2_result.txt with all 5 seeds.
+
+========================================================
+
+## TASK3: Fair Comparison F3 vs G1
+
+### Status: INCOMPLETE - no task3_result.txt (task3_done.flag is stale)
+  task3_stdout.txt shows partial results only.
+
+### Partial results from stdout:
+  F3 64/16: val=0.7667  test=0.7820  (OK - within 0.78-0.85 range)
+  G1 64/16: training in progress at ep=60, val=0.7633 (trending up, OK)
+
+### QC verdict: task3 still running. F3 result looks valid. G1 result pending.
+
+========================================================
+
+## TASK4: Hop Selection Ablation
+
+### Status: INCOMPLETE - no task4_result.txt
+  Truncated at 'uniform' experiment.
+
+### Partial results from stdout:
+  fixed_hop0: val=0.2267  test=0.2220  (expected - raw features, no propagation)
+  fixed_hop1: val=0.7900  test=0.7820  (OK)
+  fixed_hop2: val=0.7867  test=0.7680  (OK)
+  uniform:    still running
+  learnable:  not yet run
+  cr_driven:  not yet run
+
+### QC verdict: fixed_hop0 low val is EXPECTED (no graph propagation = bad).
+  Need cr_driven result to confirm it beats others.
+
+========================================================
+
+## TASK5: Module Ablation
+
+### Status: INCOMPLETE - no task5_result.txt
+  Truncated at 'uniform_hop' experiment.
+
+### Partial results from stdout:
+  full:          val=0.8367  test=0.8400  (OK - matches known g1_base result)
+  no_mcr:        val=0.7367  test=0.7420  (OK - lower than full, expected)
+  no_orth:       val=0.7667  test=0.7590  (OK - lower than full, expected)
+  no_layernorm:  val=0.1367  test=0.1180  (expected collapse without LayerNorm)
+  no_threshold:  val=0.7667  test=0.7870  (OK - slightly lower than full)
+  one_layer:     val=0.7333  test=0.7460  (OK - lower than full, expected)
+  uniform_hop:   still running
+  learnable_hop: not yet run
+
+### QC verdict: All completed variants are within expected ranges.
+  full=0.8367 matches known g1_base. no_layernorm collapse is expected behavior.
+
+========================================================
+
+## TASK6: hidden=128 Crash Diagnosis
+
+### Status: COMPLETE (task6_done.flag present)
+
+### Results:
+  raw:      val=0.5533  test=0.5300  (collapses - hop_w=[1,0,0], expected)
+  scaled:   val=0.7800  test=0.7940  (best - normalizes by subspace_dim)
+  relative: val=0.5533  test=0.5300  (collapses same as raw)
+  znorm:    val=0.7167  test=0.7190  (OK but worse than scaled)
+
+### QC verdict: PASS. scaled mode correctly fixes the hidden=128 collapse.
+  raw/relative collapse is expected (large R values dominate softmax).
+  scaled > znorm > raw/relative ordering is correct.
+
+========================================================
+
+## TASK7: tau Mechanism Experiment
+
+### Status: INCOMPLETE - task7_result.txt only has 2/5 experiments
+  tau_fixed_20 still running in stdout.
+
+### Results so far:
+  tau_fixed_05 (tau=0.5): val=0.8300  test=0.8450  (OK)
+  tau_fixed_10 (tau=1.0): val=0.7733  test=0.7910  (OK)
+  tau_fixed_20 (tau=2.0): still running
+  learnable:              not yet run
+  anneal:                 not yet run
+
+### QC verdict: tau=0.5 gives best result so far (sharper softmax = better
+  discrimination). tau=1.0 is g1_base default. Need learnable/anneal to
+  complete the comparison.
+
+========================================================
+
+## SUMMARY OF ALL BUGS FIXED
+
+1. task1_generalization.py load_citeseer:
+   - Fixed isolated-node zero-padding (critical correctness bug)
+   - Removed row-normalization (inconsistency with load_cora)
+   - Fixed val split: range(200,500) -> range(200,700)
+
+2. task1_generalization.py load_pubmed:
+   - Removed row-normalization (TF-IDF features, no re-norm needed)
+   - Fixed val split: range(200,500) -> range(200,700)
+
+## TASKS STILL RUNNING / PENDING RESULT FILES
+  task1: re-running with fixes (Cora in progress)
+  task2: needs clean re-run (garbled stdout, no result file)
+  task3: still running (G1 64/16 in progress)
+  task4: still running (uniform/learnable/cr_driven pending)
+  task5: still running (uniform_hop/learnable_hop pending)
+  task7: still running (tau_fixed_20/learnable/anneal pending)
+
+## TASKS COMPLETE
+  task6: PASS - scaled mode best, raw collapses as expected
+
+========================================================
+END OF QC LOG
+
+

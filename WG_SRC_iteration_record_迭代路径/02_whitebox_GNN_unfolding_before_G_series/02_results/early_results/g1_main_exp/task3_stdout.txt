@@ -1,0 +1,80 @@
+﻿Task 3: Fair Comparison F3 vs G1
+============================================================
+
+--- Config 64/16: F3 ---
+  [F3 64/16] ep= 50 loss=-0.3727 val=0.7233 test=0.7820   [F3 64/16] early stop at epoch 96
+  F3 64/16: val=0.7667 test=0.7820 (1643.2s)
+
+--- Config 64/16: G1 ---
+  [G1 64/16] ep= 50 loss=0.3742 val=0.7367 test=0.7590
+  [G1 64/16] ep=100 loss=0.1488 val=0.7967 test=0.8220
+  [G1 64/16] ep=150 loss=0.0683 val=0.8067 test=0.8390
+  [G1 64/16] early stop at epoch 156
+  G1 64/16: val=0.8233 test=0.8470 (1488.4s)
+
+--- Config 128/32: F3 ---
+  [F3 128/32] ep= 50 loss=-1.1826 val=0.6567 test=0.6400
+  [F3 128/32] early stop at epoch 54
+  F3 128/32: val=0.8267 test=0.8040 (1335.4s)
+
+--- Config 128/32: G1 ---
+  [G1 128/32] ep= 50 loss=0.2521 val=0.5600 test=0.5710
+  [G1 128/32] ep=100 loss=0.1251 val=0.5933 test=0.6140
+  [G1 128/32] early stop at epoch 140
+  G1 128/32: val=0.6067 test=0.6250 (1734.9s)
+
+��ƽ�Աȱ�
+����         ģ��     val     test    ˵��
+-------------------------------------------------------
+64/16      F3     0.767  0.782  Gumbel learnable hop
+64/16      G1     0.823  0.847  CR-driven hop
+128/32     F3     0.827  0.804  Gumbel learnable hop
+128/32     G1     0.607  0.625  CR-driven hop
+
+Result saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3_result.txt
+Flag written to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3_done.flag
+ 64/16] ep=130 loss=0.0909 val=0.8167 test=0.8460
+  [G1 64/16] ep=140 loss=0.1004 val=0.8067 test=0.8370
+  [G1 64/16] ep=150 loss=0.0683 val=0.8067 test=0.8390
+  [G1 64/16] early stop at epoch 156
+  G1 64/16: val=0.8233 test=0.8470 (1275.4s)
+
+--- Config 128/32: F3 ---
+  [F3 128/32] ep= 10 loss=1.4566 val=0.1833 test=0.2110
+  [F3 128/32] ep= 20 loss=-0.0705 val=0.8000 test=0.7790
+  [F3 128/32] ep= 30 loss=-0.9896 val=0.8033 test=0.8060
+  [F3 128/32] ep= 40 loss=-1.1522 val=0.7600 test=0.7600
+  [F3 128/32] ep= 50 loss=-1.1826 val=0.6567 test=0.6400
+  [F3 128/32] early stop at epoch 54
+  F3 128/32: val=0.8267 test=0.8040 (987.0s)
+
+--- Config 128/32: G1 ---
+  [G1 128/32] ep= 10 loss=0.9148 val=0.4200 test=0.4220
+  [G1 128/32] ep= 20 loss=0.5536 val=0.5400 test=0.5360
+  [G1 128/32] ep= 30 loss=0.4134 val=0.5367 test=0.5510
+  [G1 128/32] ep= 40 loss=0.2989 val=0.5400 test=0.5490
+  [G1 128/32] ep= 50 loss=0.2521 val=0.5600 test=0.5710
+  [G1 128/32] ep= 60 loss=0.2093 val=0.5767 test=0.5860
+  [G1 128/32] ep= 70 loss=0.1822 val=0.5867 test=0.5930
+  [G1 128/32] ep= 80 loss=0.1591 val=0.5800 test=0.5900
+  [G1 128/32] ep= 90 loss=0.1376 val=0.5967 test=0.6070
+  [G1 128/32] ep=100 loss=0.1251 val=0.5933 test=0.6140
+  [G1 128/32] ep=110 loss=0.1091 val=0.6067 test=0.6250
+  [G1 128/32] ep=120 loss=0.0995 val=0.5933 test=0.6300
+  [G1 128/32] ep=130 loss=0.0877 val=0.5967 test=0.6380
+  [G1 128/32] ep=140 loss=0.0832 val=0.6000 test=0.6320
+  [G1 128/32] early stop at epoch 140
+  G1 128/32: val=0.6067 test=0.6250 (1396.1s)
+
+��ƽ�Աȱ�
+����         ģ��     val     test    ˵��
+-------------------------------------------------------
+64/16      F3     0.767  0.782  Gumbel learnable hop
+64/16      G1     0.823  0.847  CR-driven hop
+128/32     F3     0.827  0.804  Gumbel learnable hop
+128/32     G1     0.607  0.625  CR-driven hop
+
+Result saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3_result.txt
+Flag written to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3_done.flag
+
+

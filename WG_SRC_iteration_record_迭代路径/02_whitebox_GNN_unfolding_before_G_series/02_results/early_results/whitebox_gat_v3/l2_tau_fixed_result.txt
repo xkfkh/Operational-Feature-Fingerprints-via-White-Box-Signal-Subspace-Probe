@@ -1,0 +1,18 @@
+﻿L2 Tau Annealing FIXED Result
+========================================
+Config: l2_tau_fixed
+  hidden_dim=64, subspace_dim=16, num_hops=2
+  eps=0.1 (was 0.5), epochs=200, patience=50
+  lambda_lap=0.1 (was 0.3)
+  tau_min=0.1, tau_max=1.0 (cosine annealing)
+  lambda_div=0.01 (hop diversity regularization)
+  delta_R normalization: ON
+----------------------------------------
+Best Val  Acc: 0.6267
+Best Test Acc: 0.6220
+----------------------------------------
+G1 Baseline: val=0.7033, test=0.6800
+Delta Val:  -0.0766
+Delta Test: -0.0580
+========================================
+

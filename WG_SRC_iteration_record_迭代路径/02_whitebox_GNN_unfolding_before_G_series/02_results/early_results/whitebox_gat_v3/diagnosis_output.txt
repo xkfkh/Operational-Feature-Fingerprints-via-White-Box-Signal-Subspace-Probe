@@ -1,0 +1,46 @@
+﻿=== G1 深度诊断报告 ===
+
+Loading Cora ...
+  n=2708, in_dim=1433, num_classes=7
+
+[Part 1] 标准GCN基线
+  GCN: val=0.7867, test=0.8070  (elapsed 11.3s)
+
+[Part 2] G1组件监控（每50epoch）
+  配置: hidden=32, subspace=8, epochs=150, patience=30
+  Epoch  50: dR_mean=0.0014, hop_var=0.00000, grad_norm=0.00, H_half_norm=202.03, sparsity=79.5%, ln_std=0.9154
+  Early stop at epoch 52
+  G1 monitor run: val=0.7033, test=0.6800
+
+[Part 3] 消融实验
+  V1 (no CR grad):   val=0.5733, test=0.5550  (21.0s)
+  V2 (no Lap reg):   val=0.5500, test=0.5530  (24.2s)
+  V3 (no threshold): val=0.6933, test=0.6800  (20.0s)
+  G1 full:           val=0.7033, test=0.6800  (25.9s)
+
+=== 诊断结论 ===
+
+  [GCN vs G1 gap]  GCN val=0.7867, G1 full val=0.7033, gap=0.0833
+
+  [消融影响 on val (相对 G1 full)]
+    关闭 CR 梯度步:  -0.1300 (关掉后变差 → 该组件有正贡献)
+    关闭 Lap 正则:   -0.1533 (关掉后变差 → 该组件有正贡献)
+    关闭软阈值:      -0.0100 (影响不显著)
+
+  主要瓶颈: 软阈值(过稀疏)  (关掉后 val 变化 -0.0100)
+  次要瓶颈: CR梯度步(ΔR死区)  (关掉后 val 变化 -0.1300)
+
+  [深层分析]
+    coeff = d/(n*eps^2) = 32/(2708*0.25) = 0.04727
+    ΔR 量级极小 → softmax(ΔR/tau) 趋于均匀分布 → 白盒 hop 权重失效
+    H_half norm 约 200 → 梯度步信号被 LayerNorm 归一化，实际贡献接近 0
+    G1 full vs GCN gap = 0.0833 → G1 白盒机制在小 subspace 下未能带来增益
+
+  [改进方向]
+    1. 增大 subspace_dim (如 16→32) 提升 ΔR 量级，让 hop 权重有区分度
+    2. 减小 eta 或对 grad_contrib 做归一化，避免 H_half 数值膨胀
+    3. 软阈值改为可学习 per-node 或改用 L1 penalty，避免过稀疏
+    4. 去掉 Laplacian 正则 (若 lap_impact > 0)，或改为谱域低频滤波
+
+=== 诊断完成 ===
+

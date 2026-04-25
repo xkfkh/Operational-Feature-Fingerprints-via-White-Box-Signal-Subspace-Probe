@@ -1,0 +1,28 @@
+﻿L1 Innovation: ISTA Proximal Operator
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: L1 ISTA Proximal (White-box Sparse Coding)
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'lambda_orth_D': 0.01, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 150, 'patience': 30, 'seed': 42, 'tau_init': 1.0, 'eta_ista': 0.1}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | loss=0.8273 | val=0.5967 | test=0.5970
+  ista_sparsity=0.5616 | D_orth_loss=0.001162 | lambda=[0.0593,0.0213]
+Epoch   20 | loss=0.5252 | val=0.6133 | test=0.6360
+  ista_sparsity=0.5380 | D_orth_loss=0.002147 | lambda=[0.0377,0.0420]
+Epoch   30 | loss=0.4025 | val=0.6300 | test=0.6520
+  ista_sparsity=0.5142 | D_orth_loss=0.003201 | lambda=[0.0237,0.0801]
+Epoch   40 | loss=0.3305 | val=0.6267 | test=0.6520
+  ista_sparsity=0.4960 | D_orth_loss=0.004371 | lambda=[0.0189,0.1185]
+Epoch   50 | loss=0.2731 | val=0.6300 | test=0.6430
+  ista_sparsity=0.4824 | D_orth_loss=0.005642 | lambda=[0.0129,0.1569]
+Epoch   60 | loss=0.2380 | val=0.6333 | test=0.6420
+  ista_sparsity=0.4747 | D_orth_loss=0.006945 | lambda=[0.0112,0.1971]
+Early stop at epoch 64
+============================================================
+FINAL: best_val=0.6433 | best_test=0.6520 | time=87.4s
+============================================================
+G1 baseline: val=0.7033, test=0.6800
+Delta vs G1: val=-0.0600, test=-0.0280
+

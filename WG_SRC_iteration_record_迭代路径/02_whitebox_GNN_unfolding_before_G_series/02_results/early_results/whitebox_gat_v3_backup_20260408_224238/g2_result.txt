@@ -1,0 +1,42 @@
+﻿G2 FreqLap Experiment Results
+============================================================
+Experiment             Val Acc  Test Acc
+------------------------------------------
+g2_base                 0.6400    0.6580
+g2_tau_high             0.6400    0.6580
+g2_tau_low              0.6440    0.6620
+g2_hidden128            0.6320    0.6110
+g2_hop3                 0.6720    0.6430
+g2_best                 0.6320    0.6110
+------------------------------------------
+Best config: g2_tau_low  test_acc=0.6620
+
+Full results JSON:
+{
+  "g2_base": {
+    "val": 0.64,
+    "test": 0.658
+  },
+  "g2_tau_high": {
+    "val": 0.64,
+    "test": 0.658
+  },
+  "g2_tau_low": {
+    "val": 0.644,
+    "test": 0.662
+  },
+  "g2_hidden128": {
+    "val": 0.632,
+    "test": 0.611
+  },
+  "g2_hop3": {
+    "val": 0.672,
+    "test": 0.643
+  },
+  "g2_best": {
+    "val": 0.632,
+    "test": 0.611
+  }
+}
+
+

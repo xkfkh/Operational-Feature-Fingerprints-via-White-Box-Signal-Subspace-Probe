@@ -1,0 +1,67 @@
+﻿=== Agent D4: MSSD  2026-04-08 10:36:37 ===
+理论：多尺度子空间分解，不同 hop 对应不同频率子空间，正交约束保证信息不重叠
+每层 = 多尺度 coding rate 最大化 + 子空间间正交投影
+
+D:\桌面\MSR实验复现与创新\whitebox_gat_v3_d4.py:49: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Cora: 2708 nodes, 1433 features
+
+--- iter1_base ---
+  [iter1_base] ep= 50  loss=0.1300  val=0.6333  test=0.6560  hop_w=[0.299 0.292 0.409]
+  >> iter1_base: val=0.6833  test=0.6680
+
+--- iter2_hop1 ---
+  [iter2_hop1] ep= 50  loss=0.1869  val=0.5600  test=0.5820  hop_w=[0.446 0.554]
+  [iter2_hop1] ep=100  loss=-0.0092  val=0.5867  test=0.5680  hop_w=[0.382 0.618]
+  >> iter2_hop1: val=0.6000  test=0.5670
+
+--- iter3_hop3 ---
+  >> iter3_hop3: val=0.1300  test=0.1030
+
+--- iter4_sub8 ---
+  [iter4_sub8] ep= 50  loss=0.1977  val=0.5800  test=0.5990  hop_w=[0.314 0.344 0.343]
+  >> iter4_sub8: val=0.6267  test=0.6230
+
+--- iter5_sub32 ---
+  [iter5_sub32] ep= 50  loss=0.2105  val=0.6267  test=0.6390  hop_w=[0.286 0.317 0.396]
+  >> iter5_sub32: val=0.6667  test=0.6770
+
+--- iter6_no_mcr ---
+  [iter6_no_mcr] ep= 50  loss=0.1834  val=0.5600  test=0.5830  hop_w=[0.380 0.270 0.350]
+  >> iter6_no_mcr: val=0.5900  test=0.6060
+
+--- iter7_no_orth ---
+  [iter7_no_orth] ep= 50  loss=0.0760  val=0.5567  test=0.5530  hop_w=[0.378 0.301 0.321]
+  >> iter7_no_orth: val=0.5833  test=0.5730
+
+--- iter8_3layer ---
+  >> iter8_3layer: val=0.1467  test=0.1440
+
+--- iter9_best ---
+  [iter9_best] ep= 50  loss=0.2356  val=0.5867  test=0.5590  hop_w=[0.288 0.328 0.383]
+  >> iter9_best: val=0.5933  test=0.5420
+
+============================================================
+Agent D4 - MSSD 实验结果汇总
+============================================================
+  iter1_base                val=0.6833  test=0.6680
+  iter2_hop1                val=0.6000  test=0.5670
+  iter3_hop3                val=0.1300  test=0.1030
+  iter4_sub8                val=0.6267  test=0.6230
+  iter5_sub32               val=0.6667  test=0.6770
+  iter6_no_mcr              val=0.5900  test=0.6060
+  iter7_no_orth             val=0.5833  test=0.5730
+  iter8_3layer              val=0.1467  test=0.1440
+  iter9_best                val=0.5933  test=0.5420
+
+最优: iter1_base  val=0.6833  test=0.6680
+
+理论贡献：
+  - 不同 hop 的图信号对应不同频率子空间（低频=远邻，高频=近邻）
+  - 子空间间正交约束确保多尺度信息不冗余（直和分解）
+  - hop 权重可学习，自动发现最有用的图信号尺度
+  - 消融 iter7_no_orth 验证跨尺度正交约束的必要性
+
+Written to D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\d4_result.txt
+
+

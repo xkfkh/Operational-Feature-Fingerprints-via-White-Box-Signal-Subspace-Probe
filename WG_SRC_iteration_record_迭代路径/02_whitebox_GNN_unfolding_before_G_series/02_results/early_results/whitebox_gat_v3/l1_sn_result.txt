@@ -1,0 +1,14 @@
+﻿L1 Signal-Noise Result
+========================================
+Config: l1_signal_noise_small
+  hidden_dim=32, subspace_dim=8, num_hops=2
+  epochs=150, patience=30, lambda_noise=0.5
+----------------------------------------
+Best Val  Acc: 0.7033
+Best Test Acc: 0.6800
+----------------------------------------
+G1 Baseline: val=0.7033, test=0.6800
+Delta val:  +0.0000
+Delta test: +0.0000
+========================================
+

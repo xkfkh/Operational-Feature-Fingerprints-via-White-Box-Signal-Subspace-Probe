@@ -1,0 +1,14 @@
+﻿=== Agent F2 (fixed): Spectral Proximal Gradient  2026-04-08 18:59:34 ===
+�׺У�Ŀ�꺯�� = ���� coding rate + ���� Laplacian ���� + L1 ϡ��
+ÿ�� = ��Ŀ�꺯����һ�� proximal gradient�����κκں����
+
+D:\����\MSRʵ�鸴���봴��\run_f2_initial.py:31: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Cora: 2708 nodes, 1433 features, 7 classes
+  Computing top-16 eigenvectors (largest eigenvalues, fixed)...
+  Eigenvalue range: [1.431972, 1.482631]
+
+
+--- f2_base ---
+
+

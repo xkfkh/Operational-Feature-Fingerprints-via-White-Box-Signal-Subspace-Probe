@@ -1,0 +1,16 @@
+﻿Whitebox GAT CRATE - Hyperparameter Search Results
+============================================================
+
+  base_fixed      val=0.7800  test=0.7900
+  lr_high         val=0.7367  test=0.7840
+  lr_low          val=0.7767  test=0.7730
+  drop06          val=0.7833  test=0.7920
+  mcr_small       val=0.7500  test=0.7840
+  mcr_large       val=0.7567  test=0.7920
+  sparse_small    val=0.7700  test=0.7840
+  sparse_large    val=0.7600  test=0.7940
+  orth_small      val=0.7500  test=0.7290
+  best_combo      val=0.7833  test=0.8070
+
+Best: drop06  val=0.7833  test=0.7920
+

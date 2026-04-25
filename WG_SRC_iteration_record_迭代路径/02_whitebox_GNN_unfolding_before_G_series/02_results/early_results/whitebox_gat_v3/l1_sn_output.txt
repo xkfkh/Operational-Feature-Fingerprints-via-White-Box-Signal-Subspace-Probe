@@ -1,0 +1,81 @@
+﻿L1 Innovation: PRISM Signal-Noise Decomposition
+OUT_DIR: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: L1 Signal-Noise Decomposition
+Config: {'hidden_dim': 32, 'subspace_dim': 8, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'lambda_noise': 0.5, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 150, 'patience': 30, 'seed': 42, 'tau_s_init': 1.0, 'tau_n_init': 1.0}
+============================================================
+Data: n=2708, in_dim=1433, num_classes=7
+Train=140, Val=300, Test=1000
+Epoch   10 | loss=0.8348 | val=0.6833 | test=0.6970
+  [L1-SN] Layer1: H_half_norm=202.0257 | tau_s=0.9980 | tau_n=0.9995
+          final_w=[0.395, 0.276, 0.329]
+          signal_w=[0.395, 0.276, 0.328]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0007, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.193, -0.164, 0.008]
+  [L1-SN] Layer2: H_half_norm=229.4734 | tau_s=0.9991 | tau_n=1.0004
+          final_w=[0.992, 0.001, 0.007]
+          signal_w=[0.992, 0.001, 0.007]
+          noise_w=[0.340, 0.330, 0.330]
+          E_k=[0.0335, 0.0046, 0.0019]  (low=signal, high=noise)
+          delta_R=[4.800, -2.030, -0.198]
+Epoch   20 | loss=0.5875 | val=0.6933 | test=0.6810
+  [L1-SN] Layer1: H_half_norm=202.0254 | tau_s=0.9990 | tau_n=1.0007
+          final_w=[0.356, 0.313, 0.331]
+          signal_w=[0.356, 0.313, 0.331]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0002, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.071, -0.060, -0.003]
+  [L1-SN] Layer2: H_half_norm=223.8454 | tau_s=1.0013 | tau_n=0.9995
+          final_w=[0.849, 0.049, 0.102]
+          signal_w=[0.850, 0.049, 0.102]
+          noise_w=[0.335, 0.333, 0.332]
+          E_k=[0.0083, 0.0013, 0.0005]  (low=signal, high=noise)
+          delta_R=[2.010, -0.855, -0.117]
+Epoch   30 | loss=0.4422 | val=0.6833 | test=0.6680
+  [L1-SN] Layer1: H_half_norm=202.0253 | tau_s=0.9994 | tau_n=1.0001
+          final_w=[0.339, 0.329, 0.333]
+          signal_w=[0.339, 0.329, 0.333]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0001, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.017, -0.013, -0.000]
+  [L1-SN] Layer2: H_half_norm=217.1289 | tau_s=1.0012 | tau_n=0.9994
+          final_w=[0.504, 0.223, 0.273]
+          signal_w=[0.504, 0.223, 0.273]
+          noise_w=[0.334, 0.333, 0.333]
+          E_k=[0.0017, 0.0002, 0.0001]  (low=signal, high=noise)
+          delta_R=[0.547, -0.269, -0.068]
+Epoch   40 | loss=0.3624 | val=0.6800 | test=0.6760
+  [L1-SN] Layer1: H_half_norm=202.0253 | tau_s=0.9996 | tau_n=0.9998
+          final_w=[0.335, 0.331, 0.333]
+          signal_w=[0.335, 0.331, 0.333]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0000, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.007, -0.005, -0.000]
+  [L1-SN] Layer2: H_half_norm=212.1281 | tau_s=0.9996 | tau_n=0.9997
+          final_w=[0.372, 0.306, 0.323]
+          signal_w=[0.372, 0.306, 0.323]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0004, 0.0001, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.134, -0.062, -0.008]
+Epoch   50 | loss=0.2804 | val=0.6900 | test=0.6830
+  [L1-SN] Layer1: H_half_norm=202.0253 | tau_s=0.9998 | tau_n=1.0002
+          final_w=[0.334, 0.333, 0.333]
+          signal_w=[0.334, 0.333, 0.333]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0000, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.002, -0.002, -0.000]
+  [L1-SN] Layer2: H_half_norm=207.9958 | tau_s=1.0001 | tau_n=1.0001
+          final_w=[0.352, 0.320, 0.328]
+          signal_w=[0.352, 0.320, 0.328]
+          noise_w=[0.333, 0.333, 0.333]
+          E_k=[0.0002, 0.0000, 0.0000]  (low=signal, high=noise)
+          delta_R=[0.065, -0.032, -0.005]
+Early stop at epoch 52
+============================================================
+FINAL: best_val=0.7033 | best_test=0.6800 | time=104.6s
+G1 Baseline: val=0.7033 | test=0.6800
+Delta vs G1: val=+0.0000 | test=+0.0000
+============================================================
+

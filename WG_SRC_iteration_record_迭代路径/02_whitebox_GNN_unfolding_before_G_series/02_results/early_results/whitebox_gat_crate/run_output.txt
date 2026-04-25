@@ -1,0 +1,21 @@
+﻿D:\桌面\MSR实验复现与创新\whitebox_gat_crate.py:34: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objects.append(pickle.load(f, encoding='laLoading CLoading Cora...
+  nodes=2708, features=1433, classes=7
+  train=140, val=300, test=1000
+
+=== Run 1: Base config ===
+Epoch  20 | loss=0.5805 ce=0.4574 mcr=-3.5616 orthU=15.7783 val=0.6567 test=0.6790
+Epoch  40 | loss=0.0068 ce=0.0169 mcr=-5.8665 orthU=4.6817 val=0.7233 test=0.7710
+Epoch  60 | loss=-0.0143 ce=0.0310 mcr=-7.2203 orthU=2.5424 val=0.7600 test=0.8020
+Early stop at epoch 63
+  => val=0.7833, test=0.8080
+
+============================================================
+FINAL RESULT
+  Best config: base
+  val_acc:  0.7833
+  test_acc: 0.8080
+============================================================
+Results written to D:/桌面/MSR实验复现与创新/results/whitebox_gat_crate
+
+

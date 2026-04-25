@@ -1,0 +1,16 @@
+﻿L3 Adaptive Gate Result
+========================================
+Config: adaptive_gate
+  hidden_dim=64, subspace_dim=16, num_hops=2
+  Gate MLP: stats-driven hop weights
+  Gate applied to direct hop aggregation (Z_k=W_k@H_k)
+  CR gradient step retained for proximal regularization
+----------------------------------------
+Best Val  Acc: 0.7867
+Best Test Acc: 0.7820
+----------------------------------------
+G1 Baseline: val=0.7033, test=0.6800
+Delta Val:  +0.0834
+Delta Test: +0.1020
+========================================
+

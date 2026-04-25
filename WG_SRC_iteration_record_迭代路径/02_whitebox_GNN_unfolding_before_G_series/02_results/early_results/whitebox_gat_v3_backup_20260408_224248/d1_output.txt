@@ -1,0 +1,52 @@
+﻿=== Agent D1: GL-SRR  2026-04-08 10:36:37 ===
+理论：Graph Laplacian Sparse Rate Reduction
+每层 = proximal gradient step on: -R(Z) + lambda/2*tr(Z^T L Z) + mu*||Z||_1
+
+D:\桌面\MSR实验复现与创新\whitebox_gat_v3_d1.py:50: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+Cora: 2708 nodes, 1433 features, 7 classes
+
+--- iter1_base ---
+  >> iter1_base: val=0.7800  test=0.7880
+
+--- iter2_lap_high ---
+  [iter2_lap_high] ep= 50  loss=-0.5018  ce=0.0122  mcr=-148.5202  lap_smooth=515106.9062  val=0.7200  test=0.7720
+  >> iter2_lap_high: val=0.7633  test=0.7820
+
+--- iter3_lap_low ---
+  >> iter3_lap_low: val=0.7600  test=0.7770
+
+--- iter4_heads8 ---
+  >> iter4_heads8: val=0.7700  test=0.7980
+
+--- iter5_sub32 ---
+  >> iter5_sub32: val=0.7733  test=0.7990
+
+--- iter6_adj_norm ---
+  >> iter6_adj_norm: val=0.6167  test=0.6020
+
+--- iter7_best ---
+  [iter7_best] ep= 50  loss=-0.4522  ce=0.0158  mcr=-150.5022  lap_smooth=546243.0000  val=0.7400  test=0.7790
+  >> iter7_best: val=0.7767  test=0.7850
+
+============================================================
+Agent D1 - GL-SRR 实验结果汇总
+============================================================
+  iter1_base           val=0.7800  test=0.7880
+  iter2_lap_high       val=0.7633  test=0.7820
+  iter3_lap_low        val=0.7600  test=0.7770
+  iter4_heads8         val=0.7700  test=0.7980
+  iter5_sub32          val=0.7733  test=0.7990
+  iter6_adj_norm       val=0.6167  test=0.6020
+  iter7_best           val=0.7767  test=0.7850
+
+最优: iter1_base  val=0.7800  test=0.7880
+
+理论贡献：
+  - 将 graph Laplacian 正则嵌入目标函数，每层严格对应一步 proximal gradient
+  - Laplacian 权重 lambda_lap 可学习，自适应图结构
+  - attention 权重由 coding rate Hessian 近似给出，有理论依据
+
+Written to D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\d1_result.txt
+
+

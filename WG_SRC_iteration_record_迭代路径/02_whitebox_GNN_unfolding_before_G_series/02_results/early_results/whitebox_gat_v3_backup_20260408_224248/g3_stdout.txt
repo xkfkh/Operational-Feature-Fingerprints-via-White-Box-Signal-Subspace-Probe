@@ -1,0 +1,100 @@
+﻿�ܾ����ʡ�
+��鸴���봴��\run_g3_variational.py:35: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  return pickle.load(f, encoding="latin1")
+D:\����\MSRʵ�鸴���봴��\run_g3_variational.py:97: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\Context.cpp:767.)
+  return torch.sparse_coo_tensor(idx, val, mat.shape).coalesce()
+============================================================
+G3 Variational Hop Selection GNN �� Cora
+============================================================
+Loading Cora from D:/����/MSRʵ�鸴���봴��/planetoid/data ...
+  nodes=2708, features=1433, classes=7
+  train=140, val=500, test=1000
+
+------------------------------------------------------------
+Experiment: g3_base
+  lambda_kl=0.01, hidden=64, subspace=16, num_hops=2
+  ep   1 | ce=2.0195 | kl=2.1972 | val=0.2280 | test=0.2420
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  ep  50 | ce=0.5303 | kl=2.1972 | val=0.5740 | test=0.5490
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  Early stop at epoch 96
+  => best val=0.5880, test=0.5530, time=166.8s
+
+------------------------------------------------------------
+Experiment: g3_kl_high
+  lambda_kl=0.05, hidden=64, subspace=16, num_hops=2
+  ep   1 | ce=2.0195 | kl=2.1972 | val=0.2280 | test=0.2420
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  ep  50 | ce=0.5303 | kl=2.1972 | val=0.5740 | test=0.5490
+           L1 tau=0.6932 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  Early stop at epoch 96
+  => best val=0.5880, test=0.5530, time=215.1s
+
+------------------------------------------------------------
+Experiment: g3_kl_low
+  lambda_kl=0.001, hidden=64, subspace=16, num_hops=2
+  ep   1 | ce=2.0195 | kl=2.1972 | val=0.2280 | test=0.2420
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  ep  50 | ce=0.5303 | kl=2.1972 | val=0.5740 | test=0.5490
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6934 q=[1.000, 0.000, 0.000]
+  Early stop at epoch 96
+  => best val=0.5880, test=0.5530, time=217.6s
+
+------------------------------------------------------------
+Experiment: g3_hidden128
+  lambda_kl=0.01, hidden=128, subspace=32, num_hops=2
+  ep   1 | ce=2.0370 | kl=2.1972 | val=0.2040 | test=0.1820
+           L1 tau=0.6932 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  ep  50 | ce=0.2536 | kl=2.1972 | val=0.5160 | test=0.5270
+           L1 tau=0.6934 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  Early stop at epoch 77
+  => best val=0.5780, test=0.5430, time=194.3s
+
+------------------------------------------------------------
+Experiment: g3_hop3
+  lambda_kl=0.01, hidden=64, subspace=16, num_hops=3
+  ep   1 | ce=1.9991 | kl=2.7726 | val=0.1420 | test=0.1800
+           L1 tau=0.6933 q=[1.000, 0.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000, 0.000]
+  ep  50 | ce=0.6301 | kl=2.7726 | val=0.5440 | test=0.5460
+           L1 tau=0.6932 q=[1.000, 0.000, 0.000, 0.000]
+           L2 tau=0.6933 q=[1.000, 0.000, 0.000, 0.000]
+  Early stop at epoch 82
+  => best val=0.5680, test=0.5350, time=231.4s
+
+------------------------------------------------------------
+Experiment: g3_best
+  lambda_kl=0.01, hidden=128, subspace=32, num_hops=2
+  ep   1 | ce=2.0370 | kl=2.1972 | val=0.2040 | test=0.1820
+           L1 tau=0.6932 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  ep  50 | ce=0.2536 | kl=2.1972 | val=0.5160 | test=0.5270
+           L1 tau=0.6934 q=[1.000, 0.000, 0.000]
+           L2 tau=0.6932 q=[1.000, 0.000, 0.000]
+  Early stop at epoch 77
+  => best val=0.5780, test=0.5430, time=186.9s
+
+============================================================
+SUMMARY
+Experiment              Val Acc   Test Acc    Time(s)
+-------------------------------------------------------
+g3_base                  0.5880     0.5530      166.8
+g3_kl_high               0.5880     0.5530      215.1
+g3_kl_low                0.5880     0.5530      217.6
+g3_hidden128             0.5780     0.5430      194.3
+g3_hop3                  0.5680     0.5350      231.4
+g3_best                  0.5780     0.5430      186.9
+-------------------------------------------------------
+Best config: g3_base  test_acc=0.5530
+============================================================
+Results written to D:/����/MSRʵ�鸴���봴��/results/whitebox_gat_v3\g3_result.txt
+
+

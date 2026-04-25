@@ -1,0 +1,45 @@
+﻿Task 5: Module Ablation
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task5_module_ablation.py:21: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f  early stop at epoch 275
+  val=0.3567  test=0.3970  (3562.9s)
+[no_threshold] starting...
+  early stop at epoch 230
+  val=0.8300  test=0.8350  (2966.7s)
+[one_layer] starting...
+  early stop at epoch 234
+  val=0.8500  test=0.8660  (1115.6s)
+[uniform_hop] starting...
+  early stop at epoch 92
+  val=0.7833  test=0.8050  (489.3s)
+[learnable_hop] starting...
+  early stop at epoch 93
+  val=0.7933  test=0.7770  (486.5s)
+
+Module Ablation Table
+--------------------------------------------
+Variant                val    test   vs_full
+--------------------------------------------
+full                 0.837   0.840  baseline
+no_mcr               0.737   0.742    -0.098
+no_orth              0.803   0.804    -0.036
+no_layernorm         0.357   0.397    -0.443
+no_threshold         0.830   0.835    -0.005
+one_layer            0.850   0.866    +0.026
+uniform_hop          0.783   0.805    -0.035
+learnable_hop        0.793   0.777    -0.063
+--------------------------------------------
+Done.
+              val   test  vs_full
+--------------------------------------------
+full                  0.800  0.829 baseline
+no_mcr                0.727  0.766   -0.073
+no_orth               0.833  0.851   +0.033
+no_layernorm          0.347  0.384   -0.453
+no_threshold          0.803  0.825   +0.003
+one_layer             0.780  0.800   -0.020
+uniform_hop           0.757  0.772   -0.043
+learnable_hop         0.797  0.795   -0.003
+
+Saved to D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task5_result.txt
+
+

@@ -1,0 +1,52 @@
+﻿GAT vs G1 Comparison on Cora
+============================================================
+epochs=400, patience=50, lr=0.005, wd=0.0005, dropout=0.6, seed=42
+
+Loading Cora...
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task_gat_compare.py:41: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  nodes=2708, features=1433, classes=7, edges=13264
+  train=140, val=300, test=1000
+
+--- Training GAT (8 heads x 8 dim, 2 layers, edge-based) ---
+  [GAT] ep= 50 loss=1.0771  [GAT] early stop at epoch 93
+  [GAT] best val=0.8167 test=0.8050 (308.7s)
+
+--- Training G1 (hidden=64, subspace=16) ---
+  [G1 64/16] ep= 50 loss=0.3737 val=0.6500 test=0.6860
+  [G1 64/16] ep=100 loss=0.1442 val=0.7300 test=0.7740
+  [G1 64/16] ep=150 loss=0.0723 val=0.7667 test=0.8210
+  [G1 64/16] ep=200 loss=0.0487 val=0.7867 test=0.8310
+  [G1 64/16] ep=250 loss=0.0353 val=0.8367 test=0.8740
+  [G1 64/16] ep=300 loss=0.0166 val=0.8233 test=0.8660
+  [G1 64/16] early stop at epoch 303
+  [G1 64/16] best val=0.8433 test=0.8780 (140.1s)
+
+--- Self-check ---
+  GAT val=0.8167 -> PASS
+  G1  val=0.8433  -> PASS
+
+GAT vs G1 Comparison on Cora
+epochs=400, patience=50, lr=0.005, wd=0.0005, seed=42
+--------------------------------------------------------------
+Model                 Val Acc  Test Acc   Time(s) Note
+--------------------------------------------------------------
+GAT (8h x 8d)          0.8167    0.8050     308.7  standard 2-layer GAT, attention mechanism
+G1 (64/16)             0.8433    0.8780     140.1  CR-driven hop selection
+--------------------------------------------------------------
+
+Delta (G1 - GAT):
+  val:  +0.0267
+  test: +0.0730
+
+Self-check:
+  GAT val > 0.78: PASS
+  G1  val > 0.78: PASS
+
+Interpretation:
+  G1 outperforms GAT on val: CR-driven hop selection provides better inductive bias than learned attention on this dataset.
+
+Results saved to D:/����/MSRʵ�鸴���봴��/results/gat_g1_main\gat_compare_result.txt
+Flag written to D:/����/MSRʵ�鸴���봴��/results/gat_g1_main\gat_compare_done.flag
+
+

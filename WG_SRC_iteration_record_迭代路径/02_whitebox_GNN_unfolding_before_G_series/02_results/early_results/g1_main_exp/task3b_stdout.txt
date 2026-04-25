@@ -1,0 +1,67 @@
+﻿Task 3b: G1 128/32 Scaled CR Hop Weights
+Date: 2026-04-09
+Fix: w=softmax(R/subspace_dim/tau) to prevent softmax saturation
+
+
+============================================================
+Experiment: G1_64_16_scaled  hidden=64  subspace=16
+weight_mode=scaled  (R/subspace_dim/tau)
+============================================================
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task3b_g1_128_scaled.py:52: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  in_dim=1433, hidden=64, subspace=16, num_classes=7
+  Epoch   50 | loss=0.2781 | val=0.7400 | test=0.7610
+    tau=1.106 | hop_w=[0.365, 0.318, 0.317] | R=[7.68, 5.22, 5.20]
+  Early stop at epoch 91
+  Best val=0.7533 | Best test=0.7710 | Time=51.0s
+  Best-epoch hop_w (layer1): [0.365, 0.318, 0.317]
+
+============================================================
+Experiment: G1_128_32_scaled  hidden=128  subspace=32
+weight_mode=scaled  (R/subspace_dim/tau)
+============================================================
+D:\����\MSRʵ�鸴���봴��\experiments_g1\task3b_g1_128_scaled.py:52: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+  in_dim=1433, hidden=128, subspace=32, num_classes=7
+  Epoch   50 | loss=0.2041 | val=0.7633 | test=0.7920
+    tau=0.976 | hop_w=[0.395, 0.308, 0.298] | R=[20.83, 13.06, 12.05]
+  Early stop at epoch 81
+  Best val=0.7700 | Best test=0.7920 | Time=68.6s
+  Best-epoch hop_w (layer1): [0.394, 0.308, 0.299]
+
+============================================================
+SELF-CHECK RESULTS
+============================================================
+
+[Self-check] G1_64_16_scaled
+  OK: val=0.7533 >= 0.75
+  OK: hop_w=[0.365, 0.318, 0.317] -- balanced (max=0.365)
+  PASS
+
+[Self-check] G1_128_32_scaled
+  OK: val=0.7700 >= 0.75
+  OK: hop_w=[0.394, 0.308, 0.299] -- balanced (max=0.394)
+  PASS
+
+============================================================
+TASK 3b SUMMARY: G1 Scaled Hop Weights
+============================================================
+Config                    Val     Test  Check
+--------------------------------------------------
+[ref] G1_64_16_raw      0.823    0.847  (task3 baseline)
+[ref] G1_128_32_raw     0.607    0.625  (task3 collapsed)
+[ref] F3_128_32         0.827    0.804  (task3 F3 target)
+--------------------------------------------------
+G1_64_16_scaled        0.7533   0.7710  PASS
+G1_128_32_scaled       0.7700   0.7920  PASS
+============================================================
+
+Diagnosis for G1 128/32 scaled:
+  Scaled mode FIXED the collapse: val=0.7700 (was 0.607)
+  G1 128/32 scaled (0.7700) still below F3 128/32 (0.827)
+
+Results: D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3b_result.txt
+Flag:    D:/����/MSRʵ�鸴���봴��/results/g1_main_exp\task3b_done.flag
+DONE
+
+

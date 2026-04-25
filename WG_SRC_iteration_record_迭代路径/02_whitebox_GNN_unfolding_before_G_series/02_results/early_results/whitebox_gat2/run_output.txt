@@ -1,0 +1,76 @@
+﻿D:\桌面\MSR实验复现与创新\whitebox_gat2.py:31: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, encoding='latin1'))
+D:\桌面\MSR实验复现与创新\whitebox_gat2.py:31: DeprecationWarning: Please import `csr_matrix` from the `scipy.sparse` namespace; the `scipy.sparse.csr` namespace is deprecated and will be removed in SciPy 2.0.0.
+  objs.append(pickle.load(f, enc
+================
+============================================================
+Config 0: {'hidden_dim': 64, 'num_subspaces': 4, 'subspace_dim': 16, 'eta': 0.5, 'lambda_sparse': 0.05, 'c': 0.5, 'dropout': 0.5, 'lr': 0.005, 'weight_decay': 0.0005, 'lambda_mcr': 0.01, 'lambda_orth': 0.001, 'epochs': 200, 'patience': 20, 'data_dir': 'D:/桌面/MSR实验复现与创新/planetoid/data'}
+============================================================
+Loading Cora...
+Training for up to 200 epochs (patience=20)...
+  Epoch   1 | loss=1.9484 ce=1.9484 dR=0.000 | val=0.1560 test=0.1440
+  Epoch  20 | loss=1.9460 ce=1.9460 dR=0.000 | val=0.1560 test=0.1440
+  Early stop at epoch 21
+
+Best val=0.1560  test=0.1440
+
+============================================================
+Config 1: {'hidden_dim': 128, 'num_subspaces': 8, 'subspace_dim': 16, 'eta': 0.3, 'lambda_sparse': 0.02, 'c': 0.5, 'dropout': 0.6, 'lr': 0.005, 'weight_decay': 0.0005, 'lambda_mcr': 0.01, 'lambda_orth': 0.001, 'epochs': 200, 'patience': 20, 'data_dir': 'D:/桌面/MSR实验复现与创新/planetoid/data'}
+============================================================
+Loading Cora...
+Training for up to 200 epochs (patience=20)...
+  Epoch   1 | loss=1.9484 ce=1.9484 dR=0.000 | val=0.1620 test=0.1490
+  Epoch  20 | loss=1.9459 ce=1.9459 dR=0.000 | val=0.1620 test=0.1490
+  Early stop at epoch 21
+
+Best val=0.1620  test=0.1490
+
+============================================================
+Config 2: {'hidden_dim': 64, 'num_subspaces': 4, 'subspace_dim': 16, 'eta': 0.3, 'lambda_sparse': 0.01, 'c': 0.3, 'dropout': 0.5, 'lr': 0.01, 'weight_decay': 0.001, 'lambda_mcr': 0.005, 'lambda_orth': 0.0005, 'epochs': 300, 'patience': 30, 'data_dir': 'D:/桌面/MSR实验复现与创新/planetoid/data'}
+============================================================
+Loading Cora...
+Training for up to 300 epochs (patience=30)...
+  Epoch   1 | loss=1.9483 ce=1.9483 dR=0.000 | val=0.3120 test=0.3200
+  Epoch  20 | loss=1.9193 ce=1.9198 dR=0.095 | val=0.2160 test=0.2240
+  Epoch  40 | loss=1.2157 ce=1.2819 dR=14.131 | val=0.3960 test=0.3930
+  Epoch  60 | loss=0.1288 ce=0.3229 dR=46.567 | val=0.5600 test=0.5560
+  Epoch  80 | loss=-0.1157 ce=0.1740 dR=70.419 | val=0.6860 test=0.6860
+  Epoch 100 | loss=-0.2352 ce=0.1099 dR=73.500 | val=0.7040 test=0.6990
+  Early stop at epoch 104
+
+Best val=0.7240  test=0.6940
+
+============================================================
+Config 3: {'hidden_dim': 64, 'num_subspaces': 4, 'subspace_dim': 16, 'eta': 0.3, 'lambda_sparse': 0.01, 'c': 0.5, 'dropout': 0.5, 'lr': 0.005, 'weight_decay': 0.0005, 'lambda_mcr': 0.0, 'lambda_orth': 0.0, 'epochs': 200, 'patience': 20, 'data_dir': 'D:/桌面/MSR实验复现与创新/planetoid/data'}
+============================================================
+Loading Cora...
+Training for up to 200 epochs (patience=20)...
+  Epoch   1 | loss=1.9487 ce=1.9487 dR=-0.000 | val=0.0720 test=0.0910
+  Epoch  20 | loss=1.9459 ce=1.9459 dR=0.000 | val=0.0720 test=0.0910
+  Early stop at epoch 21
+
+Best val=0.0720  test=0.0910
+
+============================================================
+Config 4: {'hidden_dim': 128, 'num_subspaces': 4, 'subspace_dim': 32, 'eta': 0.2, 'lambda_sparse': 0.005, 'c': 0.5, 'dropout': 0.5, 'lr': 0.005, 'weight_decay': 0.0005, 'lambda_mcr': 0.01, 'lambda_orth': 0.001, 'epochs': 300, 'patience': 30, 'data_dir': 'D:/桌面/MSR实验复现与创新/planetoid/data'}
+============================================================
+Loading Cora...
+Training for up to 300 epochs (patience=30)...
+  Epoch   1 | loss=1.9474 ce=1.9474 dR=0.000 | val=0.0960 test=0.1040
+  Epoch  20 | loss=1.9231 ce=1.9244 dR=0.131 | val=0.1660 test=0.1590
+  Epoch  40 | loss=1.1711 ce=1.5328 dR=51.955 | val=0.2860 test=0.2850
+  Epoch  60 | loss=0.2850 ce=1.1591 dR=101.116 | val=0.3520 test=0.3510
+  Epoch  80 | loss=-0.7282 ce=0.6346 dR=154.194 | val=0.6020 test=0.5640
+  Epoch 100 | loss=-1.4055 ce=0.2729 dR=195.502 | val=0.6100 test=0.6120
+  Epoch 120 | loss=-1.5416 ce=0.3052 dR=229.989 | val=0.6220 test=0.6210
+  Epoch 140 | loss=-0.8924 ce=0.4759 dR=143.290 | val=0.5140 test=0.5520
+  Early stop at epoch 149
+
+Best val=0.6660  test=0.6610
+
+Result written to D:/桌面/MSR实验复现与创新/results/whitebox_gat2\agent5_result.txt
+Log written to D:/桌面/MSR实验复现与创新/results/whitebox_gat2\experiment_log.md
+
+Final test accuracy: 0.6940
+
+

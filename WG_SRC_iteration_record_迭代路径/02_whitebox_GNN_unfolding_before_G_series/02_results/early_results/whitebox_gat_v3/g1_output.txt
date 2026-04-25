@@ -1,0 +1,118 @@
+﻿G1: Coding Rate Gain Driven Hop Weights
+Date: 2026-04-08
+Output dir: D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3
+
+============================================================
+Experiment: g1_base
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Epoch   50 | loss=0.3742 | val=0.7367 | test=0.7590
+  Layer1 tau=1.040 | hop_w=[0.308, 0.281, 0.412] | R=[6.864, 6.768, 7.167]
+  Layer2 tau=1.003 | hop_w=[1.000, 0.000, 0.000] | R=[19.927, 0.213, 0.148]
+Epoch  100 | loss=0.1488 | val=0.7967 | test=0.8220
+  Layer1 tau=1.034 | hop_w=[0.206, 0.139, 0.655] | R=[6.409, 6.004, 7.604]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[19.376, 0.001, 0.001]
+Epoch  150 | loss=0.0683 | val=0.8067 | test=0.8390
+  Layer1 tau=1.027 | hop_w=[0.206, 0.101, 0.693] | R=[6.007, 5.275, 7.250]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[17.612, 0.000, 0.000]
+Epoch  200 | loss=0.0569 | val=0.8067 | test=0.8200
+  Layer1 tau=1.037 | hop_w=[0.272, 0.069, 0.658] | R=[6.267, 4.849, 7.183]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[16.673, 0.000, 0.000]
+Epoch  250 | loss=0.0300 | val=0.8333 | test=0.8370
+  Layer1 tau=1.053 | hop_w=[0.221, 0.080, 0.699] | R=[6.026, 4.953, 7.238]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[17.017, 0.000, 0.000]
+  Early stop at epoch 268
+  Best val=0.8367 | Best test=0.8400 | Time=695.2s
+
+============================================================
+Experiment: g1_tau_high
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 2.0}
+============================================================
+Epoch   50 | loss=0.3284 | val=0.7233 | test=0.7680
+  Layer1 tau=2.080 | hop_w=[0.725, 0.127, 0.147] | R=[8.812, 5.191, 5.497]
+  Layer2 tau=2.151 | hop_w=[0.111, 0.880, 0.009] | R=[17.597, 22.046, 12.278]
+Epoch  100 | loss=0.1307 | val=0.7300 | test=0.7840
+  Layer1 tau=2.115 | hop_w=[0.714, 0.134, 0.153] | R=[8.526, 4.982, 5.269]
+  Layer2 tau=2.143 | hop_w=[0.104, 0.896, 0.000] | R=[16.428, 21.045, 4.379]
+Epoch  150 | loss=0.0661 | val=0.7400 | test=0.7960
+  Layer1 tau=2.132 | hop_w=[0.685, 0.148, 0.167] | R=[7.890, 4.629, 4.876]
+  Layer2 tau=2.098 | hop_w=[0.121, 0.878, 0.000] | R=[14.575, 18.727, 1.549]
+  Early stop at epoch 173
+  Best val=0.7467 | Best test=0.8030 | Time=440.3s
+
+============================================================
+Experiment: g1_tau_low
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 0.5}
+============================================================
+Epoch   50 | loss=0.2938 | val=0.7367 | test=0.7630
+  Layer1 tau=0.541 | hop_w=[0.123, 0.877, 0.000] | R=[7.036, 8.100, 3.758]
+  Layer2 tau=0.634 | hop_w=[1.000, 0.000, 0.000] | R=[20.614, 0.199, 0.179]
+Epoch  100 | loss=0.1452 | val=0.7233 | test=0.7730
+  Layer1 tau=0.539 | hop_w=[0.099, 0.901, 0.000] | R=[6.719, 7.906, 2.788]
+  Layer2 tau=0.764 | hop_w=[1.000, 0.000, 0.000] | R=[20.035, 0.001, 0.001]
+  Early stop at epoch 111
+  Best val=0.7467 | Best test=0.7850 | Time=272.0s
+
+============================================================
+Experiment: g1_hidden128
+Config: {'hidden_dim': 128, 'subspace_dim': 32, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Epoch   50 | loss=0.2521 | val=0.5600 | test=0.5710
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[21.553, 3.252, 1.263]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[45.104, 0.318, 0.246]
+Epoch  100 | loss=0.1251 | val=0.5933 | test=0.6140
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.961, 1.046, 0.175]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[41.152, 0.002, 0.002]
+Epoch  150 | loss=0.0767 | val=0.5967 | test=0.6310
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.073, 0.396, 0.017]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[36.833, 0.000, 0.000]
+  Early stop at epoch 160
+  Best val=0.6067 | Best test=0.6250 | Time=376.1s
+
+============================================================
+Experiment: g1_hop3
+Config: {'hidden_dim': 64, 'subspace_dim': 16, 'num_hops': 3, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Epoch   50 | loss=0.4813 | val=0.7100 | test=0.6990
+  Layer1 tau=0.999 | hop_w=[0.528, 0.049, 0.387, 0.036] | R=[7.895, 5.521, 7.583, 5.210]
+  Layer2 tau=0.999 | hop_w=[1.000, 0.000, 0.000, 0.000] | R=[20.494, 0.251, 0.151, 0.143]
+Epoch  100 | loss=0.1376 | val=0.7667 | test=0.8050
+  Layer1 tau=0.995 | hop_w=[0.310, 0.011, 0.673, 0.007] | R=[7.670, 4.314, 8.442, 3.890]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000, 0.000] | R=[20.014, 0.001, 0.001, 0.001]
+  Early stop at epoch 128
+  Best val=0.7900 | Best test=0.8120 | Time=192.6s
+
+============================================================
+Experiment: g1_best
+Config: {'hidden_dim': 128, 'subspace_dim': 32, 'num_hops': 2, 'eta': 0.5, 'eps': 0.5, 'lambda_lap': 0.3, 'lambda_sparse': 0.05, 'lambda_mcr': 0.005, 'lambda_orth': 0.005, 'dropout': 0.6, 'lr': 0.005, 'wd': 0.001, 'epochs': 400, 'patience': 50, 'seed': 42, 'tau_init': 1.0}
+============================================================
+Epoch   50 | loss=0.2521 | val=0.5600 | test=0.5710
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[21.553, 3.252, 1.263]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[45.104, 0.318, 0.246]
+Epoch  100 | loss=0.1251 | val=0.5933 | test=0.6140
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.961, 1.046, 0.175]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[41.152, 0.002, 0.002]
+Epoch  150 | loss=0.0767 | val=0.5967 | test=0.6310
+  Layer1 tau=0.999 | hop_w=[1.000, 0.000, 0.000] | R=[20.073, 0.396, 0.017]
+  Layer2 tau=1.000 | hop_w=[1.000, 0.000, 0.000] | R=[36.833, 0.000, 0.000]
+  Early stop at epoch 160
+  Best val=0.6067 | Best test=0.6250 | Time=145.6s
+
+============================================================
+SUMMARY TABLE
+============================================================
+Experiment              Val Acc   Test Acc
+------------------------------------------
+g1_base                  0.8367     0.8400 <-- best
+g1_tau_high              0.7467     0.8030
+g1_tau_low               0.7467     0.7850
+g1_hidden128             0.6067     0.6250
+g1_hop3                  0.7900     0.8120
+g1_best                  0.6067     0.6250
+
+Best config: g1_base
+  Val Acc:  0.8367
+  Test Acc: 0.8400
+
+Results saved to D:/桌面/MSR实验复现与创新/results/whitebox_gat_v3\g1_result.txt
+
