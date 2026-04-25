@@ -31,21 +31,23 @@ For the final algorithm and experiments:
 - `run_all_experiments.py`
 
 ---
+## Why the Research Iteration Record Is Included
 
-## What Makes This Repository Different
+This repository is intended to show not only the final WG-SRC scaffold, but also the first-author-led research process that produced it.
 
-Most graph-learning repositories only provide final code and accuracy tables.
+The iteration record is included because the main value of this project is not a one-shot accuracy improvement. It shows how I formulated a white-box graph-learning problem, tested several mechanistic routes, identified why some apparently promising designs failed, and used statistical audits beyond accuracy to decide which mechanisms should be kept or rejected.
 
-This repository also records **how the method was discovered**:
+The research trajectory documents:
 
-1. Starting from MCR² / ReduNet / CRATE representation geometry.
-2. Attempting white-box GNN unfolding.
-3. Discovering that interpretable formulas inside trainable GNN layers were not sufficient for a truly white-box mechanism.
-4. Moving to closed-form graph subspace classifiers.
-5. Finding that Chameleon-like heterophilic graphs require explicit high-pass graph differences.
-6. Replacing accuracy-only search with node-level and mechanism-level statistical audits.
-7. Rejecting more complex variants when they improved validation but failed to transfer to test or harmed interpretability.
-8. Selecting `src_v16c` because it achieved the best balance among performance, simplicity, runtime, white-box clarity, and dataset-fingerprint analysis.
+1. how the project started from MCR² / ReduNet / CRATE representation geometry;
+2. why early white-box GNN unfolding was not clean enough as a final mechanism;
+3. how the work moved toward closed-form graph signal–subspace classification;
+4. how Chameleon experiments exposed the need for explicit high-pass graph differences;
+5. how later versions were judged by hard-node statistics, parameter effects, fixed / broken / redirect audits, per-class PCA dimension traces, pairwise-specialist overfitting checks, reliability maps, anti-hub analysis, and OOF candidate traces;
+6. why more complex variants were rejected when they improved validation but failed to transfer, increased complexity, or weakened the diagnostic role of the scaffold;
+7. why `src_v16c` was selected as the cleanest balance between prediction, interpretability, runtime, and operational dataset fingerprinting.
+
+In short, the record is included to make the research path auditable: problem reframing, negative results, mechanism diagnosis, statistical decision-making, and final convergence to a white-box signal–subspace probe.
 
 ---
 
