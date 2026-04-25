@@ -1,0 +1,16 @@
+﻿nohup: ignoring input
+
+=== E03 texas ===
+rep=0 val=0.8621 test=0.7895 cfg={'top_k': 5000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.4, 'feature_variant': 'full'}
+rep=1 val=0.8276 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=2 val=0.9138 test=0.7895 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=3 val=0.7759 test=0.7895 cfg={'top_k': 6000, 'dim': 32, 'energy': 0.9, 'alphas': (0.1, 1.0, 10.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=4 val=0.8966 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=5 val=0.8448 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=6 val=0.8793 test=0.7895 cfg={'top_k': 6000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=7 val=0.8966 test=0.8947 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=8 val=0.8448 test=0.8947 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=9 val=0.8966 test=0.7895 cfg={'top_k': 5000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+
+Saved E03 to /root/autodl-tmp/texas_seed0_20260429_results
+

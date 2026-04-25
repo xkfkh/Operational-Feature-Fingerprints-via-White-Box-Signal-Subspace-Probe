@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=wisconsin ===
+[split] dataset=wisconsin repeat=0 policy=random_stratified_matching_fixed_split0_class_counts split_id= seed=20260419 train=120 val=80 test=51
+repeat=0 no_p3                    val=0.8500 test=0.8824 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=27.60s
+repeat=0 no_sym                   val=0.8250 test=0.9020 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=20.18s
+repeat=0 no_highpass              val=0.7750 test=0.7647 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=20.33s
+repeat=0 pca_only                 val=0.7375 test=0.8039 cfg=(top_k=4000, dim=64, energy=0.99, alphas=(0.01, 0.1, 1.0), w=1.0) time=7.40s
+repeat=0 ridge_only               val=0.8625 test=0.8824 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.0) time=6.90s
+repeat=0 single_alpha             val=0.8250 test=0.9020 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(1.0,), w=0.4) time=10.14s
+repeat=0 fixed_dim64_energy095    val=0.8375 test=0.8824 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=6.51s
+repeat=0 raw_only                 val=0.8625 test=0.9216 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=7.87s
+repeat=0 row_lowpass_only         val=0.8250 test=0.8235 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=18.39s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/wisconsin_r0
+

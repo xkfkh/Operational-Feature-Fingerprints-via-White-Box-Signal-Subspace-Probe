@@ -1,0 +1,11 @@
+﻿dataset,ablation,n,train_mean,train_std,val_mean,val_std,test_mean,test_std,train_size,val_size,test_size,split_policy,train_mean_%,train_std_%,val_mean_%,val_std_%,test_mean_%,test_std_%
+texas,fixed_dim64_energy095,1,1.0,,0.8448275862068966,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,84.48275862068965,,81.57894736842105,
+texas,no_highpass,1,1.0,,0.8275862068965517,,0.7894736842105263,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,82.75862068965517,,78.94736842105263,
+texas,no_p3,1,1.0,,0.8620689655172413,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,86.20689655172413,,81.57894736842105,
+texas,no_sym,1,1.0,,0.8620689655172413,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,86.20689655172413,,81.57894736842105,
+texas,pca_only,1,1.0,,0.7586206896551724,,0.7368421052631579,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,75.86206896551724,,73.68421052631578,
+texas,raw_only,1,1.0,,0.8448275862068966,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,84.48275862068965,,81.57894736842105,
+texas,ridge_only,1,1.0,,0.8620689655172413,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,86.20689655172413,,81.57894736842105,
+texas,row_lowpass_only,1,1.0,,0.8275862068965517,,0.7894736842105263,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,82.75862068965517,,78.94736842105263,
+texas,single_alpha,1,1.0,,0.8620689655172413,,0.8157894736842105,,87,58,38,random_stratified_matching_fixed_split0_class_counts,100.0,,86.20689655172413,,81.57894736842105,
+

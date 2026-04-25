@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  amazon-computers: graphsage
+
+[load] dataset=amazon-computers method=graphsage repeat=8
+[split] nodes=13752 features=767 classes=10 train=200 val=300 test=13252 policy=class_balanced_random_20_train_30_val_per_class split_id=0 split_seed=20260427
+[train] amazon-computers r=8 graphsage lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.850000 test=0.776487 epoch=165 time=225.722s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/amazon-computers__repeat8__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/amazon-computers__repeat8__best.csv
+

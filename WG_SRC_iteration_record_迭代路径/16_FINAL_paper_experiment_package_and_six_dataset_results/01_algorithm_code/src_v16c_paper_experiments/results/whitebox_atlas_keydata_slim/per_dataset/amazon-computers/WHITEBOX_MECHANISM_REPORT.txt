@@ -1,0 +1,39 @@
+﻿White-box Graph Mechanism Atlas Report
+Dataset: amazon-computers
+Grid: fast
+Splits: 1
+
+1. Graph Signal Identity
+R = 0.0780
+L = 0.8742
+H = 0.0478
+HHI = 0.0546
+T = 1.1324
+O = 0.5208
+S = 0.6406
+Graph signal identity: low-pass-dominant
+
+2. Class Geometry Identity
+C_mean = 16.4000
+C_std = 0.5164
+
+3. Decision Mechanism Identity
+A_PR = 0.8697
+D = 0.1303
+Q_easy = 0.7220
+Q_geo = 0.0417
+Q_boundary = 0.0549
+Q_hard = 0.1814
+B = 0.4000
+Decision identity: balanced-geometry-boundary
+
+4. Output Figures
+A_graph_signal_barcode.png
+B_class_signal_glyph.png
+C_geometry_boundary_mechanism_plane.png
+D_subspace_constellation.png
+E_error_signal_shift.png
+F_split_mechanism_stability_strip.png
+
+Note:
+When splits=1, F is a single-split mechanism strip. True split stability requires splits > 1.

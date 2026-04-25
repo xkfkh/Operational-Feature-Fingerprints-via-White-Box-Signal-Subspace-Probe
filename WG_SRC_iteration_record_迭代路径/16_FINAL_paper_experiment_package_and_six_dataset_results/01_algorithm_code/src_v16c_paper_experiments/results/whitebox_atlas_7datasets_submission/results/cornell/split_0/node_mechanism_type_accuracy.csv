@@ -1,0 +1,4 @@
+﻿dataset,split,mechanism_type,n_test,test_acc,mean_HHI_i,mean_entropy,mean_purity
+cornell,0,low-pass-node,16,0.75,0.5651371993236649,2.170097427574751,0.14780183413587922
+cornell,0,two-hop-node,21,0.8571428571428571,0.7131200929938464,2.169083364471154,0.1435336236078438
+

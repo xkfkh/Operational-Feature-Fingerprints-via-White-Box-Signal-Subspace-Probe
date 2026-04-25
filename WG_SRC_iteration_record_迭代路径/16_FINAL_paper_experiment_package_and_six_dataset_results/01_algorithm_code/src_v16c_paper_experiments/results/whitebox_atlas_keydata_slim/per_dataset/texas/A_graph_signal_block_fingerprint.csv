@@ -1,0 +1,11 @@
+﻿dataset,split,block,block_label,I_name,selected_count,top_k_effective,I_b
+texas,0,raw,X,I_X,169,4000,0.04225
+texas,0,row_1hop,P_r X,I_PrX,462,4000,0.1155
+texas,0,row_2hop,P_r^2 X,I_Pr2X,599,4000,0.14975
+texas,0,row_3hop,P_r^3 X,I_Pr3X,590,4000,0.1475
+texas,0,highpass_row_1,X-P_r X,I_XminusPrX,349,4000,0.08725
+texas,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,622,4000,0.1555
+texas,0,sym_1hop,P_s X,I_PsX,346,4000,0.0865
+texas,0,sym_2hop,P_s^2 X,I_Ps2X,569,4000,0.14225
+texas,0,highpass_sym_1,X-P_s X,I_XminusPsX,294,4000,0.0735
+

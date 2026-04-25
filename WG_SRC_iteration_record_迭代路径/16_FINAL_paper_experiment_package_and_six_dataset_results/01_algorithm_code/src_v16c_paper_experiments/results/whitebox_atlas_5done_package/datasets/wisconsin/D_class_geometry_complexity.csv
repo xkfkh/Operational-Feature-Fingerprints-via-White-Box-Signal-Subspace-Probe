@@ -1,0 +1,7 @@
+﻿dataset,split,class,C_c,retained_variance
+wisconsin,0,0,3,1.0
+wisconsin,0,1,25,0.9045463725867549
+wisconsin,0,2,31,0.9081106812931723
+wisconsin,0,3,13,0.9002572654755695
+wisconsin,0,4,9,0.9521621960732031
+

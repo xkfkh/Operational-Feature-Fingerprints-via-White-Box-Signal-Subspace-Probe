@@ -1,0 +1,11 @@
+﻿dataset,ablation,n,train_mean,train_std,val_mean,val_std,test_mean,test_std,train_size,val_size,test_size,split_policy,train_mean_%,train_std_%,val_mean_%,val_std_%,test_mean_%,test_std_%
+amazon-photo,fixed_dim64_energy095,1,1.0,,0.9291666666666667,,0.9063448275862069,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,92.91666666666667,,90.63448275862069,
+amazon-photo,no_highpass,1,1.0,,0.925,,0.9121379310344827,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,92.5,,91.21379310344827,
+amazon-photo,no_p3,1,1.0,,0.9083333333333333,,0.875448275862069,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,90.83333333333333,,87.54482758620689,
+amazon-photo,no_sym,1,1.0,,0.8916666666666667,,0.8591724137931035,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,89.16666666666667,,85.91724137931035,
+amazon-photo,pca_only,1,1.0,,0.9083333333333333,,0.8852413793103449,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,90.83333333333333,,88.52413793103449,
+amazon-photo,raw_only,1,0.9875,,0.7833333333333333,,0.772551724137931,,160,240,7250,class_balanced_random_20_train_30_val_per_class,98.75,,78.33333333333333,,77.2551724137931,
+amazon-photo,ridge_only,1,1.0,,0.9208333333333333,,0.9064827586206896,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,92.08333333333333,,90.64827586206896,
+amazon-photo,row_lowpass_only,1,1.0,,0.9,,0.899448275862069,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,90.0,,89.9448275862069,
+amazon-photo,single_alpha,1,1.0,,0.9208333333333333,,0.9004137931034483,,160,240,7250,class_balanced_random_20_train_30_val_per_class,100.0,,92.08333333333333,,90.04137931034482,
+

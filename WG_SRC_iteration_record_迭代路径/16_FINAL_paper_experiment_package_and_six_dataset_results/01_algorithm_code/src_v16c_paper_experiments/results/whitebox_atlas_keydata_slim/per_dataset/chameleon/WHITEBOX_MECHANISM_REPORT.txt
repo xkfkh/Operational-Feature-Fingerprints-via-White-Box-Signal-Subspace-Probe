@@ -1,0 +1,39 @@
+﻿White-box Graph Mechanism Atlas Report
+Dataset: chameleon
+Grid: fast
+Splits: 1
+
+1. Graph Signal Identity
+R = 0.0005
+L = 0.8982
+H = 0.1013
+HHI = 0.1128
+T = 1.6195
+O = 0.6086
+S = 0.5209
+Graph signal identity: low-pass-dominant
+
+2. Class Geometry Identity
+C_mean = 94.8000
+C_std = 1.7889
+
+3. Decision Mechanism Identity
+A_PR = 0.8465
+D = 0.1535
+Q_easy = 0.6776
+Q_geo = 0.0461
+Q_boundary = 0.0570
+Q_hard = 0.2193
+B = 0.6000
+Decision identity: balanced-geometry-boundary
+
+4. Output Figures
+A_graph_signal_barcode.png
+B_class_signal_glyph.png
+C_geometry_boundary_mechanism_plane.png
+D_subspace_constellation.png
+E_error_signal_shift.png
+F_split_mechanism_stability_strip.png
+
+Note:
+When splits=1, F is a single-split mechanism strip. True split stability requires splits > 1.

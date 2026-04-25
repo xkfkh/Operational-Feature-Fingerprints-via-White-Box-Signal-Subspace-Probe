@@ -1,0 +1,3 @@
+﻿dataset,method,n,val_mean,val_std,test_mean,test_std
+amazon-photo,src_v16c,10,0.9166666666666666,0.0220479275922049,0.8876,0.01353278487043904
+

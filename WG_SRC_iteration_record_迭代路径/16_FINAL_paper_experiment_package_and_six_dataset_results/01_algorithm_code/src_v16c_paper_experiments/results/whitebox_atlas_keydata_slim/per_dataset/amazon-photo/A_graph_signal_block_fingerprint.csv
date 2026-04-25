@@ -1,0 +1,11 @@
+﻿dataset,split,block,block_label,I_name,selected_count,top_k_effective,I_b
+amazon-photo,0,raw,X,I_X,296,4000,0.074
+amazon-photo,0,row_1hop,P_r X,I_PrX,629,4000,0.15725
+amazon-photo,0,row_2hop,P_r^2 X,I_Pr2X,723,4000,0.18075
+amazon-photo,0,row_3hop,P_r^3 X,I_Pr3X,723,4000,0.18075
+amazon-photo,0,highpass_row_1,X-P_r X,I_XminusPrX,173,4000,0.04325
+amazon-photo,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,76,4000,0.019
+amazon-photo,0,sym_1hop,P_s X,I_PsX,590,4000,0.1475
+amazon-photo,0,sym_2hop,P_s^2 X,I_Ps2X,721,4000,0.18025
+amazon-photo,0,highpass_sym_1,X-P_s X,I_XminusPsX,69,4000,0.01725
+

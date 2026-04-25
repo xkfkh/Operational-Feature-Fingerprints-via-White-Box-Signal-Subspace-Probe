@@ -1,0 +1,16 @@
+﻿nohup: ignoring input
+
+=== E03 squirrel ===
+rep=0 val=0.6268 test=0.6167 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=1 val=0.6106 test=0.6100 cfg={'top_k': 4000, 'dim': 64, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=2 val=0.6142 test=0.5773 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=3 val=0.6238 test=0.6167 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=4 val=0.5968 test=0.5879 cfg={'top_k': 6000, 'dim': 64, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=5 val=0.6070 test=0.6100 cfg={'top_k': 6000, 'dim': 64, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.5, 'feature_variant': 'full'}
+rep=6 val=0.6028 test=0.6350 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+rep=7 val=0.6082 test=0.6254 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.4, 'feature_variant': 'full'}
+rep=8 val=0.5847 test=0.5965 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.05, 0.5, 5.0), 'w': 0.5, 'feature_variant': 'full'}
+rep=9 val=0.6208 test=0.6129 cfg={'top_k': 6000, 'dim': 96, 'energy': 0.95, 'alphas': (0.01, 0.1, 1.0), 'w': 0.6, 'feature_variant': 'full'}
+
+Saved E03 to /root/autodl-tmp/squirrel_fast_seed20260419
+

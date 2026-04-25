@@ -1,0 +1,11 @@
+﻿dataset,ablation,n,train_mean,train_std,val_mean,val_std,test_mean,test_std,train_size,val_size,test_size,split_policy,train_mean_%,train_std_%,val_mean_%,val_std_%,test_mean_%,test_std_%
+wisconsin,fixed_dim64_energy095,1,1.0,,0.8375,,0.8431372549019608,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,83.75,,84.31372549019608,
+wisconsin,no_highpass,1,1.0,,0.8,,0.8235294117647058,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,80.0,,82.35294117647058,
+wisconsin,no_p3,1,1.0,,0.85,,0.8431372549019608,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,85.0,,84.31372549019608,
+wisconsin,no_sym,1,1.0,,0.8375,,0.8235294117647058,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,83.75,,82.35294117647058,
+wisconsin,pca_only,1,1.0,,0.7625,,0.8235294117647058,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,76.25,,82.35294117647058,
+wisconsin,raw_only,1,1.0,,0.85,,0.9019607843137255,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,85.0,,90.19607843137256,
+wisconsin,ridge_only,1,1.0,,0.8375,,0.8431372549019608,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,83.75,,84.31372549019608,
+wisconsin,row_lowpass_only,1,1.0,,0.825,,0.8627450980392157,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,82.5,,86.27450980392157,
+wisconsin,single_alpha,1,1.0,,0.85,,0.8431372549019608,,120,80,51,random_stratified_matching_fixed_split0_class_counts,100.0,,85.0,,84.31372549019608,
+

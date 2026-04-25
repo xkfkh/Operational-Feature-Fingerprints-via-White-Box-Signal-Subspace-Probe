@@ -1,0 +1,3 @@
+﻿dataset,method,n,val_mean,val_std,test_mean,test_std
+amazon-computers,src_v16c,10,0.8546666666666667,0.01239274977208772,0.7870962873528524,0.011547438109068895
+

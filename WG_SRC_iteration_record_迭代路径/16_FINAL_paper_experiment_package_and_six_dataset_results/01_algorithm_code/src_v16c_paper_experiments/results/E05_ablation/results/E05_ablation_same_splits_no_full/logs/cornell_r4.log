@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=cornell ===
+[split] dataset=cornell repeat=4 policy=random_stratified_matching_fixed_split0_class_counts split_id= seed=20260423 train=87 val=59 test=37
+repeat=4 no_p3                    val=0.7797 test=0.7838 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=19.60s
+repeat=4 no_sym                   val=0.7627 test=0.7568 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=15.10s
+repeat=4 no_highpass              val=0.7966 test=0.7568 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=14.31s
+repeat=4 pca_only                 val=0.7119 test=0.6216 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=1.0) time=4.73s
+repeat=4 ridge_only               val=0.8136 test=0.8108 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.0) time=5.48s
+repeat=4 single_alpha             val=0.7627 test=0.7838 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(1.0,), w=0.4) time=8.00s
+repeat=4 fixed_dim64_energy095    val=0.7797 test=0.7568 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=4.08s
+repeat=4 raw_only                 val=0.8475 test=0.8108 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=5.80s
+repeat=4 row_lowpass_only         val=0.7627 test=0.7838 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=13.89s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/cornell_r4
+

@@ -1,0 +1,19 @@
+﻿========== START cornell 2026-04-20 21:17:22 ==========
+patched files:
+ - none; package already patched
+
+=== E03 cornell ===
+rep=0 val=0.7797 test=0.8108 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=1 val=0.7966 test=0.6216 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=2 val=0.7797 test=0.8108 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.05, 0.5, 5.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=3 val=0.8475 test=0.7568 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.05, 0.5, 5.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=4 val=0.7966 test=0.7838 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=5 val=0.7627 test=0.8378 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=6 val=0.8136 test=0.8108 cfg={'top_k': 6000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=7 val=0.7797 test=0.7297 cfg={'top_k': 5000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=8 val=0.8475 test=0.7297 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.7, 'feature_variant': 'full'}
+rep=9 val=0.8475 test=0.6486 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.1, 1.0, 10.0), 'w': 0.2, 'feature_variant': 'full'}
+
+Saved E03 to results/E03_random_split_stability
+========== END cornell 2026-04-20 21:26:53 exit_code=0 ==========
+

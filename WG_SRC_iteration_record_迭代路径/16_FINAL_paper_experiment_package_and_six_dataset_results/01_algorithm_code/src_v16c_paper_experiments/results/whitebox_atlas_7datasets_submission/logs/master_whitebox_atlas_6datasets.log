@@ -1,0 +1,3 @@
+﻿nohup: ignoring input
+run_whitebox_atlas_6datasets_parallel.sh: line 13: PYTHONPATH: unbound variable
+

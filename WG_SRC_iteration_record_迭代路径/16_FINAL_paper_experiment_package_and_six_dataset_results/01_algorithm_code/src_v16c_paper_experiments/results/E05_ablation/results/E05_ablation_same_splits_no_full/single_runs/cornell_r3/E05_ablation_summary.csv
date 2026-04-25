@@ -1,0 +1,11 @@
+﻿dataset,ablation,n,train_mean,train_std,val_mean,val_std,test_mean,test_std,train_size,val_size,test_size,split_policy,train_mean_%,train_std_%,val_mean_%,val_std_%,test_mean_%,test_std_%
+cornell,fixed_dim64_energy095,1,1.0,,0.8305084745762712,,0.7297297297297297,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,83.05084745762711,,72.97297297297297,
+cornell,no_highpass,1,1.0,,0.8305084745762712,,0.6756756756756757,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,83.05084745762711,,67.56756756756756,
+cornell,no_p3,1,1.0,,0.8305084745762712,,0.7297297297297297,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,83.05084745762711,,72.97297297297297,
+cornell,no_sym,1,1.0,,0.8305084745762712,,0.6486486486486487,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,83.05084745762711,,64.86486486486487,
+cornell,pca_only,1,1.0,,0.7966101694915254,,0.5945945945945946,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,79.66101694915254,,59.45945945945946,
+cornell,raw_only,1,1.0,,0.7796610169491526,,0.7837837837837838,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,77.96610169491525,,78.37837837837837,
+cornell,ridge_only,1,1.0,,0.847457627118644,,0.7567567567567568,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,84.7457627118644,,75.67567567567568,
+cornell,row_lowpass_only,1,1.0,,0.7966101694915254,,0.7297297297297297,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,79.66101694915254,,72.97297297297297,
+cornell,single_alpha,1,1.0,,0.8305084745762712,,0.7297297297297297,,87,59,37,random_stratified_matching_fixed_split0_class_counts,100.0,,83.05084745762711,,72.97297297297297,
+

@@ -1,0 +1,3 @@
+﻿dataset,split,mechanism_type,n_test,test_acc,mean_HHI_i,mean_entropy,mean_purity
+wisconsin,0,two-hop-node,51,0.9019607843137255,0.6032700649462562,2.161890739794262,0.15913186155623585
+

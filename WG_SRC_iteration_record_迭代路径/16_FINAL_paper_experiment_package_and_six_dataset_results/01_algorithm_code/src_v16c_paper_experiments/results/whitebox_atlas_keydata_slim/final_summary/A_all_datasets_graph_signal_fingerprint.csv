@@ -1,0 +1,47 @@
+﻿dataset,split,block,block_label,I_name,selected_count,top_k_effective,I_b
+amazon-computers,0,raw,X,I_X,312,4000,0.078
+amazon-computers,0,row_1hop,P_r X,I_PrX,656,4000,0.164
+amazon-computers,0,row_2hop,P_r^2 X,I_Pr2X,740,4000,0.185
+amazon-computers,0,row_3hop,P_r^3 X,I_Pr3X,727,4000,0.18175
+amazon-computers,0,highpass_row_1,X-P_r X,I_XminusPrX,101,4000,0.02525
+amazon-computers,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,24,4000,0.006
+amazon-computers,0,sym_1hop,P_s X,I_PsX,643,4000,0.16075
+amazon-computers,0,sym_2hop,P_s^2 X,I_Ps2X,731,4000,0.18275
+amazon-computers,0,highpass_sym_1,X-P_s X,I_XminusPsX,66,4000,0.0165
+cornell,0,raw,X,I_X,280,4000,0.07
+cornell,0,row_1hop,P_r X,I_PrX,317,4000,0.07925
+cornell,0,row_2hop,P_r^2 X,I_Pr2X,615,4000,0.15375
+cornell,0,row_3hop,P_r^3 X,I_Pr3X,571,4000,0.14275
+cornell,0,highpass_row_1,X-P_r X,I_XminusPrX,387,4000,0.09675
+cornell,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,626,4000,0.1565
+cornell,0,sym_1hop,P_s X,I_PsX,258,4000,0.0645
+cornell,0,sym_2hop,P_s^2 X,I_Ps2X,597,4000,0.14925
+cornell,0,highpass_sym_1,X-P_s X,I_XminusPsX,349,4000,0.08725
+squirrel,0,raw,X,I_X,81,6000,0.0135
+squirrel,0,row_1hop,P_r X,I_PrX,777,6000,0.1295
+squirrel,0,row_2hop,P_r^2 X,I_Pr2X,1249,6000,0.2081666666666666
+squirrel,0,row_3hop,P_r^3 X,I_Pr3X,687,6000,0.1145
+squirrel,0,highpass_row_1,X-P_r X,I_XminusPrX,440,6000,0.0733333333333333
+squirrel,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,667,6000,0.1111666666666666
+squirrel,0,sym_1hop,P_s X,I_PsX,735,6000,0.1225
+squirrel,0,sym_2hop,P_s^2 X,I_Ps2X,1149,6000,0.1915
+squirrel,0,highpass_sym_1,X-P_s X,I_XminusPsX,215,6000,0.0358333333333333
+texas,0,raw,X,I_X,169,4000,0.04225
+texas,0,row_1hop,P_r X,I_PrX,462,4000,0.1155
+texas,0,row_2hop,P_r^2 X,I_Pr2X,599,4000,0.14975
+texas,0,row_3hop,P_r^3 X,I_Pr3X,590,4000,0.1475
+texas,0,highpass_row_1,X-P_r X,I_XminusPrX,349,4000,0.08725
+texas,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,622,4000,0.1555
+texas,0,sym_1hop,P_s X,I_PsX,346,4000,0.0865
+texas,0,sym_2hop,P_s^2 X,I_Ps2X,569,4000,0.14225
+texas,0,highpass_sym_1,X-P_s X,I_XminusPsX,294,4000,0.0735
+wisconsin,0,raw,X,I_X,402,4000,0.1005
+wisconsin,0,row_1hop,P_r X,I_PrX,343,4000,0.08575
+wisconsin,0,row_2hop,P_r^2 X,I_Pr2X,570,4000,0.1425
+wisconsin,0,row_3hop,P_r^3 X,I_Pr3X,435,4000,0.10875
+wisconsin,0,highpass_row_1,X-P_r X,I_XminusPrX,469,4000,0.11725
+wisconsin,0,highpass_row_2,P_r X-P_r^2 X,I_PrXminusPr2X,480,4000,0.12
+wisconsin,0,sym_1hop,P_s X,I_PsX,281,4000,0.07025
+wisconsin,0,sym_2hop,P_s^2 X,I_Ps2X,593,4000,0.14825
+wisconsin,0,highpass_sym_1,X-P_s X,I_XminusPsX,427,4000,0.10675
+

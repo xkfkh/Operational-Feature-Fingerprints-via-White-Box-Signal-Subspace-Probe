@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  wisconsin: graphsage
+
+[load] dataset=wisconsin method=graphsage repeat=9
+[split] nodes=251 features=1703 classes=5 train=120 val=80 test=51 policy=random_stratified_matching_fixed_split0_class_counts split_id=0 split_seed=20260428
+[train] wisconsin r=9 graphsage lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.800000 test=0.862745 epoch=95 time=0.717s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/wisconsin__repeat9__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/wisconsin__repeat9__best.csv
+

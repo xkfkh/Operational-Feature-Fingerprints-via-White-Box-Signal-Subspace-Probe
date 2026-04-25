@@ -1,0 +1,12 @@
+﻿dataset,split,class,C_c,retained_variance
+amazon-computers,0,0,17,0.9606484978679573
+amazon-computers,0,1,16,0.9609432686331659
+amazon-computers,0,2,17,0.9545084563187276
+amazon-computers,0,3,16,0.9621239637190309
+amazon-computers,0,4,17,0.9602674202663043
+amazon-computers,0,5,16,0.953713442692128
+amazon-computers,0,6,16,0.95474873140725
+amazon-computers,0,7,16,0.9677338609469996
+amazon-computers,0,8,16,0.9553549046056281
+amazon-computers,0,9,17,0.9607372982160847
+

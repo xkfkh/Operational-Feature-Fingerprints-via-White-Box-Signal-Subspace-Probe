@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  amazon-photo: graphsage
+
+[load] dataset=amazon-photo method=graphsage repeat=3
+[split] nodes=7650 features=745 classes=8 train=160 val=240 test=7250 policy=class_balanced_random_20_train_30_val_per_class split_id=0 split_seed=20260422
+[train] amazon-photo r=3 graphsage lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.937500 test=0.869241 epoch=95 time=73.035s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/amazon-photo__repeat3__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/amazon-photo__repeat3__best.csv
+

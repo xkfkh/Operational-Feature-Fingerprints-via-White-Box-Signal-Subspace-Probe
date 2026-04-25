@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  texas: graphsage
+
+[load] dataset=texas method=graphsage repeat=9
+[split] nodes=183 features=1703 classes=5 train=87 val=59 test=37 policy=random_stratified_matching_fixed_split0_class_counts split_id=0 split_seed=20260428
+[train] texas r=9 graphsage lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.915254 test=0.864865 epoch=115 time=0.756s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/texas__repeat9__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/texas__repeat9__best.csv
+

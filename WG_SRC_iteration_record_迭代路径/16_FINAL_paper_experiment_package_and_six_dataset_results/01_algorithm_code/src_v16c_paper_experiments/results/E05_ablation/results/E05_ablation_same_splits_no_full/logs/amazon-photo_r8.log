@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=amazon-photo ===
+[split] dataset=amazon-photo repeat=8 policy=class_balanced_random_20_train_30_val_per_class split_id= seed=20260427 train=160 val=240 test=7250
+repeat=8 no_p3                    val=0.9083 test=0.8754 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=368.43s
+repeat=8 no_sym                   val=0.8917 test=0.8592 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=289.57s
+repeat=8 no_highpass              val=0.9250 test=0.9121 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=311.72s
+repeat=8 pca_only                 val=0.9083 test=0.8852 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=1.0) time=119.07s
+repeat=8 ridge_only               val=0.9208 test=0.9065 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.0) time=128.59s
+repeat=8 single_alpha             val=0.9208 test=0.9004 cfg=(top_k=4000, dim=64, energy=0.99, alphas=(1.0,), w=0.5) time=214.61s
+repeat=8 fixed_dim64_energy095    val=0.9292 test=0.9063 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.5) time=100.95s
+repeat=8 raw_only                 val=0.7833 test=0.7726 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.6) time=70.73s
+repeat=8 row_lowpass_only         val=0.9000 test=0.8994 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.5) time=231.92s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/amazon-photo_r8
+

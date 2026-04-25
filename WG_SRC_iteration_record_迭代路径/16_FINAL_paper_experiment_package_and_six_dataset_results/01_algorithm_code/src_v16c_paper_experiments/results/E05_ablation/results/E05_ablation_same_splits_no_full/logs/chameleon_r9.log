@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=chameleon ===
+[split] dataset=chameleon repeat=9 policy=fixed_geom_gcn_split_id_9 split_id=9 seed=9 train=1092 val=729 test=456
+repeat=9 no_p3                    val=0.7380 test=0.7259 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=425.21s
+repeat=9 no_sym                   val=0.7174 test=0.7325 cfg=(top_k=4000, dim=96, energy=0.99, alphas=(0.01, 0.1, 1.0), w=0.6) time=397.91s
+repeat=9 no_highpass              val=0.7353 test=0.7456 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=410.20s
+repeat=9 pca_only                 val=0.7188 test=0.7215 cfg=(top_k=4000, dim=96, energy=0.99, alphas=(0.01, 0.1, 1.0), w=1.0) time=153.50s
+repeat=9 ridge_only               val=0.7298 test=0.7237 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.0) time=152.82s
+repeat=9 single_alpha             val=0.7106 test=0.7346 cfg=(top_k=6000, dim=96, energy=0.99, alphas=(1.0,), w=0.6) time=127.48s
+repeat=9 fixed_dim64_energy095    val=0.7284 test=0.7346 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=68.61s
+repeat=9 raw_only                 val=0.4417 test=0.4320 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=136.41s
+repeat=9 row_lowpass_only         val=0.7243 test=0.7434 cfg=(top_k=4000, dim=96, energy=0.99, alphas=(0.01, 0.1, 1.0), w=0.5) time=198.49s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/chameleon_r9
+

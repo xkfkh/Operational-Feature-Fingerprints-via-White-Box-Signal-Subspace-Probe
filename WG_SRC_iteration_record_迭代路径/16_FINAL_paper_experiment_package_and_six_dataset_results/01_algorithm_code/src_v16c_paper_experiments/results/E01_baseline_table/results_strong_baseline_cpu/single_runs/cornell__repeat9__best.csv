@@ -1,0 +1,3 @@
+﻿dataset,method,repeat,split_id,split_seed,train_seed,split_policy,num_nodes,num_features,num_classes,train_size,val_size,test_size,feature_norm,make_undirected,lr,weight_decay,hidden_channels,dropout,train_acc,val_acc,test_acc,best_epoch,time_sec,params,selection_rule
+cornell,graphsage,9,0,20260428,20272773,random_stratified_matching_fixed_split0_class_counts,183,1703,5,87,59,37,row_l1,True,0.01,0.0005,64,0.5,0.9655172228813171,0.7966101765632629,0.7567567825317383,65,0.47,218693,strongest_method_for_dataset_then_grid_selected_by_val_only_no_test
+

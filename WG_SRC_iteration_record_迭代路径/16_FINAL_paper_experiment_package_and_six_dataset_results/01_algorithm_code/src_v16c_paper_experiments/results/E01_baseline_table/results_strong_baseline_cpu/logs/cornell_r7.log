@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  cornell: graphsage
+
+[load] dataset=cornell method=graphsage repeat=7
+[split] nodes=183 features=1703 classes=5 train=87 val=59 test=37 policy=random_stratified_matching_fixed_split0_class_counts split_id=0 split_seed=20260426
+[train] cornell r=7 graphsage lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.728814 test=0.702703 epoch=145 time=0.765s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/cornell__repeat7__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/cornell__repeat7__best.csv
+

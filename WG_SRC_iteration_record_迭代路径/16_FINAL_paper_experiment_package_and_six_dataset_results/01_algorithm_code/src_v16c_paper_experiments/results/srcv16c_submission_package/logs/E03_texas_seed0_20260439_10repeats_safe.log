@@ -1,0 +1,17 @@
+﻿========== START texas seed0=20260439 2026-04-21 09:45:16 ==========
+
+=== E03 texas ===
+rep=0 val=0.8103 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.4, 'feature_variant': 'full'}
+rep=1 val=0.8276 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.1, 1.0, 10.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=2 val=0.8621 test=0.8421 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.05, 0.5, 5.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=3 val=0.8103 test=0.8684 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=4 val=0.8103 test=0.8421 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.1, 1.0, 10.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=5 val=0.8276 test=0.8421 cfg={'top_k': 5000, 'dim': 32, 'energy': 0.9, 'alphas': (0.05, 0.5, 5.0), 'w': 0.7, 'feature_variant': 'full'}
+rep=6 val=0.8448 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=7 val=0.8966 test=0.8684 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.05, 0.5, 5.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=8 val=0.8966 test=0.8158 cfg={'top_k': 4000, 'dim': 32, 'energy': 0.9, 'alphas': (0.01, 0.1, 1.0), 'w': 0.2, 'feature_variant': 'full'}
+rep=9 val=0.8103 test=0.8158 cfg={'top_k': 5000, 'dim': 32, 'energy': 0.9, 'alphas': (0.1, 1.0, 10.0), 'w': 0.2, 'feature_variant': 'full'}
+
+Saved E03 to /root/autodl-tmp/texas_seed_sweep_parallel2_safe/seed0_20260439
+========== END texas seed0=20260439 2026-04-21 09:53:36 exit_code=0 ==========
+

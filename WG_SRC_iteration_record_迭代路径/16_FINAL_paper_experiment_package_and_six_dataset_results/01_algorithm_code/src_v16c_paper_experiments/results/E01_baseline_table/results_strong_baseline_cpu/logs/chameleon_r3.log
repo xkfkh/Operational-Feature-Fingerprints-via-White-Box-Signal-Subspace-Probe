@@ -1,0 +1,10 @@
+﻿[plan] strongest methods:
+  chameleon: linkx
+
+[load] dataset=chameleon method=linkx repeat=3
+[split] nodes=2277 features=2325 classes=5 train=1092 val=729 test=456 policy=fixed_geom_gcn_split_id_3 split_id=3 split_seed=3
+[train] chameleon r=3 linkx lr=0.01 wd=0.0005 hidden=64 dropout=0.5
+[done] val=0.732510 test=0.710526 epoch=55 time=2.981s
+[all] wrote results_strong_baseline_cpu/all_grid_runs/chameleon__repeat3__all_grid.csv
+[best] wrote results_strong_baseline_cpu/single_runs/chameleon__repeat3__best.csv
+

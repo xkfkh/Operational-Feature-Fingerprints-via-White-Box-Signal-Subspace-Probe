@@ -1,0 +1,3 @@
+﻿dataset,method,n,val_mean,val_std,test_mean,test_std
+cornell,src_v16c,10,0.8050847457627119,0.03220834534178353,0.754054054054054,0.07257705967972193
+

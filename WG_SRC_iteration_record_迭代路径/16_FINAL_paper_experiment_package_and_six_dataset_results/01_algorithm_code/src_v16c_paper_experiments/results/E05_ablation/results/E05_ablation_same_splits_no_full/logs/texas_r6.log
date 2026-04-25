@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=texas ===
+[split] dataset=texas repeat=6 policy=random_stratified_matching_fixed_split0_class_counts split_id= seed=20260425 train=87 val=58 test=38
+repeat=6 no_p3                    val=0.8448 test=0.8684 cfg=(top_k=4000, dim=64, energy=0.99, alphas=(0.01, 0.1, 1.0), w=0.6) time=19.10s
+repeat=6 no_sym                   val=0.8276 test=0.8684 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=12.72s
+repeat=6 no_highpass              val=0.8103 test=0.8158 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=13.42s
+repeat=6 pca_only                 val=0.7759 test=0.7632 cfg=(top_k=4000, dim=64, energy=0.99, alphas=(0.01, 0.1, 1.0), w=1.0) time=3.82s
+repeat=6 ridge_only               val=0.8621 test=0.8947 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.0) time=4.79s
+repeat=6 single_alpha             val=0.8276 test=0.8421 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(1.0,), w=0.4) time=6.99s
+repeat=6 fixed_dim64_energy095    val=0.8621 test=0.8947 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=4.01s
+repeat=6 raw_only                 val=0.8621 test=0.8421 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=5.11s
+repeat=6 row_lowpass_only         val=0.8621 test=0.8421 cfg=(top_k=6000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=12.81s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/texas_r6
+

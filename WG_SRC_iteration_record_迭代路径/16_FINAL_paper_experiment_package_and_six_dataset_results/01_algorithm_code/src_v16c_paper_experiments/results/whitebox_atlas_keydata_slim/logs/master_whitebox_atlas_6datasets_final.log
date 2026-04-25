@@ -1,0 +1,26 @@
+﻿nohup: ignoring input
+========== START amazon-computers, grid=fast, 2026-04-21 15:23:05 ==========
+========== START cornell, grid=default, 2026-04-21 15:23:05 ==========
+========== START texas, grid=default, 2026-04-21 15:23:05 ==========
+========== START amazon-photo, grid=default, 2026-04-21 15:23:05 ==========
+========== START squirrel, grid=fast, 2026-04-21 15:23:05 ==========
+========== START wisconsin, grid=default, 2026-04-21 15:23:05 ==========
+========== END texas, grid=default, 2026-04-21 15:24:49, exit_code=1 ==========
+========== END cornell, grid=default, 2026-04-21 15:25:10, exit_code=0 ==========
+========== END wisconsin, grid=default, 2026-04-21 15:26:08, exit_code=0 ==========
+========== END squirrel, grid=fast, 2026-04-21 15:28:21, exit_code=0 ==========
+========== END amazon-computers, grid=fast, 2026-04-21 15:33:43, exit_code=0 ==========
+Terminated
+========== END amazon-photo, grid=default, 2026-04-21 17:03:19, exit_code=143 ==========
+========== ALL DATASETS FINISHED 2026-04-21 17:03:19 ==========
+===== WHITEBOX ATLAS 6 DATASETS SUMMARY =====
+         dataset    grid  test_acc_pct  R_raw_dominance_pct  L_lowpass_dominance_pct  H_highpass_dominance_pct  HHI_highpass_heterophily_index  T_twohop_return_index  O_deephop_utility  S_hub_sensitivity  C_mean_class_geometry_complexity  C_std_class_geometry_imbalance  A_PR_pca_ridge_agreement_pct  D_geometry_discriminant_conflict_pct  Q_easy_pct  Q_geo_only_pct  Q_boundary_only_pct  Q_hard_pct  B_boundary_dominance_pct graph_signal_identity decision_mechanism_identity
+amazon-computers    fast       77.6185               7.8000                  87.4250                    4.7750                          0.0546                 1.1324             0.5208             0.6406                           16.4000                          0.5164                       86.9680                               13.0320     72.2004          4.1730               5.4860     18.1407                   40.0000     low-pass-dominant  balanced-geometry-boundary
+         cornell default       81.0811               7.0000                  58.9500                   34.0500                          0.5776                 2.1078             0.6127             0.4785                           11.6000                          5.9833                       86.4865                               13.5135     75.6757          2.7027               5.4054     16.2162                   80.0000     low-pass-dominant           boundary-dominant
+        squirrel    fast       60.1345               1.3500                  76.6167                   22.0333                          0.2876                 1.5860             0.3391             0.5495                           96.0000                          0.0000                       63.4006                               36.5994     45.4371         11.4313              12.9683     30.1633                   50.0000     low-pass-dominant  balanced-geometry-boundary
+           texas default       86.8421               4.2250                  64.1500                   31.6250                          0.4930                 1.4455             0.5561             0.4611                           13.2500                          8.5000                       84.2105                               15.7895     73.6842          0.0000              13.1579     13.1579                   80.0000     low-pass-dominant           boundary-dominant
+       wisconsin default       90.1961              10.0500                  55.5500                   34.4000                          0.6193                 1.8638             0.4765             0.5664                           16.2000                         11.5412                       90.1961                                9.8039     80.3922          0.0000               7.8431     11.7647                   80.0000     low-pass-dominant           boundary-dominant
+
+===== FINAL PACKAGE =====
+-rw-r--r-- 1 root root 11M Apr 21 17:03 /root/autodl-tmp/whitebox_atlas_6datasets_final_20260421_170320.tar.gz
+

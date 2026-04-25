@@ -1,0 +1,39 @@
+﻿White-box Graph Mechanism Atlas Report
+Dataset: squirrel
+Grid: fast
+Splits: 1
+
+1. Graph Signal Identity
+R = 0.0135
+L = 0.7662
+H = 0.2203
+HHI = 0.2876
+T = 1.5860
+O = 0.3391
+S = 0.5495
+Graph signal identity: low-pass-dominant
+
+2. Class Geometry Identity
+C_mean = 96.0000
+C_std = 0.0000
+
+3. Decision Mechanism Identity
+A_PR = 0.6340
+D = 0.3660
+Q_easy = 0.4544
+Q_geo = 0.1143
+Q_boundary = 0.1297
+Q_hard = 0.3016
+B = 0.5000
+Decision identity: balanced-geometry-boundary
+
+4. Output Figures
+A_graph_signal_barcode.png
+B_class_signal_glyph.png
+C_geometry_boundary_mechanism_plane.png
+D_subspace_constellation.png
+E_error_signal_shift.png
+F_split_mechanism_stability_strip.png
+
+Note:
+When splits=1, F is a single-split mechanism strip. True split stability requires splits > 1.

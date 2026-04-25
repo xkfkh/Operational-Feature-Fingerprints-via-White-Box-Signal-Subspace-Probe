@@ -1,0 +1,17 @@
+﻿========== START texas, grid=default, 2026-04-21 15:23:05 ==========
+========== texas split=0 seed=20260419 grid=default ==========
+Traceback (most recent call last):
+  File "/root/autodl-tmp/srcv16c/src_v16c_paper_experiments/scripts/run_whitebox_graph_mechanism_atlas.py", line 933, in <module>
+    main()
+  File "/root/autodl-tmp/srcv16c/src_v16c_paper_experiments/scripts/run_whitebox_graph_mechanism_atlas.py", line 844, in main
+    s, st = analyze_one_split(
+            ^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/srcv16c/src_v16c_paper_experiments/scripts/run_whitebox_graph_mechanism_atlas.py", line 518, in analyze_one_split
+    M_pca, R_pca_true, R_pca_wrong = wrong_min_margin(R_pca_n, y, classes)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/srcv16c/src_v16c_paper_experiments/scripts/run_whitebox_graph_mechanism_atlas.py", line 136, in wrong_min_margin
+    true_pos = np.asarray([class_to_pos[int(v)] for v in y], dtype=int)
+                           ~~~~~~~~~~~~^^^^^^^^
+KeyError: 1
+========== END texas, grid=default, 2026-04-21 15:24:49, exit_code=1 ==========
+

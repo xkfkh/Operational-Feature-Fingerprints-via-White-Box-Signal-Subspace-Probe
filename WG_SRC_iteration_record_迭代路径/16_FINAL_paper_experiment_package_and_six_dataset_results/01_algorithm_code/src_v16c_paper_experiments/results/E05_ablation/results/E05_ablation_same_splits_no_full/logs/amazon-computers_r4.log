@@ -1,0 +1,15 @@
+﻿
+=== E05 same-split no-full dataset=amazon-computers ===
+[split] dataset=amazon-computers repeat=4 policy=class_balanced_random_20_train_30_val_per_class split_id= seed=20260423 train=200 val=300 test=13252
+repeat=4 no_p3                    val=0.8467 test=0.7744 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=692.74s
+repeat=4 no_sym                   val=0.8200 test=0.7575 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=588.78s
+repeat=4 no_highpass              val=0.8667 test=0.7950 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.4) time=645.04s
+repeat=4 pca_only                 val=0.8133 test=0.7810 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=1.0) time=234.68s
+repeat=4 ridge_only               val=0.8633 test=0.7898 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.05, 0.5, 5.0), w=0.0) time=240.59s
+repeat=4 single_alpha             val=0.8633 test=0.7837 cfg=(top_k=4000, dim=64, energy=0.99, alphas=(1.0,), w=0.5) time=379.57s
+repeat=4 fixed_dim64_energy095    val=0.8600 test=0.7902 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.4) time=227.33s
+repeat=4 raw_only                 val=0.7433 test=0.6404 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=153.69s
+repeat=4 row_lowpass_only         val=0.8533 test=0.7775 cfg=(top_k=4000, dim=64, energy=0.95, alphas=(0.01, 0.1, 1.0), w=0.6) time=520.35s
+
+Saved E05 same-split no-full ablation to /root/autodl-tmp/srcv16c/src_v16c_paper_experiments/results/E05_ablation_same_splits_no_full/single_runs/amazon-computers_r4
+
